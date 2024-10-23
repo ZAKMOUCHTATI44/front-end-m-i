@@ -100,7 +100,7 @@ const CardInfluencer = ({ influencer }: { influencer: Influencer }) => {
           <div>
             <Typography sx={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
               {influencer.fullName}
-              <img src='/images/social-media/verified.png' width={20} height={20} alt='Verified' />
+              <img src='/images/social-media/verified.png' width={18} height={18} alt='Verified' />
             </Typography>
             <Typography>{influencer.nicheName}</Typography>
             <Typography variant='caption'>{influencer.title}</Typography>
