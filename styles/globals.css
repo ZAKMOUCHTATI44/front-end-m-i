@@ -15,10 +15,32 @@ code {
   color: #d400ff;
   border-radius: 0.1335rem;
 }
+
 code:not([class*='language-']):before,
 code:not([class*='language-']):after {
   content: '`';
 }
+
 code[class*='language-'] {
   padding: 0;
+}
+
+.css-mhxa-MuiPaper-root-MuiMenu-paper-MuiPopover-paper {
+  max-height: 350px !important;
+}
+
+.height-fill-available {
+  height: -webkit-fill-available;
+}
+
+.growth.high {
+  background-color: #fff5f5;
+  color: #2f855a;
+  padding: 10px;
+}
+
+.growth.lower {
+  background-color: #fff5f5;
+  color: #b71818;
+  padding: 10px;
 }

@@ -20,7 +20,7 @@ const Niches = () => {
         >
           <Box>
             <Typography variant='h4' sx={{ mb: 1.5, textAlign: 'center', fontWeight: 'bold' }}>
-              Browse over 600+ Niches
+              Parcourir plus de 600+ Niches
             </Typography>
           </Box>
           <Box sx={{ display: 'flex', justifyContent: 'center', width: '50%', marginInline: 'auto' }}>

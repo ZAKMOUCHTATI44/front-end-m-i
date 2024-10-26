@@ -73,9 +73,10 @@ const CustomRadioBasic = (props: CustomRadioBasicProps) => {
         <Box
           onClick={() => handleChange(value)}
           sx={{
-            p: 4,
+            p: 1,
             height: '100%',
             display: 'flex',
+            justifyContent: 'center',
             borderRadius: 1,
             cursor: 'pointer',
             position: 'relative',
@@ -87,13 +88,14 @@ const CustomRadioBasic = (props: CustomRadioBasicProps) => {
           }}
         >
           <Radio
+            className='none-display'
             name={name}
             size='small'
             color={color}
             value={value}
             onChange={handleChange}
             checked={selected === value}
-            sx={{ mb: -2, mt: -2.5, ml: -2.75 }}
+            sx={{ mb: -2, mt: -2.5, ml: -2.75, display: 'none' }}
           />
           {renderData()}
         </Box>
