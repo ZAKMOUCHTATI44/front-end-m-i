@@ -34,8 +34,8 @@ code[class*='language-'] {
 }
 
 .growth.high {
-  background-color: #fff5f5;
-  color: #2f855a;
+  background-color: rgba(33, 186, 69, 0.15);
+  color: #000;
   padding: 10px;
 }
 

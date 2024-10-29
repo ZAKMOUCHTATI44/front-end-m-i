@@ -3,63 +3,80 @@ import { VerticalNavItemsType } from 'src/@core/layouts/types'
 
 const navigation = (): VerticalNavItemsType => {
   return [
+    // {
+    //   title: 'Calculateurs',
+    //   icon: 'tabler:chart-donut',
+    //   children: [
+    //     {
+    //       title: 'TikTok',
+    //       path: '/calculateurs/tiktok'
+    //     },
+    //     {
+    //       title: 'Instagram',
+    //       path: '/calculateurs/instagram'
+    //     },
+    //     {
+    //       title: 'YouTube',
+    //       path: '/calculateurs/youtube'
+    //     }
+    //   ]
+    // },
     {
-      title: 'Répertoire',
-      icon: 'tabler:search',
-      children: [
-        {
-          title: "Influenceurs",
-          path: '/influenceurs'
-        },
-        {
-          title: 'Top List',
-          path: '/top-list'
-        },
-        {
-          title: 'Collaborations',
-          path: '/collaborations'
-        }
-      ]
-    },
-    {
-      title: "Calculateurs",
-      icon: 'tabler:chart-donut',
-      children: [
-        {
-          title: "TikTok",
-          path: '/calculateurs/tiktok'
-        },
-        {
-          title: "Instagram",
-          path: '/calculateurs/instagram'
-        },
-        {
-          title: "YouTube",
-          path: '/calculateurs/youtube'
-        }
-      ]
-    },
-    {
-      title: 'Suivi Concurrentiel',
+      title: 'Dashbaord',
       path: '/second-page',
-      icon: 'tabler:mail',
+      icon: 'tabler:mail'
     },
     {
-      title: 'Favoris',
+      title: 'Influenceurs',
+      path: '/influenceurs',
+      icon: 'tabler:users'
+    },
+    {
+      title: 'Manager Mes Projets',
       path: '/favoris',
-      icon: 'tabler:heart',
+      icon: 'tabler:list'
     },
     {
       title: 'Classement',
       path: '/ranking',
-      icon: 'tabler:timeline',
+      icon: 'tabler:timeline'
+    },
+    {
+      title: 'Social Listening',
+      path: '/favoris',
+      icon: 'tabler:speakerphone'
+    },
+
+    {
+      title: 'Favoris',
+      path: '/favoris',
+      icon: 'tabler:heart'
     },
     {
       title: 'Niches',
       path: '/niches',
-      icon: 'tabler:clipboard-text',
+      icon: 'tabler:list'
     },
-
+    {
+      title: 'Marketplace',
+      path: '/marketplace',
+      icon: 'tabler:world'
+    },
+    {
+      title: 'Academie',
+      path: '/academie',
+      icon: 'tabler:clipboard-text'
+    },
+    {
+      title: 'Support',
+      path: '/academie',
+      icon: 'tabler:headphones'
+    },
+    {
+      title: 'Déconnexion',
+      path: '/academie',
+      icon: 'tabler:logout'
+    }
   ]
 }
 

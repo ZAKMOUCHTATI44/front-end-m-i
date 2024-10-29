@@ -75,7 +75,7 @@
                 "score": "16.7",
                 "growth": {
                     "value": "+0.69%",
-                    "type": "greater"
+                    "type": "lower"
                 }
             }
         ]
