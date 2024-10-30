@@ -3,6 +3,7 @@ import DataTable, { TableColumn } from 'react-data-table-component'
 import influencers from '../../data/1.json'
 import { Box } from '@mui/system'
 import { Typography } from '@mui/material'
+import Link from 'next/link'
 
 const DataTableInfluencers = () => {
   const columns: TableColumn<Influencer>[] = [
@@ -31,16 +32,18 @@ const DataTableInfluencers = () => {
       selector: row => row.fullName,
       width: '450px',
       cell: row => (
-        <Box sx={{ display: 'flex', alignItems: 'center', padding: '15px', gap: theme => theme.spacing(2) }}>
-          <span>
-            <img src={row.pictureUrl} style={{ borderRadius: '50%' }} alt={row.fullName} width={55} height={55} />
-          </span>
-          <div>
-            <Typography variant='h6'>{row.fullName}</Typography>
-            <Typography variant='subtitle2'>{row.title}</Typography>
-            <Typography variant='caption'>{row.biography.substring(0, 100)} ...</Typography>
-          </div>
-        </Box>
+        <Link href={`/influenceurs/show/${row._id}`} style={{ textDecoration: 'none' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', padding: '15px', gap: theme => theme.spacing(2) }}>
+            <span>
+              <img src={row.pictureUrl} style={{ borderRadius: '50%' }} alt={row.fullName} width={55} height={55} />
+            </span>
+            <div>
+              <Typography variant='h6'>{row.fullName}</Typography>
+              <Typography variant='subtitle2'>{row.title}</Typography>
+              <Typography variant='caption'>{row.biography.substring(0, 100)} ...</Typography>
+            </div>
+          </Box>
+        </Link>
       )
     },
     {

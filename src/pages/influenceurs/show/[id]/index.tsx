@@ -12,7 +12,7 @@ const Page = () => {
     <div>
       <Grid container spacing={6}>
         <CardDetails influencer={influencer} />
-        <InfluenceScore networksStats={influencer.networksStats} />
+        <InfluenceScore networksStats={influencer.networksStats} influencer={influencer} />
       </Grid>
       <div style={{ marginTop: '80px' }}>
         <MediaDetails />

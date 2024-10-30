@@ -13,6 +13,7 @@ import { styled } from '@mui/material/styles'
 import MuiTab, { TabProps } from '@mui/material/Tab'
 import MuiTabList, { TabListProps } from '@mui/lab/TabList'
 import PostMedia from 'src/components/influencers/PostMedia'
+import SocialCoverage from 'src/components/influencers/SocialCoverage'
 
 // ** Icon Imports
 
@@ -63,7 +64,7 @@ const MediaDetails = () => {
         sx={{ borderBottom: theme => `1px solid ${theme.palette.divider}` }}
       >
         <Tab value='media' label='Posts' />
-        <Tab value='security' label='Social Coverage' />
+        <Tab value='social-coverage' label='Social Coverage' />
         <Tab value='billing-plan' label='Creator Network' />
         <Tab value='notification' label='Audience' />
         <Tab value='connection' label='Scoring' />
@@ -72,6 +73,9 @@ const MediaDetails = () => {
         <>
           <TabPanel sx={{ p: 0 }} value='media'>
             <PostMedia />
+          </TabPanel>
+          <TabPanel sx={{ p: 0 }} value='social-coverage'>
+            <SocialCoverage />
           </TabPanel>
         </>
       </Box>

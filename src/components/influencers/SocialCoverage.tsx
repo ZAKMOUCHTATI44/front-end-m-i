@@ -1,0 +1,150 @@
+import { Box, Grid, Typography } from '@mui/material'
+import React from 'react'
+import DataTable, { TableColumn } from 'react-data-table-component'
+import socialCoverage from '../../data/socialCoverage.json'
+import AudienceGrowthChart from './AudienceGrowthChart'
+
+const SocialCoverage = () => {
+  const columns: TableColumn<Network>[] = [
+    {
+      name: 'Social Media',
+      sortable: true,
+      id: 'network',
+      selector: row => row.network,
+      width: '300px',
+      cell: row => (
+        <Box sx={{ display: 'flex', alignItems: 'center', padding: '15px', gap: theme => theme.spacing(2) }}>
+          <span>
+            <img src={`/images/social-media/${row.network}.png`} alt={row.fullName} width={25} height={25} />
+          </span>
+          <span>
+            <img src={row.pictureUrl} style={{ borderRadius: '50%' }} alt={row.fullName} width={35} height={35} />
+          </span>
+          <div>
+            <Typography variant='h6'>{row.fullName}</Typography>
+            <Typography variant='caption'>@{row.username}</Typography>
+          </div>
+          {row.isVerified && (
+            <span>
+              <img src={`/images/social-media/verified.png`} alt={row.fullName} width={15} height={15} />
+            </span>
+          )}
+        </Box>
+      )
+    },
+    {
+      name: 'Influence Score',
+      sortable: true,
+      id: 'influenceScore.score',
+      selector: row => row.influenceScore.score,
+      width: '150px',
+      cell(row) {
+        return (
+          <span
+            style={{ display: 'flex', gap: '5px', alignItems: 'center' }}
+            className={`growth ${row.influenceScore.comment === 'low' ? 'lower' : 'high'}`}
+          >
+            <span className={`circle ${row.influenceScore.comment}`}></span>
+            {row.influenceScore.score} / 100
+          </span>
+        )
+      }
+    },
+    {
+      name: 'Followers',
+      width: '150px',
+      sortable: true,
+      id: 'follower_Count',
+      selector: row => row.follower_Count
+    },
+    {
+      name: 'Last Activity',
+      width: '150px',
+      sortable: true,
+      id: 'niche',
+      cell(row) {
+        return <p>{row.metrics.last_activity_str.value} </p>
+      }
+    },
+    {
+      name: 'Activity',
+      width: '200px',
+      sortable: true,
+      id: 'growth',
+      cell(row) {
+        return (
+          <p>
+            {row.metrics.activity.value} {row.metrics.activity.title}
+          </p>
+        )
+      }
+    },
+    {
+      name: 'Engage. Rate',
+      sortable: true,
+      id: 'growth',
+      width: '150px',
+      cell(row) {
+        return (
+          <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+            <span className={`circle ${row.metrics.avg_engagement.score}`}></span> {row.metrics.engagement.value}
+          </p>
+        )
+      }
+    },
+    {
+      name: 'Growth (last 30 days)',
+      sortable: true,
+      id: 'growth',
+      width: '200px',
+      cell(row) {
+        return (
+          <div>
+            <p style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0px' }}>
+              <span className={`circle ${row.metrics.growth.score}`}></span> {row.metrics.growth.value}
+            </p>
+            <Typography variant='caption'>{row.metrics.raw_growth.value}</Typography>
+          </div>
+        )
+      }
+    },
+    {
+      name: 'Avg. Engage.',
+      sortable: true,
+      id: 'growth',
+      width: '150px',
+      cell(row) {
+        return (
+          <p style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0px' }}>
+            <span className={`circle ${row.metrics.avg_engagement.score}`}></span> {row.metrics.avg_engagement.value}
+          </p>
+        )
+      }
+    },
+    {
+      name: 'Avg. Views',
+      sortable: true,
+      id: 'growth',
+      cell(row) {
+        return (
+          <p style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0px' }}>
+            <span className={`circle ${row.metrics.avg_views.score}`}></span> {row.metrics.avg_views.value}
+          </p>
+        )
+      }
+    }
+  ]
+
+  return (
+    <>
+      <DataTable columns={columns} data={socialCoverage.socialCoverage.networks} />
+      <Grid container spacing={6} mt={6}>
+        {socialCoverage.socialCoverage.audienceEvolutions.map(item => (
+          <AudienceGrowthChart key={item.network} network={item.network} data={item.data} />
+        ))}
+      </Grid>
+    </>
+  )
+}
+
+export default SocialCoverage

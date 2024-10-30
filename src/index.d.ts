@@ -56,3 +56,65 @@ interface Influencer {
   badges: Badge
   networksStats: NetworkStats[]
 }
+
+type Network = {
+  network: string
+  userId: string
+  username: string
+  fullName: string
+  pictureUrl: string
+  follower_Count: number
+  profileUrl: string
+  isVerified: boolean
+  biography: string
+  favikonUrl: string
+  score: number
+  influenceScore: {
+    score: string
+    comment: string
+  }
+  metrics: {
+    activity: {
+      title: string
+      value: string
+      score: string
+    }
+    followers: {
+      title: string
+      value: string
+    }
+    engagement: {
+      title: string
+      value: string
+      score: string
+    }
+    growth: {
+      title: string
+      value: string
+      score: string
+    }
+    raw_growth: {
+      title: string
+      value: string
+      score: string
+    }
+    avg_engagement: {
+      title: string
+      value: string
+      score: string
+    }
+    avg_views: {
+      title: string
+      value: string
+      score?: string
+    }
+    last_activity_str: {
+      title: string
+      value: string
+      score: string
+    }
+    prices: string
+    postsPerDay: number
+    postsMostCommonTimeUtc: number
+  }
+}

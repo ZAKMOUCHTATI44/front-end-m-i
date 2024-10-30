@@ -1,0 +1,1423 @@
+{
+    "socialCoverage": {
+        "overviewEvolution": [
+            {
+                "id": "favikon_score",
+                "data": [
+                    {
+                        "value": 1206,
+                        "displayedValue": "1 206",
+                        "date": "Nov 28 2023",
+                        "timestamp": 1701182172085,
+                        "other_data": {
+                            "score_tier": 10
+                        }
+                    },
+                    {
+                        "value": 1213,
+                        "displayedValue": "1 213",
+                        "date": "Dec 28 2023",
+                        "timestamp": 1703777096516,
+                        "other_data": {
+                            "score_tier": 10
+                        }
+                    },
+                    {
+                        "value": 1220,
+                        "displayedValue": "1 220",
+                        "date": "Jan 11 2024",
+                        "timestamp": 1704986170025,
+                        "other_data": {
+                            "score_tier": 10
+                        }
+                    },
+                    {
+                        "value": 1219,
+                        "displayedValue": "1 219",
+                        "date": "Feb 10 2024",
+                        "timestamp": 1707578623150,
+                        "other_data": {
+                            "score_tier": 10
+                        }
+                    },
+                    {
+                        "value": 2137,
+                        "displayedValue": "2 137",
+                        "date": "Apr 12 2024",
+                        "timestamp": 1712954494929,
+                        "other_data": {
+                            "score_tier": 10
+                        }
+                    },
+                    {
+                        "value": 2134,
+                        "displayedValue": "2 134",
+                        "date": "Apr 20 2024",
+                        "timestamp": 1713632954487,
+                        "other_data": {
+                            "score_tier": 10
+                        }
+                    },
+                    {
+                        "value": 2140,
+                        "displayedValue": "2 140",
+                        "date": "May 24 2024",
+                        "timestamp": 1716531323842,
+                        "other_data": {
+                            "score_tier": 10
+                        }
+                    },
+                    {
+                        "value": 2221,
+                        "displayedValue": "2 221",
+                        "date": "Jul 27 2024",
+                        "timestamp": 1722108396950,
+                        "other_data": {
+                            "score_tier": 10
+                        }
+                    },
+                    {
+                        "value": 2031,
+                        "displayedValue": "2 031",
+                        "date": "Sep 25 2024",
+                        "timestamp": 1727215666242,
+                        "other_data": {
+                            "score_tier": 10
+                        }
+                    },
+                    {
+                        "value": 2181,
+                        "displayedValue": "2 181",
+                        "date": "Oct 15 2024",
+                        "timestamp": 1728997216199,
+                        "other_data": {
+                            "score_tier": 10
+                        }
+                    },
+                    {
+                        "value": 2181,
+                        "displayedValue": "2 181",
+                        "date": "Oct 18 2024",
+                        "timestamp": 1729256446127,
+                        "other_data": {
+                            "score_tier": 10
+                        }
+                    },
+                    {
+                        "value": 2198,
+                        "displayedValue": "2 198",
+                        "date": "Oct 21 2024",
+                        "timestamp": 1729515670817,
+                        "other_data": {
+                            "score_tier": 10
+                        }
+                    },
+                    {
+                        "value": 2198,
+                        "displayedValue": "2 198",
+                        "date": "Oct 24 2024",
+                        "timestamp": 1729774923455,
+                        "other_data": {
+                            "score_tier": 10
+                        }
+                    },
+                    {
+                        "value": 2219,
+                        "displayedValue": "2 219",
+                        "date": "Oct 27 2024",
+                        "timestamp": 1730034160406,
+                        "other_data": {
+                            "score_tier": 10
+                        }
+                    }
+                ],
+                "growth": {
+                    "growth": "+ 1K (+ 84%)",
+                    "type": "greater"
+                }
+            },
+            {
+                "id": "global_audience",
+                "data": [
+                    {
+                        "value": 47498775,
+                        "displayedValue": "47.5M",
+                        "date": "Nov 28 2023",
+                        "timestamp": 1701182172085
+                    },
+                    {
+                        "value": 48001169,
+                        "displayedValue": "48M",
+                        "date": "Dec 28 2023",
+                        "timestamp": 1703777096516
+                    },
+                    {
+                        "value": 48196738,
+                        "displayedValue": "48.2M",
+                        "date": "Jan 11 2024",
+                        "timestamp": 1704986170025
+                    },
+                    {
+                        "value": 48833305,
+                        "displayedValue": "48.83M",
+                        "date": "Feb 10 2024",
+                        "timestamp": 1707578623150
+                    },
+                    {
+                        "value": 48881681,
+                        "displayedValue": "48.88M",
+                        "date": "Apr 12 2024",
+                        "timestamp": 1712954494929
+                    },
+                    {
+                        "value": 48880017,
+                        "displayedValue": "48.88M",
+                        "date": "Apr 20 2024",
+                        "timestamp": 1713632954487
+                    },
+                    {
+                        "value": 48986014,
+                        "displayedValue": "48.99M",
+                        "date": "May 24 2024",
+                        "timestamp": 1716531323842
+                    },
+                    {
+                        "value": 49842413,
+                        "displayedValue": "49.84M",
+                        "date": "Jul 27 2024",
+                        "timestamp": 1722108396950
+                    },
+                    {
+                        "value": 49461374,
+                        "displayedValue": "49.46M",
+                        "date": "Sep 25 2024",
+                        "timestamp": 1727215666242
+                    },
+                    {
+                        "value": 49485674,
+                        "displayedValue": "49.49M",
+                        "date": "Oct 15 2024",
+                        "timestamp": 1728997216199
+                    },
+                    {
+                        "value": 49485335,
+                        "displayedValue": "49.49M",
+                        "date": "Oct 18 2024",
+                        "timestamp": 1729256446127
+                    },
+                    {
+                        "value": 49537490,
+                        "displayedValue": "49.54M",
+                        "date": "Oct 21 2024",
+                        "timestamp": 1729515670817
+                    },
+                    {
+                        "value": 49543514,
+                        "displayedValue": "49.54M",
+                        "date": "Oct 24 2024",
+                        "timestamp": 1729774923455
+                    },
+                    {
+                        "value": 49662783,
+                        "displayedValue": "49.66M",
+                        "date": "Oct 27 2024",
+                        "timestamp": 1730034160406
+                    }
+                ],
+                "growth": {
+                    "growth": "+ 2.2M (+ 4.56%)",
+                    "type": "greater"
+                }
+            },
+            {
+                "id": "global_activity",
+                "data": [
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Nov 28 2023",
+                        "timestamp": 1701182172085
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Dec 28 2023",
+                        "timestamp": 1703777096516
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Jan 11 2024",
+                        "timestamp": 1704986170025
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Feb 10 2024",
+                        "timestamp": 1707578623150
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Apr 12 2024",
+                        "timestamp": 1712954494929
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Apr 20 2024",
+                        "timestamp": 1713632954487
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "May 24 2024",
+                        "timestamp": 1716531323842
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Jul 27 2024",
+                        "timestamp": 1722108396950
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Sep 25 2024",
+                        "timestamp": 1727215666242
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Oct 15 2024",
+                        "timestamp": 1728997216199
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Oct 18 2024",
+                        "timestamp": 1729256446127
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Oct 21 2024",
+                        "timestamp": 1729515670817
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Oct 24 2024",
+                        "timestamp": 1729774923455
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Oct 27 2024",
+                        "timestamp": 1730034160406
+                    }
+                ],
+                "growth": {
+                    "growth": " NaN ( NaN%)",
+                    "type": ""
+                }
+            },
+            {
+                "id": "global_engagement",
+                "data": [
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Nov 28 2023",
+                        "timestamp": 1701182172085
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Dec 28 2023",
+                        "timestamp": 1703777096516
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Jan 11 2024",
+                        "timestamp": 1704986170025
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Feb 10 2024",
+                        "timestamp": 1707578623150
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Apr 12 2024",
+                        "timestamp": 1712954494929
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Apr 20 2024",
+                        "timestamp": 1713632954487
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "May 24 2024",
+                        "timestamp": 1716531323842
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Jul 27 2024",
+                        "timestamp": 1722108396950
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Sep 25 2024",
+                        "timestamp": 1727215666242
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Oct 15 2024",
+                        "timestamp": 1728997216199
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Oct 18 2024",
+                        "timestamp": 1729256446127
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Oct 21 2024",
+                        "timestamp": 1729515670817
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Oct 24 2024",
+                        "timestamp": 1729774923455
+                    },
+                    {
+                        "value": null,
+                        "displayedValue": "NaN",
+                        "date": "Oct 27 2024",
+                        "timestamp": 1730034160406
+                    }
+                ],
+                "growth": {
+                    "growth": " NaN ( NaN%)",
+                    "type": ""
+                }
+            }
+        ],
+        "audienceEvolutions": [
+            {
+                "data": [
+                    {
+                        "date": "Nov 14 2023",
+                        "value": 38134794,
+                        "displayedValue": "38.13M",
+                        "timestamp": 1699959659028
+                    },
+                    {
+                        "date": "Nov 28 2023",
+                        "value": 38381421,
+                        "displayedValue": "38.38M",
+                        "timestamp": 1701182171542
+                    },
+                    {
+                        "date": "Dec 21 2023",
+                        "value": 38812090,
+                        "displayedValue": "38.81M",
+                        "timestamp": 1703164951437
+                    },
+                    {
+                        "date": "Dec 28 2023",
+                        "value": 38854786,
+                        "displayedValue": "38.85M",
+                        "timestamp": 1703777076867
+                    },
+                    {
+                        "date": "Jan 11 2024",
+                        "value": 39039093,
+                        "displayedValue": "39.04M",
+                        "timestamp": 1704986167356
+                    },
+                    {
+                        "date": "Jan 27 2024",
+                        "value": 39365605,
+                        "displayedValue": "39.37M",
+                        "timestamp": 1706329353642
+                    },
+                    {
+                        "date": "Feb 10 2024",
+                        "value": 39663936,
+                        "displayedValue": "39.66M",
+                        "timestamp": 1707578622825
+                    },
+                    {
+                        "date": "Mar 12 2024",
+                        "value": 39928206,
+                        "displayedValue": "39.93M",
+                        "timestamp": 1710257866280
+                    },
+                    {
+                        "date": "Mar 27 2024",
+                        "value": 39844599,
+                        "displayedValue": "39.84M",
+                        "timestamp": 1711528779588
+                    },
+                    {
+                        "date": "Apr 12 2024",
+                        "value": 39666645,
+                        "displayedValue": "39.67M",
+                        "timestamp": 1712954494711
+                    },
+                    {
+                        "date": "Apr 20 2024",
+                        "value": 39666077,
+                        "displayedValue": "39.67M",
+                        "timestamp": 1713632954269
+                    },
+                    {
+                        "date": "May 13 2024",
+                        "value": 39861277,
+                        "displayedValue": "39.86M",
+                        "timestamp": 1715603618975
+                    },
+                    {
+                        "date": "May 24 2024",
+                        "value": 39765597,
+                        "displayedValue": "39.77M",
+                        "timestamp": 1716531323553
+                    },
+                    {
+                        "date": "Jun 06 2024",
+                        "value": 39911124,
+                        "displayedValue": "39.91M",
+                        "timestamp": 1717656530804
+                    },
+                    {
+                        "date": "Jun 30 2024",
+                        "value": 40460823,
+                        "displayedValue": "40.46M",
+                        "timestamp": 1719756494845
+                    },
+                    {
+                        "date": "Jul 09 2024",
+                        "value": 40486863,
+                        "displayedValue": "40.49M",
+                        "timestamp": 1720545719282
+                    },
+                    {
+                        "date": "Jul 27 2024",
+                        "value": 40559348,
+                        "displayedValue": "40.56M",
+                        "timestamp": 1722108396702
+                    },
+                    {
+                        "date": "Sep 16 2024",
+                        "value": 40115749,
+                        "displayedValue": "40.12M",
+                        "timestamp": 1726471738916
+                    },
+                    {
+                        "date": "Sep 25 2024",
+                        "value": 40155169,
+                        "displayedValue": "40.16M",
+                        "timestamp": 1727215665951
+                    },
+                    {
+                        "date": "Oct 08 2024",
+                        "value": 40057467,
+                        "displayedValue": "40.06M",
+                        "timestamp": 1728356081353
+                    },
+                    {
+                        "date": "Oct 15 2024",
+                        "value": 40165510,
+                        "displayedValue": "40.17M",
+                        "timestamp": 1728997215879
+                    },
+                    {
+                        "date": "Oct 27 2024",
+                        "value": 40349572,
+                        "displayedValue": "40.35M",
+                        "timestamp": 1730034160126
+                    }
+                ],
+                "title": "Instagram Audience",
+                "network": "instagram",
+                "growth": {
+                    "value": "Last 30 days: +178.8K (+0.45%)",
+                    "type": "greater"
+                }
+            },
+            {
+                "data": [
+                    {
+                        "date": "Nov 28 2023",
+                        "value": 5480000,
+                        "displayedValue": "5.48M",
+                        "timestamp": 1701182167387
+                    },
+                    {
+                        "date": "Dec 28 2023",
+                        "value": 5510000,
+                        "displayedValue": "5.51M",
+                        "timestamp": 1703777072731
+                    },
+                    {
+                        "date": "Jan 11 2024",
+                        "value": 5520000,
+                        "displayedValue": "5.52M",
+                        "timestamp": 1704986162727
+                    },
+                    {
+                        "date": "Feb 10 2024",
+                        "value": 5530000,
+                        "displayedValue": "5.53M",
+                        "timestamp": 1707578617433
+                    },
+                    {
+                        "date": "Apr 12 2024",
+                        "value": 5570000,
+                        "displayedValue": "5.57M",
+                        "timestamp": 1712954487344
+                    },
+                    {
+                        "date": "Apr 20 2024",
+                        "value": 5570000,
+                        "displayedValue": "5.57M",
+                        "timestamp": 1713632944962
+                    },
+                    {
+                        "date": "May 24 2024",
+                        "value": 5580000,
+                        "displayedValue": "5.58M",
+                        "timestamp": 1716531319243
+                    },
+                    {
+                        "date": "Jul 27 2024",
+                        "value": 5620000,
+                        "displayedValue": "5.62M",
+                        "timestamp": 1722108384918
+                    },
+                    {
+                        "date": "Sep 25 2024",
+                        "value": 5640000,
+                        "displayedValue": "5.64M",
+                        "timestamp": 1727215657286
+                    },
+                    {
+                        "date": "Oct 15 2024",
+                        "value": 5650000,
+                        "displayedValue": "5.65M",
+                        "timestamp": 1728997206333
+                    },
+                    {
+                        "date": "Oct 24 2024",
+                        "value": 5660000,
+                        "displayedValue": "5.66M",
+                        "timestamp": 1729774921890
+                    },
+                    {
+                        "date": "Oct 27 2024",
+                        "value": 5660000,
+                        "displayedValue": "5.66M",
+                        "timestamp": 1730034152756
+                    }
+                ],
+                "title": "YouTube Audience",
+                "network": "youtube",
+                "growth": {
+                    "value": "Last 30 days: +18.4K (+0.33%)",
+                    "type": "greater"
+                }
+            },
+            {
+                "data": [
+                    {
+                        "date": "Nov 28 2023",
+                        "value": 3024954,
+                        "displayedValue": "3.02M",
+                        "timestamp": 1701182169285
+                    },
+                    {
+                        "date": "Dec 28 2023",
+                        "value": 3023183,
+                        "displayedValue": "3.02M",
+                        "timestamp": 1703777073124
+                    },
+                    {
+                        "date": "Jan 11 2024",
+                        "value": 3022145,
+                        "displayedValue": "3.02M",
+                        "timestamp": 1704986163975
+                    },
+                    {
+                        "date": "Feb 10 2024",
+                        "value": 3020669,
+                        "displayedValue": "3.02M",
+                        "timestamp": 1707578618820
+                    },
+                    {
+                        "date": "Apr 12 2024",
+                        "value": 3020636,
+                        "displayedValue": "3.02M",
+                        "timestamp": 1712954487807
+                    },
+                    {
+                        "date": "Apr 20 2024",
+                        "value": 3019840,
+                        "displayedValue": "3.02M",
+                        "timestamp": 1713632944769
+                    },
+                    {
+                        "date": "May 24 2024",
+                        "value": 3016017,
+                        "displayedValue": "3.02M",
+                        "timestamp": 1716531318289
+                    },
+                    {
+                        "date": "Jul 18 2024",
+                        "value": 3017317,
+                        "displayedValue": "3.02M",
+                        "timestamp": 1721318564503
+                    },
+                    {
+                        "date": "Jul 27 2024",
+                        "value": 3015765,
+                        "displayedValue": "3.02M",
+                        "timestamp": 1722108389055
+                    },
+                    {
+                        "date": "Sep 25 2024",
+                        "value": 3011805,
+                        "displayedValue": "3.01M",
+                        "timestamp": 1727215658734
+                    },
+                    {
+                        "date": "Oct 15 2024",
+                        "value": 3012664,
+                        "displayedValue": "3.01M",
+                        "timestamp": 1728997208361
+                    },
+                    {
+                        "date": "Oct 24 2024",
+                        "value": 3008417,
+                        "displayedValue": "3.01M",
+                        "timestamp": 1729774923196
+                    },
+                    {
+                        "date": "Oct 27 2024",
+                        "value": 2995911,
+                        "displayedValue": "3M",
+                        "timestamp": 1730034158785
+                    }
+                ],
+                "title": "X Audience",
+                "network": "twitter",
+                "growth": {
+                    "value": "Last 30 days: -14.6K (-0.49%)",
+                    "type": "lower"
+                }
+            },
+            {
+                "data": [
+                    {
+                        "date": "Nov 28 2023",
+                        "value": 612400,
+                        "displayedValue": "612.4K",
+                        "timestamp": 1701182166775
+                    },
+                    {
+                        "date": "Dec 28 2023",
+                        "value": 613200,
+                        "displayedValue": "613.2K",
+                        "timestamp": 1703777079747
+                    },
+                    {
+                        "date": "Jan 11 2024",
+                        "value": 615500,
+                        "displayedValue": "615.5K",
+                        "timestamp": 1704986165595
+                    },
+                    {
+                        "date": "Feb 10 2024",
+                        "value": 618700,
+                        "displayedValue": "618.7K",
+                        "timestamp": 1707578617008
+                    },
+                    {
+                        "date": "Apr 12 2024",
+                        "value": 624400,
+                        "displayedValue": "624.4K",
+                        "timestamp": 1712954488592
+                    },
+                    {
+                        "date": "Apr 20 2024",
+                        "value": 624100,
+                        "displayedValue": "624.1K",
+                        "timestamp": 1713632946989
+                    },
+                    {
+                        "date": "May 24 2024",
+                        "value": 624400,
+                        "displayedValue": "624.4K",
+                        "timestamp": 1716531318293
+                    },
+                    {
+                        "date": "Jul 27 2024",
+                        "value": 647300,
+                        "displayedValue": "647.3K",
+                        "timestamp": 1722108385001
+                    },
+                    {
+                        "date": "Sep 25 2024",
+                        "value": 654400,
+                        "displayedValue": "654.4K",
+                        "timestamp": 1727215656861
+                    },
+                    {
+                        "date": "Oct 15 2024",
+                        "value": 657500,
+                        "displayedValue": "657.5K",
+                        "timestamp": 1728997205892
+                    },
+                    {
+                        "date": "Oct 27 2024",
+                        "value": 657300,
+                        "displayedValue": "657.3K",
+                        "timestamp": 1730034151541
+                    }
+                ],
+                "title": "TikTok Audience",
+                "network": "tiktok",
+                "growth": {
+                    "value": "Last 30 days: +2K (+0.3%)",
+                    "type": "greater"
+                }
+            }
+        ],
+        "networks": [
+            {
+                "network": "instagram",
+                "userId": "14634719",
+                "username": "frenchmontana",
+                "fullName": "French Montana",
+                "pictureUrl": "https://favikon-medias.s3.eu-west-3.amazonaws.com/in/14634719.jpg",
+                "follower_Count": 40349572,
+                "profileUrl": "https://www.instagram.com/frenchmontana/",
+                "isVerified": true,
+                "biography": "‎مونتانا الفرنسي\n@cokeboys.music",
+                "favikonUrl": "https://campaign.favikon.com/frenchmontana",
+                "score": 99.26191515092137,
+                "influenceScore": {
+                    "score": "99.3",
+                    "comment": "high"
+                },
+                "metrics": {
+                    "activity": {
+                        "title": "Posts last month",
+                        "value": "7",
+                        "score": "average"
+                    },
+                    "followers": {
+                        "title": "Followers",
+                        "value": "40.3M"
+                    },
+                    "engagement": {
+                        "title": "Engagement rate",
+                        "value": "0.89%",
+                        "score": "low"
+                    },
+                    "growth": {
+                        "title": "Growth",
+                        "value": "+ 0.45",
+                        "score": "low"
+                    },
+                    "raw_growth": {
+                        "title": "Raw Growth",
+                        "value": "+178.8K",
+                        "score": "average"
+                    },
+                    "avg_engagement": {
+                        "title": "Avg. Engage.",
+                        "value": "359.2K",
+                        "score": "excellent"
+                    },
+                    "avg_views": {
+                        "title": "Avg. Views",
+                        "value": "1.9M"
+                    },
+                    "last_activity_str": {
+                        "title": "Last Activity",
+                        "value": "This week",
+                        "score": "very_high"
+                    },
+                    "prices": "$10K - $20K",
+                    "postsPerDay": 0.35274532952993926,
+                    "postsMostCommonTimeUtc": 16
+                }
+            },
+            {
+                "network": "youtube",
+                "userId": "UC-4mIX9ls8ROVk9ApfeYf5w",
+                "username": "FrenchMontana",
+                "fullName": "French Montana",
+                "pictureUrl": "https://favikon-medias.s3.eu-west-3.amazonaws.com/yt/UC-4mIX9ls8ROVk9ApfeYf5w.jpg",
+                "follower_Count": 5660000,
+                "profileUrl": "https://www.youtube.com/channel/UC-4mIX9ls8ROVk9ApfeYf5w",
+                "isVerified": true,
+                "biography": "Official Channel of French Montana.\n\n🔔 Subscribe to French Montana's channel: https://bit.ly/3NgM8AR\n\nFollow French Montana: \nWebsite: www.frenchmontanamusic.com\nInstagram: https://www.instagram.com/frenchmontana/\nFacebook:https://www.facebook.com/FrenchMontanaOfficial/\nTwitter: https://twitter.com/FrencHMonTanA\nSnapchat: https://www.snapchat.com/add/frenchmontana?locale=en-US\nTikTok: https://www.tiktok.com/@frenchmontana?lang=en\nAll Platforms-https://frenchmontana.komi.io\n",
+                "favikonUrl": "https://campaign.favikon.com/youtube/UC-4mIX9ls8ROVk9ApfeYf5w",
+                "score": 85.71240354218054,
+                "influenceScore": {
+                    "score": "85.7",
+                    "comment": "high"
+                },
+                "metrics": {
+                    "activity": {
+                        "title": "Video / month",
+                        "value": "1.7",
+                        "score": "low"
+                    },
+                    "followers": {
+                        "title": "Followers",
+                        "value": "5.7M"
+                    },
+                    "engagement": {
+                        "title": "Engagement rate",
+                        "value": "2.07%",
+                        "score": "very_low"
+                    },
+                    "growth": {
+                        "title": "Growth",
+                        "value": "+ 0.33",
+                        "score": "low"
+                    },
+                    "raw_growth": {
+                        "title": "Raw Growth",
+                        "value": "+18.4K",
+                        "score": "average"
+                    },
+                    "avg_engagement": {
+                        "title": "Avg. Engage.",
+                        "value": "21.9K",
+                        "score": "high"
+                    },
+                    "avg_views": {
+                        "title": "Avg. Views",
+                        "value": "1.1M",
+                        "score": "very_high"
+                    },
+                    "last_activity_str": {
+                        "title": "Last Activity",
+                        "value": "a month ago",
+                        "score": "average"
+                    },
+                    "prices": "$30K - $60K",
+                    "postsPerDay": 0,
+                    "postsMostCommonTimeUtc": 0
+                }
+            },
+            {
+                "network": "twitter",
+                "userId": "18653699",
+                "username": "frenchmontana",
+                "fullName": "French Montana",
+                "pictureUrl": "https://favikon-medias.s3.eu-west-3.amazonaws.com/tw/18653699.jpg",
+                "follower_Count": 2995911,
+                "profileUrl": "https://www.twitter.com/frenchmontana/",
+                "isVerified": false,
+                "biography": "info@frenchmontana.com // http://cokeboysdrip.com",
+                "favikonUrl": "https://campaign.favikon.com/twitter/63381e257ab3c81be6ae8628?by_id=1",
+                "score": 77.45684231409281,
+                "influenceScore": {
+                    "score": "77.5",
+                    "comment": "high"
+                },
+                "metrics": {
+                    "activity": {
+                        "title": "Tweet / week",
+                        "value": "1.4",
+                        "score": "very_low"
+                    },
+                    "followers": {
+                        "title": "Followers",
+                        "value": "3M"
+                    },
+                    "engagement": {
+                        "title": "Engagement rate",
+                        "value": "0.01%",
+                        "score": "very_low"
+                    },
+                    "growth": {
+                        "title": "Growth",
+                        "value": "- 0.49",
+                        "score": "very_low"
+                    },
+                    "raw_growth": {
+                        "title": "Raw Growth",
+                        "value": "-14.6K",
+                        "score": "very_low"
+                    },
+                    "avg_engagement": {
+                        "title": "Avg. Engage.",
+                        "value": "200",
+                        "score": "very_low"
+                    },
+                    "avg_views": {
+                        "title": "Avg. Views",
+                        "value": "30.2K",
+                        "score": "very_low"
+                    },
+                    "last_activity_str": {
+                        "title": "Last Activity",
+                        "value": "This week",
+                        "score": "very_high"
+                    },
+                    "prices": "$10 - $20",
+                    "postsPerDay": 0.20166648657247732,
+                    "postsMostCommonTimeUtc": 21
+                }
+            },
+            {
+                "network": "tiktok",
+                "userId": "121081950924103680",
+                "username": "frenchmontana",
+                "fullName": "French Montana",
+                "pictureUrl": "https://favikon-medias.s3.eu-west-3.amazonaws.com/tt/121081950924103680.jpg",
+                "follower_Count": 657300,
+                "profileUrl": "https://www.tiktok.com/@frenchmontana/",
+                "isVerified": true,
+                "biography": "",
+                "favikonUrl": "https://campaign.favikon.com/frenchmontana?tiktok=1",
+                "score": 16.35210312945255,
+                "influenceScore": {
+                    "score": "16.4",
+                    "comment": "low"
+                },
+                "metrics": {
+                    "activity": {
+                        "title": "Video / week",
+                        "value": "0.4",
+                        "score": "very_low"
+                    },
+                    "followers": {
+                        "title": "Followers",
+                        "value": "657.3K"
+                    },
+                    "engagement": {
+                        "title": "Engagement rate",
+                        "value": "3.13%",
+                        "score": "very_low"
+                    },
+                    "growth": {
+                        "title": "Growth",
+                        "value": "+ 0.3",
+                        "score": "very_low"
+                    },
+                    "raw_growth": {
+                        "title": "Raw Growth",
+                        "value": "+2K",
+                        "score": "very_low"
+                    },
+                    "avg_engagement": {
+                        "title": "Avg. Engage.",
+                        "value": "9.6K",
+                        "score": "average"
+                    },
+                    "avg_views": {
+                        "title": "Avg. Views",
+                        "value": "306.9K",
+                        "score": "high"
+                    },
+                    "last_activity_str": {
+                        "title": "Last Activity",
+                        "value": "3 months ago",
+                        "score": "average"
+                    },
+                    "prices": "$1.5K - $3K",
+                    "postsPerDay": 0,
+                    "postsMostCommonTimeUtc": 0
+                }
+            }
+        ]
+    },
+    "creator": {
+        "_id": "63919d51a05bcbdc6321d672",
+        "isVerified": false,
+        "industries": {
+            "63bbea8485ae7809e18511de": {
+                "_id": "63bbea8485ae7809e18511de",
+                "name": "🎧 Music & Audio",
+                "slug": "music-audio",
+                "niches": {
+                    "63bc316e3e4a6bcdccf07c69": {
+                        "id": "63bc316e3e4a6bcdccf07c69",
+                        "name": "Rap & R&B",
+                        "slug": "rap-rb",
+                        "primary": true,
+                        "state": 0
+                    }
+                },
+                "primary": true,
+                "state": 0
+            }
+        },
+        "topRanks": [
+            {
+                "topTitle": "Instagram · Morocco",
+                "topUrl": "/ranking/all-categories/all-niches/instagram/morocco",
+                "rank": "#1",
+                "rankPercent": "1%",
+                "comment": "high",
+                "rankingPreview": [
+                    {
+                        "rankPercent": "50%",
+                        "rawRankPercent": 50,
+                        "creator": {
+                            "pictureUrl": "https://favikon-medias.s3.eu-west-3.amazonaws.com/in/1280956191.jpg",
+                            "profileUrl": "/profile/6699a04279e1c8f1b650bf17",
+                            "fullName": "Lamiaa Arbaoui",
+                            "networkScore": {
+                                "score": "48",
+                                "network": "instagram"
+                            }
+                        }
+                    },
+                    {
+                        "rankPercent": "25%",
+                        "rawRankPercent": 25,
+                        "creator": {
+                            "pictureUrl": "https://favikon-medias.s3.eu-west-3.amazonaws.com/in/28180184063.jpg",
+                            "profileUrl": "/profile/657f37cab524af8089ccc2f3",
+                            "fullName": "Zineb afkhar",
+                            "networkScore": {
+                                "score": "69",
+                                "network": "instagram"
+                            }
+                        }
+                    },
+                    {
+                        "rankPercent": "1%",
+                        "rawRankPercent": 1,
+                        "creator": {
+                            "pictureUrl": "https://favikon-medias.s3.eu-west-3.amazonaws.com/in/14634719.jpg"
+                        },
+                        "isSelf": true
+                    }
+                ]
+            },
+            {
+                "topTitle": "Rap & R&B · Morocco",
+                "topUrl": "/ranking/music-audio/rap-rb/all-social-medias/morocco",
+                "rank": "#1",
+                "rankPercent": "1%",
+                "comment": "high",
+                "rankingPreview": [
+                    {
+                        "rankPercent": "50%",
+                        "rawRankPercent": 50,
+                        "creator": {
+                            "pictureUrl": "https://favikon-medias.s3.eu-west-3.amazonaws.com/yt/UCEEgQeLDezjoQm2AF0K5jcg.jpg",
+                            "profileUrl": "/profile/63a163d88a52f4279a6271f3",
+                            "fullName": "The Only",
+                            "globalScore": {
+                                "score": "2 324",
+                                "tier": 10
+                            }
+                        }
+                    },
+                    {
+                        "rankPercent": "25%",
+                        "rawRankPercent": 25,
+                        "creator": {
+                            "pictureUrl": "https://favikon-medias.s3.eu-west-3.amazonaws.com/in/3436440535.jpg",
+                            "profileUrl": "/profile/657f2153b524af8089cc084c",
+                            "fullName": "L7OR",
+                            "globalScore": {
+                                "score": "4 654",
+                                "tier": 7
+                            }
+                        }
+                    },
+                    {
+                        "rankPercent": "1%",
+                        "rawRankPercent": 1,
+                        "creator": {
+                            "pictureUrl": "https://favikon-medias.s3.eu-west-3.amazonaws.com/in/14634719.jpg"
+                        },
+                        "isSelf": true
+                    }
+                ]
+            },
+            {
+                "topTitle": "Instagram · Worldwide",
+                "topUrl": "/ranking/all-categories/all-niches/instagram",
+                "rank": "#67",
+                "rankPercent": "1%",
+                "comment": "high",
+                "rankingPreview": [
+                    {
+                        "rankPercent": "50%",
+                        "rawRankPercent": 50,
+                        "creator": {
+                            "pictureUrl": "https://favikon-medias.s3.eu-west-3.amazonaws.com/in/47574894006.jpg",
+                            "profileUrl": "/profile/65277bd78a10cea4b636e0f8",
+                            "fullName": "Claire Pommet",
+                            "networkScore": {
+                                "score": "54",
+                                "network": "instagram"
+                            }
+                        }
+                    },
+                    {
+                        "rankPercent": "25%",
+                        "rawRankPercent": 25,
+                        "creator": {
+                            "pictureUrl": "https://favikon-medias.s3.eu-west-3.amazonaws.com/in/2027660307.jpg",
+                            "profileUrl": "/profile/669edb0179e1c8f1b66298a0",
+                            "fullName": "Memet Ahmad",
+                            "networkScore": {
+                                "score": "71",
+                                "network": "instagram"
+                            }
+                        }
+                    },
+                    {
+                        "rankPercent": "1%",
+                        "rawRankPercent": 1,
+                        "creator": {
+                            "pictureUrl": "https://favikon-medias.s3.eu-west-3.amazonaws.com/in/14634719.jpg"
+                        },
+                        "isSelf": true
+                    }
+                ]
+            },
+            {
+                "topTitle": "Rap & R&B · Worldwide",
+                "topUrl": "/ranking/music-audio/rap-rb",
+                "rank": "#14",
+                "rankPercent": "1%",
+                "comment": "high",
+                "rankingPreview": [
+                    {
+                        "rankPercent": "50%",
+                        "rawRankPercent": 50,
+                        "creator": {
+                            "pictureUrl": "https://favikon-medias.s3.eu-west-3.amazonaws.com/yt/UCqRnubNr88bsLNF2vBmWP0g.jpg",
+                            "profileUrl": "/profile/6520187abed98df8abb45c93",
+                            "fullName": "Oncle Géabé",
+                            "globalScore": {
+                                "score": "2 370",
+                                "tier": 10
+                            }
+                        }
+                    },
+                    {
+                        "rankPercent": "25%",
+                        "rawRankPercent": 25,
+                        "creator": {
+                            "pictureUrl": "https://favikon-medias.s3.eu-west-3.amazonaws.com/in/701403581.jpg",
+                            "profileUrl": "/profile/6513e4edac00dee1a4b32f3b",
+                            "fullName": "ICEY",
+                            "globalScore": {
+                                "score": "5 033",
+                                "tier": 7
+                            }
+                        }
+                    },
+                    {
+                        "rankPercent": "1%",
+                        "rawRankPercent": 1,
+                        "creator": {
+                            "pictureUrl": "https://favikon-medias.s3.eu-west-3.amazonaws.com/in/14634719.jpg"
+                        },
+                        "isSelf": true
+                    }
+                ]
+            }
+        ],
+        "pictureUrl": "https://favikon-medias.s3.eu-west-3.amazonaws.com/in/14634719.jpg",
+        "fullName": "French Montana",
+        "title": "Rapper and Songwriter",
+        "country": {
+            "name": "Morocco",
+            "code": "ma"
+        },
+        "language": {
+            "name": "English",
+            "code": "us"
+        },
+        "biography": "French Montana, born Karim Kharbouch, is a Moroccan-American rapper and songwriter. He gained popularity with his mixtapes and collaborations with artists such as Rick Ross, Diddy, and Drake. He has released several studio albums, including \"Excuse My French\" and \"Jungle Rules,\" which earned him mainstream success with hit singles like \"Unforgettable\" and \"No Stylist.\" Montana is known for his fusion of rap and pop, and for his unique flow and rhyming style. He has also been involved in humanitarian work and supports education for underprivileged children.",
+        "networkFollowers": [
+            {
+                "network": "instagram",
+                "followerCount": 40349572,
+                "followerCountText": "40.3M",
+                "networkProfileUrl": "https://www.instagram.com/frenchmontana/",
+                "percent": 0.8124710208044523
+            },
+            {
+                "network": "youtube",
+                "followerCount": 5660000,
+                "followerCountText": "5.7M",
+                "networkProfileUrl": "https://www.youtube.com/channel/UC-4mIX9ls8ROVk9ApfeYf5w",
+                "percent": 0.11396864327961645
+            },
+            {
+                "network": "twitter",
+                "followerCount": 2995911,
+                "followerCountText": "3M",
+                "networkProfileUrl": "https://www.twitter.com/frenchmontana/",
+                "percent": 0.060325072801498056
+            },
+            {
+                "network": "tiktok",
+                "followerCount": 657300,
+                "followerCountText": "657.3K",
+                "networkProfileUrl": "https://www.tiktok.com/@frenchmontana/",
+                "percent": 0.013235263114433196
+            }
+        ],
+        "networkScores": [
+            {
+                "network": "instagram",
+                "networkProfileUrl": "https://www.instagram.com/frenchmontana/",
+                "score": "99.3",
+                "comment": "high"
+            },
+            {
+                "network": "youtube",
+                "networkProfileUrl": "https://www.youtube.com/channel/UC-4mIX9ls8ROVk9ApfeYf5w",
+                "score": "85.7",
+                "comment": "high"
+            },
+            {
+                "network": "twitter",
+                "networkProfileUrl": "https://www.twitter.com/frenchmontana/",
+                "score": "77.5",
+                "comment": "high"
+            },
+            {
+                "network": "tiktok",
+                "networkProfileUrl": "https://www.tiktok.com/@frenchmontana/",
+                "score": "16.4",
+                "comment": "low"
+            }
+        ],
+        "score": {
+            "score": "9 712",
+            "tier": 1,
+            "title": "Among the Social Media Elite"
+        },
+        "badges": {
+            "exceptionalGrowth": false,
+            "linkedinTopVoice": false,
+            "looseFollowers": false,
+            "wroteABook": false,
+            "hasANewsletter": false,
+            "hasAPodcast": false,
+            "hasTopics": false,
+            "hasCause": false,
+            "isInactive": false
+        },
+        "topPost": null,
+        "updatedTimeText": "Last updated 2 days ago",
+        "updatedTime": 1730034162024,
+        "prices": {
+            "instagram": {
+                "prices": {
+                    "min": 10000,
+                    "max": 20000
+                }
+            },
+            "youtube": {
+                "prices": {
+                    "min": 30000,
+                    "max": 60000
+                }
+            },
+            "tiktok": {
+                "prices": {
+                    "min": 1500,
+                    "max": 3000
+                }
+            },
+            "twitter": {
+                "prices": {
+                    "min": 10,
+                    "max": 20
+                }
+            }
+        },
+        "metrics": {
+            "growth": {
+                "value": "+0.37% (+184.5K followers)",
+                "comment": {
+                    "score": "average",
+                    "text": "Stable"
+                }
+            },
+            "activity": {
+                "value": "Has published this week",
+                "comment": {
+                    "score": "high",
+                    "text": "Recent"
+                }
+            },
+            "reachability": {
+                "value": "Estimated sponsored post cost: $45K",
+                "comment": {
+                    "score": "low",
+                    "text": "Very Difficult"
+                }
+            }
+        },
+        "customTops": []
+    },
+    "canUpdateProfile": "ok",
+    "blurredFields": {
+        "creator": {
+            "creatorScore": false,
+            "profileResume": false,
+            "creatorTopRanks": false,
+            "metrics": false
+        },
+        "overview": {
+            "bestPosts": false,
+            "wordCloud": false
+        },
+        "socialCoverage": {
+            "graphEvolution": false,
+            "networks": false,
+            "newsletter": false,
+            "podcast": false
+        },
+        "content": {
+            "posts": false
+        },
+        "creatorNetwork": {
+            "available": true
+        },
+        "audience": {
+            "available": true
+        },
+        "scoring": {
+            "available": true
+        },
+        "partnerships": {
+            "available": true
+        }
+    },
+    "showPartnershipsTab": false
+}

@@ -1,7 +1,6 @@
 import { Card, Grid, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
-import SocialMediaChart from 'src/components/influencers/SocialMediaChart'
 
 const CardDetails = ({ influencer }: { influencer: Influencer }) => {
   return (
@@ -28,32 +27,6 @@ const CardDetails = ({ influencer }: { influencer: Influencer }) => {
           </div>
         </Box>
         <Box sx={{ my: 2.5 }}>{influencer.biography}</Box>
-
-        <Grid spacing={6} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start' }}>
-          <Grid
-            xs={12}
-            lg={6}
-            sx={{
-              my: 5,
-              border: '1px solid ',
-              display: 'flex',
-              flexDirection: 'column',
-              padding: '20px 10px',
-              borderRadius: '10px',
-              gap: '10px'
-            }}
-          >
-            <Typography variant='h6' style={{ display: 'block' }}>
-              Industries & Niches
-            </Typography>
-            <Typography variant='subtitle2' style={{ display: 'block' }}>
-              {influencer.nicheName}
-            </Typography>
-          </Grid>
-          <Grid xs={12} lg={6} sx={{ display: 'flex', justifyContent: 'center' }}>
-            <SocialMediaChart />
-          </Grid>
-        </Grid>
       </Card>
     </Grid>
   )

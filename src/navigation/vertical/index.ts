@@ -33,7 +33,7 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'Manager Mes Projets',
-      path: '/favoris',
+      path: '/manager-mes-projets',
       icon: 'tabler:list'
     },
     {
@@ -43,7 +43,7 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       title: 'Social Listening',
-      path: '/favoris',
+      path: '/social-listening',
       icon: 'tabler:speakerphone'
     },
 

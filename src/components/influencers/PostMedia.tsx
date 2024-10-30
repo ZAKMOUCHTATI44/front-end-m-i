@@ -6,7 +6,7 @@ import { Box } from '@mui/system'
 
 const PostMedia = () => {
   return (
-    <Grid container spacing={6}>
+    <Grid spacing={6}>
       <Grid container spacing={6}>
         {data.posts.map(post => (
           <Grid item xs={12} sm={6} md={3} key={post.media_id}>
@@ -14,8 +14,8 @@ const PostMedia = () => {
           </Grid>
         ))}
       </Grid>
-      <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: theme => theme.spacing(6) }}>
-        <Pagination count={200} color='primary' onChange={(e, value) => console.log(value)} />
+      <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: theme => theme.spacing(6) }}>
+        <Pagination count={5} color='primary' onChange={(e, value) => console.log(value)} />
       </Box>
     </Grid>
   )

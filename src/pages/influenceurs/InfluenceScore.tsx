@@ -3,10 +3,11 @@ import { Box } from '@mui/system'
 import React from 'react'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import StatusCard from 'src/components/influencers/StatusCard'
+import SocialMediaChart from 'src/components/influencers/SocialMediaChart'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 
-const InfluenceScore = ({ networksStats }: { networksStats: NetworkStats[] }) => {
+const InfluenceScore = ({ networksStats, influencer }: { networksStats: NetworkStats[]; influencer: Influencer }) => {
   return (
     <Grid item xs={12} lg={7} spacing={6}>
       <Card sx={{ padding: '20px' }}>
@@ -36,6 +37,39 @@ const InfluenceScore = ({ networksStats }: { networksStats: NetworkStats[] }) =>
       </Card>
       <Card sx={{ padding: '20px', mt: theme => theme.spacing(6) }}>
         <StatusCard />
+      </Card>
+      <Card
+        sx={{
+          padding: '20px',
+          mt: theme => theme.spacing(6),
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'start'
+        }}
+      >
+        <Grid
+          xs={12}
+          lg={6}
+          sx={{
+            my: 5,
+            border: '1px solid ',
+            display: 'flex',
+            flexDirection: 'column',
+            padding: '20px 10px',
+            borderRadius: '10px',
+            gap: '10px'
+          }}
+        >
+          <Typography variant='h6' style={{ display: 'block' }}>
+            Industries & Niches
+          </Typography>
+          <Typography variant='subtitle2' style={{ display: 'block' }}>
+            {influencer.nicheName}
+          </Typography>
+        </Grid>
+        <Grid xs={12} lg={6} sx={{ display: 'flex', justifyContent: 'center' }}>
+          <SocialMediaChart />
+        </Grid>
       </Card>
     </Grid>
   )

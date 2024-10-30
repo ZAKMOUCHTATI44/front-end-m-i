@@ -37,10 +37,33 @@ code[class*='language-'] {
   background-color: rgba(33, 186, 69, 0.15);
   color: #000;
   padding: 10px;
+  border-radius: 10px;
 }
 
 .growth.lower {
   background-color: #fff5f5;
   color: #b71818;
   padding: 10px;
+  border-radius: 10px;
+}
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-flex;
+}
+
+.low,
+.very_low {
+  background-color: #b71818;
+}
+.average {
+  background-color: #ff986b;
+}
+.high,
+.excellent {
+  background-color: #16a34a;
+}
+.overflowX {
+  overflow-x: auto;
 }
