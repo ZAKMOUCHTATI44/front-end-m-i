@@ -1,4 +1,4 @@
-interface Score {
+interface ScoreInf {
   score: string
   tier: number
   raw: number
@@ -47,8 +47,11 @@ interface Influencer {
   title: string
   nicheName: string
   profileUrl: string
-  score: Score
-  growth: Growth
+  score: ScoreInf
+  growth: {
+    value: string
+    type: string
+  }
   rank: number
   biography: string
   bestNetwork: BestNetwork

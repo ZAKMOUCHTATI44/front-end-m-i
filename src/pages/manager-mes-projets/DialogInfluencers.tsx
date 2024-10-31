@@ -22,8 +22,10 @@ import CustomAutocomplete from 'src/@core/components/mui/autocomplete'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
-
-import influencers from '../../data/1.json'
+import { useQuery } from 'react-query'
+import api from 'src/lib/api'
+import Error500 from '../500'
+import Loading from 'src/components/Loading'
 
 // ** Configs Imports
 
@@ -56,6 +58,14 @@ const DialogInfluencers = ({ handleChange }: { handleChange: (e: Influencer) => 
   const [show, setShow] = useState<boolean>(false)
   const [currentInfluencer, setCurrentInfluencer] = useState<Influencer | null>()
 
+  const { error, isLoading, data } = useQuery<Influencer[]>(['/influencers'], async () => {
+    const response = await api.get<Influencer[]>('/influencers')
+
+    return response.data
+  })
+  if (error) return <Error500 />
+  if (isLoading) return <Loading />
+
   // ** Hooks
 
   return (
@@ -86,54 +96,56 @@ const DialogInfluencers = ({ handleChange }: { handleChange: (e: Influencer) => 
         onBackdropClick={() => setShow(false)}
         sx={{ '& .MuiDialog-paper': { overflow: 'visible' } }}
       >
-        <DialogContent
-          sx={{
-            px: theme => [`${theme.spacing(5)} !important`, `${theme.spacing(15)} !important`],
-            py: theme => [`${theme.spacing(8)} !important`, `${theme.spacing(12.5)} !important`]
-          }}
-        >
-          <CustomCloseButton onClick={() => setShow(false)}>
-            <Icon icon='tabler:x' fontSize='1.25rem' />
-          </CustomCloseButton>
-          <Box sx={{ mb: 4, textAlign: 'center' }}>
-            <Typography variant='h3' sx={{ mb: 3 }}>
-              Ajouter des influenceurs
-            </Typography>
-          </Box>
-          <CustomAutocomplete
-            autoHighlight
-            sx={{ mb: 6 }}
-            id='add-members'
-            options={influencers}
-            ListboxComponent={List}
-            onChange={(e, value) => {
-              setCurrentInfluencer(value)
-            }}
-            getOptionLabel={option => option.fullName || ''}
-            renderInput={params => <CustomTextField {...params} label='Add username' placeholder='@username...' />}
-            renderOption={(props, option) => (
-              <ListItem {...props}>
-                <ListItemAvatar>
-                  <Avatar src={`${option.pictureUrl}`} alt={option.fullName} sx={{ height: 28, width: 28 }} />
-                </ListItemAvatar>
-                <ListItemText primary={option.fullName} />
-              </ListItem>
-            )}
-          />
-          <Button
-            variant='contained'
-            color='success'
-            fullWidth
-            onClick={() => {
-              if (currentInfluencer) {
-                setShow(false)
-                handleChange(currentInfluencer)
-              }
+        {data && (
+          <DialogContent
+            sx={{
+              px: theme => [`${theme.spacing(5)} !important`, `${theme.spacing(15)} !important`],
+              py: theme => [`${theme.spacing(8)} !important`, `${theme.spacing(12.5)} !important`]
             }}
           >
-            Ajouter
-          </Button>
-        </DialogContent>
+            <CustomCloseButton onClick={() => setShow(false)}>
+              <Icon icon='tabler:x' fontSize='1.25rem' />
+            </CustomCloseButton>
+            <Box sx={{ mb: 4, textAlign: 'center' }}>
+              <Typography variant='h3' sx={{ mb: 3 }}>
+                Ajouter des influenceurs
+              </Typography>
+            </Box>
+            <CustomAutocomplete
+              autoHighlight
+              sx={{ mb: 6 }}
+              id='add-members'
+              options={data}
+              ListboxComponent={List}
+              onChange={(e, value) => {
+                setCurrentInfluencer(value)
+              }}
+              getOptionLabel={option => option.fullName || ''}
+              renderInput={params => <CustomTextField {...params} label='Add username' placeholder='@username...' />}
+              renderOption={(props, option) => (
+                <ListItem {...props}>
+                  <ListItemAvatar>
+                    <Avatar src={`${option.pictureUrl}`} alt={option.fullName} sx={{ height: 28, width: 28 }} />
+                  </ListItemAvatar>
+                  <ListItemText primary={option.fullName} />
+                </ListItem>
+              )}
+            />
+            <Button
+              variant='contained'
+              color='success'
+              fullWidth
+              onClick={() => {
+                if (currentInfluencer) {
+                  setShow(false)
+                  handleChange(currentInfluencer)
+                }
+              }}
+            >
+              Ajouter
+            </Button>
+          </DialogContent>
+        )}
       </Dialog>
     </div>
   )

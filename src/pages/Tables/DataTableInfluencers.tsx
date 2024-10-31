@@ -1,9 +1,12 @@
 import React from 'react'
 import DataTable, { TableColumn } from 'react-data-table-component'
-import influencers from '../../data/1.json'
 import { Box } from '@mui/system'
 import { Typography } from '@mui/material'
 import Link from 'next/link'
+import { useQuery } from 'react-query'
+import api from 'src/lib/api'
+import Error500 from '../500'
+import Loading from 'src/components/Loading'
 
 const DataTableInfluencers = () => {
   const columns: TableColumn<Influencer>[] = [
@@ -90,10 +93,18 @@ const DataTableInfluencers = () => {
     }
   ]
 
+  const { error, isLoading, data } = useQuery<Influencer[]>(['/influencers'], async () => {
+    const response = await api.get<Influencer[]>('influencers')
+
+    return response.data
+  })
+  if (error) return <Error500 />
+  if (isLoading) return <Loading />
+
   return (
     <DataTable
       columns={columns}
-      data={influencers}
+      data={data || []}
       paginationTotalRows={50}
       paginationRowsPerPageOptions={[10, 15, 20, 25, 30, 50, 100, 200]}
       pagination

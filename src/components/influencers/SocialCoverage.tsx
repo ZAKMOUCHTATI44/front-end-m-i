@@ -1,10 +1,31 @@
 import { Box, Grid, Typography } from '@mui/material'
 import React from 'react'
 import DataTable, { TableColumn } from 'react-data-table-component'
-import socialCoverage from '../../data/socialCoverage.json'
 import AudienceGrowthChart from './AudienceGrowthChart'
+import { useRouter } from 'next/router'
+import { useQuery } from 'react-query'
+import api from 'src/lib/api'
+import Error500 from 'src/pages/500'
+import Loading from '../Loading'
 
 const SocialCoverage = () => {
+  const router = useRouter()
+
+  const { id } = router.query
+
+  const { error, isLoading, data } = useQuery<DataSocialCoverage>(
+    [`/influencers-social-coverage/${id}`],
+    async () => {
+      const response = await api.get<DataSocialCoverage>(`/influencers/social-coverage/${id}`)
+
+      return response.data
+    },
+    { enabled: !!id }
+  )
+  if (error) return <Error500 />
+
+  if (isLoading) return <Loading />
+
   const columns: TableColumn<Network>[] = [
     {
       name: 'Social Media',
@@ -137,9 +158,9 @@ const SocialCoverage = () => {
 
   return (
     <>
-      <DataTable columns={columns} data={socialCoverage.socialCoverage.networks} />
+      {data && data.socialCoverage && <DataTable columns={columns} data={data.socialCoverage.networks} />}
       <Grid container spacing={6} mt={6}>
-        {socialCoverage.socialCoverage.audienceEvolutions.map(item => (
+        {data?.socialCoverage.audienceEvolutions.map(item => (
           <AudienceGrowthChart key={item.network} network={item.network} data={item.data} />
         ))}
       </Grid>
