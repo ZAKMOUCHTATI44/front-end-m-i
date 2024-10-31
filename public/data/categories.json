@@ -1,0 +1,97 @@
+[
+  {
+    "id": "63b58aab194fb9302a7e6d8d",
+    "label": "🏢 Business & Startups",
+    "value": "business-startups"
+  },
+  {
+    "id": "63b5912d06d484933694b503",
+    "label": "👔 Careers & Office",
+    "value": "careers-office"
+  },
+  {
+    "id": "63b5912d06d484933694b50e",
+    "label": "📊 Marketing & Sales",
+    "value": "marketing-sales"
+  },
+  {
+    "id": "63b5912e06d484933694b551",
+    "label": "💸 Finance & Web 3",
+    "value": "finance-web-3"
+  },
+  {
+    "id": "63b5912e06d484933694b564",
+    "label": "💻 IT & Tech",
+    "value": "it-tech"
+  },
+  {
+    "id": "63b5912f06d484933694b5ce",
+    "label": "🌍 Global Affairs & Diplomacy",
+    "value": "global-affairs-diplomacy"
+  },
+  {
+    "id": "63b5913006d484933694b5fd",
+    "label": "🎨 Arts & Culture",
+    "value": "arts-culture"
+  },
+  {
+    "id": "63b5913106d484933694b648",
+    "label": "🍽️ Food & Nutrition",
+    "value": "food-nutrition"
+  },
+  {
+    "id": "63b5913206d484933694b66f",
+    "label": "🌍 Travel",
+    "value": "travel"
+  },
+  {
+    "id": "63b5913306d484933694b6a2",
+    "label": "🏎️ Motorsports & Biking",
+    "value": "motorsports-biking"
+  },
+  {
+    "id": "63b5913306d484933694b6bd",
+    "label": "🏥 Health & Medical",
+    "value": "health-medical"
+  },
+  {
+    "id": "63b5913406d484933694b6e8",
+    "label": "🏋️‍♂️ Fitness & Personal Growth",
+    "value": "fitness-personal-growth"
+  },
+  {
+    "id": "63b5913406d484933694b6ff",
+    "label": "📚 Education",
+    "value": "education"
+  },
+  {
+    "id": "63b5913406d484933694b725",
+    "label": "⚽️ Sports",
+    "value": "sports"
+  },
+  {
+    "id": "63b5913606d484933694b774",
+    "label": "🎮 Gaming & Streaming",
+    "value": "gaming-streaming"
+  },
+  {
+    "id": "63b5913706d484933694b7dd",
+    "label": "👨‍👩‍👧‍👦 Relationships & Family",
+    "value": "relationships-family"
+  },
+  {
+    "id": "63b5913806d484933694b80b",
+    "label": "🐾 Animals",
+    "value": "animals"
+  },
+  {
+    "id": "63b5913806d484933694b81e",
+    "label": "👗 Fashion",
+    "value": "fashion"
+  },
+  {
+    "id": "63b5913806d484933694b839",
+    "label": "💅 Beauty",
+    "value": "beauty"
+  }
+]

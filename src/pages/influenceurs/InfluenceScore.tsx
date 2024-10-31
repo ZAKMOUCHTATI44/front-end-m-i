@@ -7,7 +7,7 @@ import SocialMediaChart from 'src/components/influencers/SocialMediaChart'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 
-const InfluenceScore = ({ networksStats, influencer }: { networksStats: NetworkStats[]; influencer: Influencer }) => {
+const InfluenceScore = ({ data }: { data: Data }) => {
   return (
     <Grid item xs={12} lg={7} spacing={6}>
       <Card sx={{ padding: '20px' }}>
@@ -21,22 +21,22 @@ const InfluenceScore = ({ networksStats, influencer }: { networksStats: NetworkS
             marginTop: '20px'
           }}
         >
-          {networksStats.map(network => (
+          {data.creator.networkScores.map(network => (
             <Box sx={{ display: 'flex', alignItems: 'center', gap: theme => theme.spacing(1) }} key={network.network}>
               <img width={25} height={25} src={`/images/social-media/${network.network}.png`} alt={network.network} />
               <span
-                key={network.followers}
-                className={`growth ${network.growth.type === 'lower' ? 'lower' : 'high'}`}
+                key={network.network}
+                className={`growth ${network.comment === 'low' ? 'lower' : 'high'}`}
                 style={{ display: 'flex', alignContent: 'center' }}
               >
-                {network.growth.type === 'lower' ? '-' : '+'} {network.score} / 100
+                {network.comment === 'low' ? '-' : '+'} {network.score} / 100
               </span>
             </Box>
           ))}
         </Box>
       </Card>
       <Card sx={{ padding: '20px', mt: theme => theme.spacing(6) }}>
-        <StatusCard />
+        <StatusCard data={data} />
       </Card>
       <Card
         sx={{
@@ -64,11 +64,11 @@ const InfluenceScore = ({ networksStats, influencer }: { networksStats: NetworkS
             Industries & Niches
           </Typography>
           <Typography variant='subtitle2' style={{ display: 'block' }}>
-            {influencer.nicheName}
+            {data.creator.industries[Object.keys(data.creator.industries)[0]].name}
           </Typography>
         </Grid>
         <Grid xs={12} lg={6} sx={{ display: 'flex', justifyContent: 'center' }}>
-          <SocialMediaChart />
+          <SocialMediaChart data={data} />
         </Grid>
       </Card>
     </Grid>

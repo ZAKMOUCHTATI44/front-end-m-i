@@ -13,18 +13,26 @@ const SelectBox = ({
   label,
   items,
   defaultValue,
-  id
+  id,
+  handleChange
 }: {
   label: string
   items: SelectItems[]
   defaultValue?: string
   id: string
+  handleChange: (value: string) => void
 }) => {
   return (
     <div>
       <InputLabel>{label}</InputLabel>
 
-      <CustomTextField fullWidth select defaultValue={defaultValue} id={id}>
+      <CustomTextField
+        fullWidth
+        select
+        defaultValue={defaultValue}
+        id={id}
+        onChange={e => handleChange(e.target.value)}
+      >
         <MenuItem value='0'>
           <em>{label}</em>
         </MenuItem>

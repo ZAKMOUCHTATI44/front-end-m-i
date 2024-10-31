@@ -5,21 +5,47 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
 // Define types for data
 interface ChartData {
   name: string
+  label: string
   value: number
   color: string
   icon: string // URL to the icon
 }
 
 // Sample data
-const data: ChartData[] = [
-  { name: 'YouTube', value: 323, color: 'url(#color-youtube)', icon: '/images/social-media/youtube.png' },
-  { name: 'TikTok', value: 105.5, color: 'url(#color-tiktok)', icon: '/images/social-media/tiktok.png' },
-  { name: 'Instagram', value: 60.9, color: 'url(#color-instagram)', icon: '/images/social-media/instagram.png' },
-  { name: 'Twitter', value: 31.2, color: 'url(#color-twitter)', icon: '/images/social-media/twitter.png' }
-]
 
 // Component for rendering pie chart with labels
-const SocialMediaChart: React.FC = () => {
+const SocialMediaChart = ({ data }: { data: Data }) => {
+  const dataChart: ChartData[] = [
+    {
+      name: 'YouTube',
+      value: data.creator.networkFollowers.find(network => network.network === 'youtube')?.followerCount || 0,
+      label: data.creator.networkFollowers.find(network => network.network === 'youtube')?.followerCountText || '',
+      color: 'url(#color-youtube)',
+      icon: '/images/social-media/youtube.png'
+    },
+    {
+      name: 'Instagram',
+      value: data.creator.networkFollowers.find(network => network.network === 'instagram')?.followerCount || 0,
+      label: data.creator.networkFollowers.find(network => network.network === 'instagram')?.followerCountText || '',
+      color: 'url(#color-instagram)',
+      icon: '/images/social-media/instagram.png'
+    },
+    {
+      name: 'TikTok',
+      value: data.creator.networkFollowers.find(network => network.network === 'tiktok')?.followerCount || 0,
+      label: data.creator.networkFollowers.find(network => network.network === 'tiktok')?.followerCountText || '',
+      color: 'url(#color-tiktok)',
+      icon: '/images/social-media/tiktok.png'
+    },
+    {
+      name: 'Twitter',
+      value: data.creator.networkFollowers.find(network => network.network === 'twitter')?.followerCount || 0,
+      label: data.creator.networkFollowers.find(network => network.network === 'twitter')?.followerCountText || '',
+      color: 'url(#color-twitter)',
+      icon: '/images/social-media/twitter.png'
+    }
+  ]
+
   return (
     <>
       <div className='chart-container' style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -44,7 +70,7 @@ const SocialMediaChart: React.FC = () => {
               </linearGradient>
             </defs>
             <Pie
-              data={data}
+              data={dataChart}
               dataKey='value'
               cx='50%'
               cy='50%'
@@ -53,22 +79,26 @@ const SocialMediaChart: React.FC = () => {
               fill='#8884d8'
               paddingAngle={5}
             >
-              {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={entry.color} />
+              {dataChart.map((entry, index) => (
+                <>{entry && <Cell key={`cell-${index}`} fill={entry.color} />}</>
               ))}
             </Pie>
           </PieChart>
         </ResponsiveContainer>
         <div className='legend'>
-          {data.map((entry, index) => (
-            <Box
-              sx={{ display: 'flex', alignItems: 'center', gap: '5px' }}
-              key={`legend-item-${index}`}
-              className='legend-item'
-            >
-              <img src={entry.icon} alt={`${entry.name} icon`} width='17' height='17' />
-              <span>{`${entry.value}M`}</span>
-            </Box>
+          {dataChart.map((entry, index) => (
+            <>
+              {entry.label && (
+                <Box
+                  sx={{ display: 'flex', alignItems: 'center', gap: '5px' }}
+                  key={`legend-item-${index}`}
+                  className='legend-item'
+                >
+                  <img src={entry.icon} alt={`${entry.name} icon`} width='17' height='17' />
+                  <span>{`${entry.label}`}</span>
+                </Box>
+              )}
+            </>
           ))}
         </div>
       </div>

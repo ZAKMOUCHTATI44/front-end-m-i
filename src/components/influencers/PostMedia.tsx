@@ -1,10 +1,9 @@
 import React from 'react'
-import data from '../../data/details.json'
 import PostCard from './PostCard'
 import { Grid, Pagination } from '@mui/material'
 import { Box } from '@mui/system'
 
-const PostMedia = () => {
+const PostMedia = ({ data }: { data: Data }) => {
   return (
     <Grid spacing={6}>
       <Grid container spacing={6}>
@@ -15,7 +14,11 @@ const PostMedia = () => {
         ))}
       </Grid>
       <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: theme => theme.spacing(6) }}>
-        <Pagination count={5} color='primary' onChange={(e, value) => console.log(value)} />
+        <Pagination
+          count={Math.round(data.totalCount / 12)}
+          color='primary'
+          onChange={(e, value) => console.log(value)}
+        />
       </Box>
     </Grid>
   )

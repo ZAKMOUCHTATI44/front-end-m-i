@@ -50,7 +50,7 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   }
 }))
 
-const MediaDetails = () => {
+const MediaDetails = ({ data }: { data: Data }) => {
   // ** State
   const [activeTab, setActiveTab] = useState<string>('media')
 
@@ -72,7 +72,7 @@ const MediaDetails = () => {
       <Box sx={{ mt: 4 }}>
         <>
           <TabPanel sx={{ p: 0 }} value='media'>
-            <PostMedia />
+            <PostMedia data={data} />
           </TabPanel>
           <TabPanel sx={{ p: 0 }} value='social-coverage'>
             <SocialCoverage />

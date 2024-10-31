@@ -40,26 +40,26 @@ const badgeStyle = (backgroundColor: string, color: string): React.CSSProperties
   fontWeight: 500
 })
 
-const StatusCard: React.FC = () => {
+const StatusCard = ({ data }: { data: Data }) => {
   return (
     <div style={styles.container}>
       <div style={styles.section}>
         <div style={styles.label}>
           Growth <span style={badgeStyle('#e6f4ea', '#1c7c54')}>● Gaining</span>
         </div>
-        <div style={styles.value}>+1.48% (+7.6M followers)</div>
+        <div style={styles.value}>{data.creator.metrics.growth.value}</div>
       </div>
       <div style={styles.section}>
         <div style={styles.label}>
           Activity <span style={badgeStyle('#e6f4ea', '#1c7c54')}>● Recent</span>
         </div>
-        <div style={styles.value}>Has published this week</div>
+        <div style={styles.value}>{data.creator.metrics.activity.value} </div>
       </div>
       <div style={styles.section}>
         <div style={styles.label}>
           Reachability <span style={badgeStyle('#f8e1e1', '#d9534f')}>● Out of Scope</span>
         </div>
-        <div style={styles.value}>Estimated sponsored post cost: $100K</div>
+        <div style={styles.value}>{data.creator.metrics.reachability.value}</div>
       </div>
     </div>
   )

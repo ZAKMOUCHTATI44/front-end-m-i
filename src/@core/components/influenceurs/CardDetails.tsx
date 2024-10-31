@@ -2,7 +2,7 @@ import { Card, Grid, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 
-const CardDetails = ({ influencer }: { influencer: Influencer }) => {
+const CardDetails = ({ influencer }: { influencer: CreatorData }) => {
   return (
     <Grid item xs={6} lg={5}>
       <Card sx={{ padding: '20px' }}>
