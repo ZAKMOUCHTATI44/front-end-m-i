@@ -82,7 +82,16 @@ const Page = () => {
             </Box>
           </Card>
         </Grid>
-        {isLoading && <Loading />}
+        {isLoading && (
+          <Grid
+            item
+            xs={12}
+            lg={12}
+            style={{ height: '50vh', display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'center' }}
+          >
+            <Loading />
+          </Grid>
+        )}
         {data &&
           data.length > 0 &&
           data.map(influencer => (
@@ -94,18 +103,21 @@ const Page = () => {
         
         ))} */}
       </Grid>
-      <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: theme => theme.spacing(6) }}>
-        <Pagination
-          count={200}
-          page={Number(routerParams.page) || 1}
-          color='primary'
-          onChange={(e, value) => {
-            router.push({
-              query: { ...router.query, page: value }
-            })
-          }}
-        />
-      </Box>
+
+      {!isLoading && (
+        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: theme => theme.spacing(6) }}>
+          <Pagination
+            count={200}
+            page={Number(routerParams.page) || 1}
+            color='primary'
+            onChange={(e, value) => {
+              router.push({
+                query: { ...router.query, page: value }
+              })
+            }}
+          />
+        </Box>
+      )}
     </>
   )
 }

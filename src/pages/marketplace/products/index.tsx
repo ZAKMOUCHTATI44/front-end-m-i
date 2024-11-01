@@ -1,6 +1,10 @@
-import { Button, Card, Grid } from '@mui/material'
+import { Box, Button, Card, Grid, Pagination, Typography } from '@mui/material'
 import React from 'react'
 import SelectBox from 'src/components/ui/SelectBox'
+import Icon from 'src/@core/components/icon'
+import CustomTextField from 'src/@core/components/mui/text-field'
+import products from '../../../data/products.json'
+import ProductsCard from './ProductsCard'
 
 const index = () => {
   const contentTypes = [
@@ -49,8 +53,17 @@ const index = () => {
   return (
     <div>
       <Card sx={{ padding: '40px 20px' }}>
-        <Grid container spacing={6}>
-          <Grid item xs={4}>
+        <Grid container spacing={6} sx={{ alignItems: 'end' }}>
+          <Grid item xs={3}>
+            <CustomTextField
+              fullWidth
+              label='Product Name'
+              placeholder='Product name'
+              id='auth-login-v2-password'
+              type={'text'}
+            />
+          </Grid>
+          <Grid item xs={3}>
             <SelectBox
               items={contentTypes}
               label='Social networks'
@@ -59,7 +72,7 @@ const index = () => {
               handleChange={e => console.log(e)}
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={3}>
             <SelectBox
               items={categories}
               label='Categories'
@@ -68,10 +81,28 @@ const index = () => {
               handleChange={e => console.log(e)}
             />
           </Grid>
+          <Grid item xs={3}>
+            <Button variant='contained' fullWidth sx={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+              <Icon icon='tabler:search' fontSize={20} />
+              Search
+            </Button>
+          </Grid>
         </Grid>
       </Card>
+      <Grid container spacing={6} mt={6}>
+        <Grid item xs={12} sm={12} md={12}>
+          <Typography variant='h5'>Products available (17)</Typography>
+        </Grid>
 
-      <Button variant='contained'>Search</Button>
+        {products.map(product => (
+          <Grid item xs={12} sm={6} md={4} key={product.id}>
+            <ProductsCard product={product} />
+          </Grid>
+        ))}
+      </Grid>
+      <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: theme => theme.spacing(6) }}>
+        <Pagination count={5} color='primary' onChange={(e, value) => console.log(value)} />
+      </Box>
     </div>
   )
 }

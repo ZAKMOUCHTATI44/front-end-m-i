@@ -25,7 +25,12 @@ const Page = () => {
   )
   if (error) return <Error500 />
 
-  if (isLoading) return <Loading />
+  if (isLoading)
+    return (
+      <div style={{ height: '100vh', display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'center' }}>
+        <Loading />
+      </div>
+    )
 
   return (
     <div>

@@ -77,7 +77,7 @@ const SocialMediaChart = ({ data }: { data: Data }) => {
               innerRadius={35}
               outerRadius={50}
               fill='#8884d8'
-              paddingAngle={5}
+              paddingAngle={0}
             >
               {dataChart.map((entry, index) => (
                 <>{entry && <Cell key={`cell-${index}`} fill={entry.color} />}</>

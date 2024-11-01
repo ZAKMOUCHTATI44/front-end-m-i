@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "title": "Campagne d'avis - Complément alimentaire - Formule Cycle Menstruel V2",
+        "image": "https://s3.eu-central-1.amazonaws.com/influence4brands-production-resources/campaigns/campaigncropimage-66d9a3756494b-2582c34fe574518465c2ceb1cb7c953d40c3270d.jpg",
+        "category": "Health"
+    },
+    {
+        "id": 2,
+        "title": "Campagne d'avis Amazon - Complément alimentaire - Formule Peau Radieuse",
+        "image": "https://s3.eu-central-1.amazonaws.com/influence4brands-production-resources/campaigns/campaigncropimage-66d9a62491fc5-5de150734cfed2cea304e229006014517d956954.jpg",
+        "category": "Beauty & Wellness"
+    },
+    {
+        "id": 3,
+        "title": "Campagne d'avis Amazon - Complément alimentaire - Formule Énergie & Vitalité",
+        "image": "https://s3.eu-central-1.amazonaws.com/influence4brands-production-resources/campaigns/campaigncropimage-66d9acfe0f626-4d0450915b52c9f6b5b960ba5d8fdc90eec4a104.jpg",
+        "category": "Food & Spirits"
+    },
+    {
+        "id": 4,
+        "title": "Campagne d'avis Amazon - Complément alimentaire - Formule Immunité Forte",
+        "image": "https://s3.eu-central-1.amazonaws.com/influence4brands-production-resources/campaigns/campaigncropimage-66d9a62491fc5-5de150734cfed2cea304e229006014517d956954.jpg",
+        "category": "Health"
+    },
+    {
+        "id": 5,
+        "title": "Campagne d'avis Amazon - Complément alimentaire - Formule Sommeil Réparateur",
+        "image": "https://s3.eu-central-1.amazonaws.com/influence4brands-production-resources/campaigns/campaigncropimage-66d9a3756494b-2582c34fe574518465c2ceb1cb7c953d40c3270d.jpg",
+        "category": "Beauty & Wellness"
+    },
+    {
+        "id": 6,
+        "title": "Campagne d'avis Amazon - Complément alimentaire - Formule Détox Naturelle",
+        "image": "https://s3.eu-central-1.amazonaws.com/influence4brands-production-resources/campaigns/campaigncropimage-66d9a3756494b-2582c34fe574518465c2ceb1cb7c953d40c3270d.jpg",
+        "category": "Health"
+    },
+    {
+        "id": 7,
+        "title": "Campagne d'avis Amazon - Complément alimentaire - Formule Articulations Souples",
+        "image": "https://s3.eu-central-1.amazonaws.com/influence4brands-production-resources/campaigns/campaigncropimage-66d9acfe0f626-4d0450915b52c9f6b5b960ba5d8fdc90eec4a104.jpg",
+        "category": "Health"
+    },
+    {
+        "id": 8,
+        "title": "Campagne d'avis Amazon - Complément alimentaire - Formule Beauté & Éclat",
+        "image": "https://s3.eu-central-1.amazonaws.com/influence4brands-production-resources/campaigns/campaigncropimage-66d9a3756494b-2582c34fe574518465c2ceb1cb7c953d40c3270d.jpg",
+        "category": "Beauty & Wellness"
+    },
+    {
+        "id": 9,
+        "title": "Campagne d'avis Amazon - Complément alimentaire - Formule Minceur Active",
+        "image": "https://s3.eu-central-1.amazonaws.com/influence4brands-production-resources/campaigns/campaigncropimage-66d9a3756494b-2582c34fe574518465c2ceb1cb7c953d40c3270d.jpg",
+        "category": "Health"
+    }
+]

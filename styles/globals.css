@@ -67,3 +67,7 @@ code[class*='language-'] {
 .overflowX {
   overflow-x: auto;
 }
+
+.hover-icon-heart:hover {
+  color: red;
+}
