@@ -15,7 +15,8 @@ const InfluenceScore = ({ data }: { data: Data }) => {
 
         <Box
           sx={{
-            display: 'flex',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
             alignItems: 'center',
             gap: theme => theme.spacing(6),
             marginTop: '20px'

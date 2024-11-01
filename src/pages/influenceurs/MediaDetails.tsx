@@ -14,6 +14,7 @@ import MuiTab, { TabProps } from '@mui/material/Tab'
 import MuiTabList, { TabListProps } from '@mui/lab/TabList'
 import PostMedia from 'src/components/influencers/PostMedia'
 import SocialCoverage from 'src/components/influencers/SocialCoverage'
+import Scoring from 'src/components/influencers/Scoring'
 
 // ** Icon Imports
 
@@ -67,7 +68,7 @@ const MediaDetails = ({ data }: { data: Data }) => {
         <Tab value='social-coverage' label='Social Coverage' />
         <Tab value='billing-plan' label='Creator Network' />
         <Tab value='notification' label='Audience' />
-        <Tab value='connection' label='Scoring' />
+        <Tab value='scoring' label='Scoring' />
       </TabList>
       <Box sx={{ mt: 4 }}>
         <>
@@ -76,6 +77,9 @@ const MediaDetails = ({ data }: { data: Data }) => {
           </TabPanel>
           <TabPanel sx={{ p: 0 }} value='social-coverage'>
             <SocialCoverage />
+          </TabPanel>
+          <TabPanel sx={{ p: 0 }} value='scoring'>
+            <Scoring />
           </TabPanel>
         </>
       </Box>

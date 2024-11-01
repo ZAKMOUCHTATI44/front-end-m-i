@@ -61,13 +61,17 @@ const SocialCoverage = () => {
       width: '150px',
       cell(row) {
         return (
-          <span
-            style={{ display: 'flex', gap: '5px', alignItems: 'center' }}
-            className={`growth ${row.influenceScore.comment === 'low' ? 'lower' : 'high'}`}
-          >
-            <span className={`circle ${row.influenceScore.comment}`}></span>
-            {row.influenceScore.score} / 100
-          </span>
+          <>
+            {row.influenceScore && (
+              <span
+                style={{ display: 'flex', gap: '5px', alignItems: 'center' }}
+                className={`growth ${row.influenceScore?.comment === 'low' ? 'lower' : 'high'}`}
+              >
+                <span className={`circle ${row.influenceScore?.comment}`}></span>
+                {row.influenceScore.score} / 100
+              </span>
+            )}
+          </>
         )
       }
     },

@@ -15,10 +15,18 @@ const PostCard = ({ post }: { post: Post }) => {
         justifyContent: 'space-between'
       }}
     >
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '5px' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '5px',
+          paddingInline: '10px'
+        }}
+      >
         <Box sx={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
           <img src={post.profileImageUrl} alt={post.username} width={35} height={35} style={{ borderRadius: '50%' }} />
-          <Typography>{post.username}</Typography>
+          <Typography variant='caption'>{post.username}</Typography>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
           <img src={`/images/social-media/${post.network}.png`} alt='' width={15} height={15} />
@@ -45,7 +53,7 @@ const PostCard = ({ post }: { post: Post }) => {
 
       <Typography variant='caption'>{post.date}</Typography>
       <Typography variant='caption' sx={{ my: theme => theme.spacing(3) }}>
-        {post.caption && post.caption.substring(0, 100)} ...
+        {post.caption && `${post.caption.substring(0, 100)} ...`}
       </Typography>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: theme => theme.spacing(3) }}>
         {post.viewCount && (

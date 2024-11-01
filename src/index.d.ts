@@ -450,3 +450,9 @@ interface ScoringBlurredFields {
 interface PartnershipsBlurredFields {
   available: boolean
 }
+
+interface Category {
+  id: string
+  label: string
+  value: string
+}

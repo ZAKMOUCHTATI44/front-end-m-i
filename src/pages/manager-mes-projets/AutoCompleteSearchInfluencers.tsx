@@ -1,22 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CustomAutocomplete from 'src/@core/components/mui/autocomplete'
-import Error500 from '../500'
 import { useQuery } from 'react-query'
 import api from 'src/lib/api'
 import List from '@mui/material/List'
 import CustomTextField from 'src/@core/components/mui/text-field'
-import { Avatar, ListItem, ListItemAvatar, ListItemText } from '@mui/material'
+import { Avatar, CircularProgress, ListItem, ListItemAvatar, ListItemText } from '@mui/material'
 import { useRouter } from 'next/router'
 
 const AutoCompleteSearchInfluencers = () => {
   const router = useRouter()
-  const { error, isLoading, data } = useQuery<Influencer[]>(['/influencers'], async () => {
-    const response = await api.get<Influencer[]>('/influencers')
+  const [keyword, setKeyword] = useState<string>('')
 
-    return response.data
-  })
-  if (error) return <Error500 />
-  if (isLoading) return <p>....</p>
+  const { error, isLoading, data } = useQuery<Influencer[]>(
+    [`/influencers-quick-search?username=${keyword}`],
+    async () => {
+      const response = await api.get<Influencer[]>(`/influencers-quick-search?username=${keyword}`)
+
+      return response.data
+    }
+  )
+  if (error) return <p>...</p>
 
   return (
     <div>
@@ -35,7 +38,23 @@ const AutoCompleteSearchInfluencers = () => {
             router.push(`/influenceurs`)
           }
         }}
-        renderInput={params => <CustomTextField {...params} placeholder='Search for a creator or a brand' />}
+        renderInput={params => (
+          <CustomTextField
+            {...params}
+            placeholder='Search for a creator or a brand'
+            value={keyword}
+            onChange={e => setKeyword(e.target.value)}
+            InputProps={{
+              ...params.InputProps,
+              endAdornment: (
+                <>
+                  {isLoading ? <CircularProgress disableShrink /> : null}
+                  {params.InputProps.endAdornment}
+                </>
+              )
+            }}
+          />
+        )}
         renderOption={(props, option) => (
           <ListItem {...props}>
             <ListItemAvatar>
