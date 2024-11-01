@@ -10,6 +10,7 @@ import ModeToggler from 'src/@core/layouts/components/shared-components/ModeTogg
 
 // ** Components
 import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
+import AutoCompleteSearchInfluencers from 'src/pages/manager-mes-projets/AutoCompleteSearchInfluencers'
 
 interface Props {
   hidden: boolean
@@ -23,7 +24,10 @@ const AppBarContent = (props: Props) => {
   const { settings, saveSettings } = props
 
   return (
-    <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'end' }}>
+    <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <Box sx={{ width: '350px' }}>
+        <AutoCompleteSearchInfluencers />
+      </Box>
       <Box className='actions-right' sx={{ display: 'flex', alignItems: 'center' }}>
         <ModeToggler settings={settings} saveSettings={saveSettings} />
         <LanguageDropdown settings={settings} saveSettings={saveSettings} />

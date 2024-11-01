@@ -93,9 +93,9 @@ const VerticalNavHeader = (props: Props) => {
         userNavMenuBranding(props)
       ) : (
         <LinkStyled href='/'>
-          <img width={35} height={35} src='/images/logo-icon.png' alt='logo maroc Influence' />
+          <img width={25} height={25} src='/images/logo-icon.png' alt='logo maroc Influence' />
           <HeaderTitle variant='h4' sx={{ ...menuCollapsedStyles, ...(navCollapsed && !navHover ? {} : { ml: 2.5 }) }}>
-            <img width={125} height={30} src='/images/logo-text.png' alt='logo maroc Influence' />
+            <img width={100} height={25} src='/images/logo-text.png' alt='logo maroc Influence' />
           </HeaderTitle>
         </LinkStyled>
       )}
