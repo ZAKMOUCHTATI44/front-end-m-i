@@ -20,6 +20,14 @@ const users: UserDataType[] = [
     email: 'admin@vuexy.com'
   },
   {
+    id: 1,
+    role: 'admin',
+    password: 'salah123',
+    fullName: 'Salah mimouni',
+    username: 'salahmimouni',
+    email: 'salah@maroc-influence.com'
+  },
+  {
     id: 2,
     role: 'client',
     password: 'client',

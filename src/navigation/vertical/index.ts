@@ -27,17 +27,17 @@ const navigation = (): VerticalNavItemsType => {
       icon: 'tabler:mail'
     },
     {
-      title: 'Influenceurs',
+      title: 'Influencers',
       path: '/influenceurs',
       icon: 'tabler:users'
     },
     {
-      title: 'Manager Mes Projets',
+      title: 'Manage My Projects',
       path: '/manager-mes-projets',
       icon: 'tabler:list'
     },
     {
-      title: 'Classement',
+      title: 'Ranking',
       path: '/ranking',
       icon: 'tabler:timeline'
     },
@@ -48,7 +48,7 @@ const navigation = (): VerticalNavItemsType => {
     },
 
     {
-      title: 'Favoris',
+      title: 'Favorites',
       path: '/favoris',
       icon: 'tabler:heart'
     },
@@ -60,21 +60,31 @@ const navigation = (): VerticalNavItemsType => {
     {
       title: 'Marketplace',
       path: '/marketplace',
-      icon: 'tabler:world'
+      icon: 'tabler:world',
+      children: [
+        {
+          title: 'Products',
+          path: '/marketplace/products'
+        },
+        {
+          title: 'Campaigns',
+          path: '/marketplace/campaigns'
+        }
+      ]
     },
     {
-      title: 'Academie',
-      path: '/academie',
+      title: 'Academy',
+      path: '/academy',
       icon: 'tabler:clipboard-text'
     },
     {
       title: 'Support',
-      path: '/academie',
+      path: '/support',
       icon: 'tabler:headphones'
     },
     {
-      title: 'Déconnexion',
-      path: '/academie',
+      title: 'Sign Out',
+      path: '/logout',
       icon: 'tabler:logout'
     }
   ]
