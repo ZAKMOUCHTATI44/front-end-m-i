@@ -20,12 +20,24 @@ const users: UserDataType[] = [
     email: 'admin@vuexy.com'
   },
   {
-    id: 1,
+    id: 3,
     role: 'admin',
     password: 'salah123',
     fullName: 'Salah mimouni',
+    avatar:
+      'https://media.licdn.com/dms/image/v2/D4E03AQGZ3xBdC33myQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1672358701233?e=2147483647&v=beta&t=XqlGl8B3yeIDvKI-HUOVHoB9HCZ8SS_7LXf9v13SsHQ',
     username: 'salahmimouni',
     email: 'salah@maroc-influence.com'
+  },
+  {
+    id: 4,
+    role: 'admin',
+    password: 'amal123',
+    fullName: 'Amal amazouz',
+    username: 'amalamazouz',
+    avatar:
+      'https://media.licdn.com/dms/image/v2/D4E03AQG6pmxWV1gifw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1672064701245?e=2147483647&v=beta&t=7QPzC4jolWUHbodB9dyIHCC7WoqnGqwcW4zt3vshFd4',
+    email: 'amal@maroc-influence.com'
   },
   {
     id: 2,
