@@ -1,54 +1,13 @@
-import React from 'react'
-
-// ** React Imports
-import { useState } from 'react'
-
-// ** Next Import
+import React, { useState } from 'react'
 
 // ** MUI Imports
 import Box from '@mui/material/Box'
 import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
-import { styled } from '@mui/material/styles'
-import MuiTab, { TabProps } from '@mui/material/Tab'
-import MuiTabList, { TabListProps } from '@mui/lab/TabList'
+import MuiTab from '@mui/material/Tab'
+import MuiTabList from '@mui/lab/TabList'
 import PostMedia from 'src/components/influencers/PostMedia'
 import SocialCoverage from 'src/components/influencers/SocialCoverage'
-
-// ** Icon Imports
-
-// ** Styled Tab component
-const Tab = styled(MuiTab)<TabProps>(({ theme }) => ({
-  flexDirection: 'row',
-  '& svg': {
-    marginBottom: '0 !important',
-    marginRight: theme.spacing(1.5)
-  }
-}))
-
-const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
-  borderBottom: '0 !important',
-  '&, & .MuiTabs-scroller': {
-    boxSizing: 'content-box',
-    padding: theme.spacing(1.25, 1.25, 2),
-    margin: `${theme.spacing(-1.25, -1.25, -2)} !important`
-  },
-  '& .MuiTabs-indicator': {
-    display: 'none'
-  },
-  '& .Mui-selected': {
-    boxShadow: theme.shadows[2],
-    backgroundColor: theme.palette.primary.main,
-    color: `${theme.palette.common.white} !important`
-  },
-  '& .MuiTab-root': {
-    lineHeight: 1,
-    borderRadius: theme.shape.borderRadius,
-    '&:hover': {
-      color: theme.palette.primary.main
-    }
-  }
-}))
 
 const MediaDetails = ({ data }: { data: Data }) => {
   // ** State
@@ -56,28 +15,41 @@ const MediaDetails = ({ data }: { data: Data }) => {
 
   return (
     <TabContext value={activeTab}>
-      <TabList
-        variant='scrollable'
-        scrollButtons='auto'
+      <MuiTabList
+        centered
         onChange={(e, value) => setActiveTab(value)}
-        aria-label='forced scroll tabs example'
-        sx={{ borderBottom: theme => `1px solid ${theme.palette.divider}` }}
+        aria-label='centered tabs example'
+       sx={{
+          borderBottom: theme => `1px solid ${theme.palette.divider}`,
+          justifyContent: 'center', // Centrer les onglets
+          display: 'flex',
+          '& .MuiTabs-flexContainer': {
+            justifyContent: 'center' // Centrer le conteneur des onglets
+          },
+          '& .MuiTab-root': {
+            flex: 'none', // Empêche les onglets de s'étendre
+            fontSize: '1.2rem',
+             fontWeight: '600',
+
+            '&:hover': {
+              color: theme => theme.palette.primary.main
+            }
+          }
+        }}
       >
-        <Tab value='media' label='Posts' />
-        <Tab value='social-coverage' label='Social Coverage' />
-        <Tab value='billing-plan' label='Creator Network' />
-        <Tab value='notification' label='Audience' />
-        <Tab value='connection' label='Scoring' />
-      </TabList>
-      <Box sx={{ mt: 4 }}>
-        <>
-          <TabPanel sx={{ p: 0 }} value='media'>
-            <PostMedia data={data} />
-          </TabPanel>
-          <TabPanel sx={{ p: 0 }} value='social-coverage'>
-            <SocialCoverage />
-          </TabPanel>
-        </>
+        <MuiTab value='media' label='Posts' />
+        <MuiTab value='social-coverage' label='Social Coverage' />
+        <MuiTab value='billing-plan' label='Creator Network' />
+        <MuiTab value='notification' label='Audience' />
+        <MuiTab value='connection' label='Scoring' />
+      </MuiTabList>
+      <Box sx={{ mt: 8 }}>
+        <TabPanel sx={{ p: 0 }} value='media'>
+          <PostMedia data={data} />
+        </TabPanel>
+        <TabPanel sx={{ p: 0 }} value='social-coverage'>
+          <SocialCoverage />
+        </TabPanel>
       </Box>
     </TabContext>
   )
