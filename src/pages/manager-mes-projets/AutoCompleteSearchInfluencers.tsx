@@ -48,7 +48,7 @@ const AutoCompleteSearchInfluencers = () => {
               ...params.InputProps,
               endAdornment: (
                 <>
-                  {isLoading ? <CircularProgress disableShrink /> : null}
+                  {isLoading ? <CircularProgress disableShrink size={'small'} /> : null}
                   {params.InputProps.endAdornment}
                 </>
               )
