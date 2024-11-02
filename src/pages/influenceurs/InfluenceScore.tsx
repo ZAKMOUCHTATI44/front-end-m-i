@@ -10,8 +10,10 @@ ChartJS.register(ArcElement, Tooltip, Legend)
 const InfluenceScore = ({ data }: { data: Data }) => {
   return (
     <Grid item xs={12} lg={8} spacing={6}>
-      <Card sx={{ padding: '20px', border: '1px solid #e2e8f0'  }}>
-        <Typography variant='h6' style={{color:'#000', fontWeight: 'bold'}}>Influence Score</Typography>
+      <Card sx={{ padding: '20px', border: '1px solid #e2e8f0' }}>
+        <Typography variant='h6' style={{ color: '#000', fontWeight: 'bold' }}>
+          Influence Score
+        </Typography>
 
         <Box
           sx={{
@@ -28,7 +30,7 @@ const InfluenceScore = ({ data }: { data: Data }) => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center', // Centre les éléments horizontalement
-                gap: theme => theme.spacing(2),
+                gap: theme => theme.spacing(2)
               }}
               key={network.network}
             >
@@ -46,13 +48,12 @@ const InfluenceScore = ({ data }: { data: Data }) => {
                   alignItems: 'center', // Centre verticalement dans le `span`
                   fontWeight: 'bold',
                   whiteSpace: 'nowrap', // Évite les retours à la ligne
-                  textAlign: 'center', // Centre le texte horizontalement
+                  textAlign: 'center' // Centre le texte horizontalement
                 }}
               >
-    {network.comment === 'low' ? '-' : '+'} {network.score} / 100
-  </span>
+                {network.comment === 'low' ? '-' : '+'} {network.score} / 100
+              </span>
             </Box>
-
           ))}
         </Box>
       </Card>
@@ -66,7 +67,7 @@ const InfluenceScore = ({ data }: { data: Data }) => {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'start',
-          border: '1px solid #e2e8f0',
+          border: '1px solid #e2e8f0'
         }}
       >
         <Grid
@@ -77,9 +78,8 @@ const InfluenceScore = ({ data }: { data: Data }) => {
             display: 'flex',
             flexDirection: 'column',
             padding: '10px 10px',
-           // borderRadius: '10px',
             gap: '10px',
-            borderRight : '1px solid #e2e8f0',
+            borderRight: '1px solid #e2e8f0'
           }}
         >
           <Typography variant='h6' style={{ display: 'block', color: '#000', fontWeight: 'bold' }}>

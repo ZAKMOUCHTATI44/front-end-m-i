@@ -6,8 +6,6 @@ import List from '@mui/material/List'
 import CustomTextField from 'src/@core/components/mui/text-field'
 import { Avatar, CircularProgress, ListItem, ListItemAvatar, ListItemText } from '@mui/material'
 import { useRouter } from 'next/router'
-import { Icon } from '@iconify/react';
-import { InputAdornment } from '@mui/material';
 
 const AutoCompleteSearchInfluencers = () => {
   const router = useRouter()
@@ -40,7 +38,6 @@ const AutoCompleteSearchInfluencers = () => {
             router.push(`/influenceurs`)
           }
         }}
-<<<<<<< HEAD
         renderInput={params => (
           <CustomTextField
             {...params}
@@ -58,19 +55,6 @@ const AutoCompleteSearchInfluencers = () => {
             }}
           />
         )}
-=======
-        renderInput={params => <CustomTextField {...params} placeholder='Search for a creator or a brand' fullWidth
-                                                InputProps={{
-                                                  ...params.InputProps,
-                                                  // Utilisation d'Iconify pour afficher une icône de recherche sans dépendances supplémentaires
-                                                  startAdornment: (
-                                                    <InputAdornment position="start">
-                                                      {/* Icône de recherche avec Iconify */}
-                                                      <Icon icon="tabler:search" color="#655bd3" width="24" height="24" style={{ fontWeight: 'bold', strokeWidth: '2' }}  />
-                                                    </InputAdornment>
-                                                  ),
-                                                }} />}
->>>>>>> zouhair
         renderOption={(props, option) => (
           <ListItem {...props}>
             <ListItemAvatar>

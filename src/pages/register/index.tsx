@@ -30,7 +30,7 @@ import { useSettings } from 'src/@core/hooks/useSettings'
 
 // ** Demo Imports
 import FooterIllustrationsV2 from 'src/views/pages/auth/FooterIllustrationsV2'
-import themeConfig from "../../configs/themeConfig";
+import themeConfig from '../../configs/themeConfig'
 
 // ** Styled Components
 const RegisterIllustration = styled('img')(({ theme }) => ({
@@ -84,7 +84,8 @@ const Register = () => {
   // ** Vars
   const { skin } = settings
 
-  const imageSource = skin === 'bordered' ? 'auth-v2-register-illustration-bordered' : 'new-auth-v2-register-illustration'
+  const imageSource =
+    skin === 'bordered' ? 'auth-v2-register-illustration-bordered' : 'new-auth-v2-register-illustration'
 
   return (
     <Box className='content-right' sx={{ backgroundColor: 'background.paper' }}>
@@ -95,11 +96,8 @@ const Register = () => {
             display: 'flex',
             position: 'relative',
             alignItems: 'center',
-          //  borderRadius: '20px',
             justifyContent: 'center',
-            background: 'linear-gradient(to bottom, #655cd3, #a85cd3);',
-          //  backgroundColor: 'customColors.bodyBg',
-          //  margin: theme => theme.spacing(8, 0, 8, 8)
+            background: 'linear-gradient(to bottom, #655cd3, #a85cd3);'
           }}
         >
           <RegisterIllustration

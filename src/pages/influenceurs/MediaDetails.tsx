@@ -9,6 +9,7 @@ import MuiTabList from '@mui/lab/TabList'
 import PostMedia from 'src/components/influencers/PostMedia'
 import SocialCoverage from 'src/components/influencers/SocialCoverage'
 import Scoring from 'src/components/influencers/Scoring'
+import Tab from '@mui/material/Tab'
 
 const MediaDetails = ({ data }: { data: Data }) => {
   // ** State
@@ -20,7 +21,7 @@ const MediaDetails = ({ data }: { data: Data }) => {
         centered
         onChange={(e, value) => setActiveTab(value)}
         aria-label='centered tabs example'
-       sx={{
+        sx={{
           borderBottom: theme => `1px solid ${theme.palette.divider}`,
           justifyContent: 'center', // Centrer les onglets
           display: 'flex',
@@ -30,7 +31,7 @@ const MediaDetails = ({ data }: { data: Data }) => {
           '& .MuiTab-root': {
             flex: 'none', // Empêche les onglets de s'étendre
             fontSize: '1.2rem',
-             fontWeight: '600',
+            fontWeight: '600',
 
             '&:hover': {
               color: theme => theme.palette.primary.main
@@ -38,15 +39,14 @@ const MediaDetails = ({ data }: { data: Data }) => {
           }
         }}
       >
-<<<<<<< HEAD
         <Tab value='media' label='Posts' />
         <Tab value='social-coverage' label='Social Coverage' />
         <Tab value='billing-plan' label='Creator Network' />
         <Tab value='notification' label='Audience' />
         <Tab value='scoring' label='Scoring' />
-      </TabList>
+      </MuiTabList>
       <Box sx={{ mt: 4 }}>
-        <>
+        <Box>
           <TabPanel sx={{ p: 0 }} value='media'>
             <PostMedia data={data} />
           </TabPanel>
@@ -56,14 +56,13 @@ const MediaDetails = ({ data }: { data: Data }) => {
           <TabPanel sx={{ p: 0 }} value='scoring'>
             <Scoring />
           </TabPanel>
-        </>
-=======
+        </Box>
         <MuiTab value='media' label='Posts' />
         <MuiTab value='social-coverage' label='Social Coverage' />
         <MuiTab value='billing-plan' label='Creator Network' />
         <MuiTab value='notification' label='Audience' />
         <MuiTab value='connection' label='Scoring' />
-      </MuiTabList>
+      </Box>
       <Box sx={{ mt: 8 }}>
         <TabPanel sx={{ p: 0 }} value='media'>
           <PostMedia data={data} />
@@ -71,7 +70,6 @@ const MediaDetails = ({ data }: { data: Data }) => {
         <TabPanel sx={{ p: 0 }} value='social-coverage'>
           <SocialCoverage />
         </TabPanel>
->>>>>>> zouhair
       </Box>
     </TabContext>
   )
