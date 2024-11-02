@@ -9,9 +9,9 @@ ChartJS.register(ArcElement, Tooltip, Legend)
 
 const InfluenceScore = ({ data }: { data: Data }) => {
   return (
-    <Grid item xs={12} lg={7} spacing={6}>
-      <Card sx={{ padding: '20px' }}>
-        <Typography variant='h6'>Influence Score</Typography>
+    <Grid item xs={12} lg={8} spacing={6}>
+      <Card sx={{ padding: '20px', border: '1px solid #e2e8f0'  }}>
+        <Typography variant='h6' style={{color:'#000', fontWeight: 'bold'}}>Influence Score</Typography>
 
         <Box
           sx={{
@@ -23,16 +23,36 @@ const InfluenceScore = ({ data }: { data: Data }) => {
           }}
         >
           {data.creator.networkScores.map(network => (
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: theme => theme.spacing(1) }} key={network.network}>
-              <img width={25} height={25} src={`/images/social-media/${network.network}.png`} alt={network.network} />
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center', // Centre les éléments horizontalement
+                gap: theme => theme.spacing(2),
+              }}
+              key={network.network}
+            >
+              <img
+                width={35}
+                height={35}
+                src={`/images/social-media/${network.network}.png`}
+                alt={network.network}
+                style={{ display: 'block', marginRight: '0px' }} // Enlève tout espacement supplémentaire
+              />
               <span
-                key={network.network}
                 className={`growth ${network.comment === 'low' ? 'lower' : 'high'}`}
-                style={{ display: 'flex', alignContent: 'center' }}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center', // Centre verticalement dans le `span`
+                  fontWeight: 'bold',
+                  whiteSpace: 'nowrap', // Évite les retours à la ligne
+                  textAlign: 'center', // Centre le texte horizontalement
+                }}
               >
-                {network.comment === 'low' ? '-' : '+'} {network.score} / 100
-              </span>
+    {network.comment === 'low' ? '-' : '+'} {network.score} / 100
+  </span>
             </Box>
+
           ))}
         </Box>
       </Card>
@@ -41,11 +61,12 @@ const InfluenceScore = ({ data }: { data: Data }) => {
       </Card>
       <Card
         sx={{
-          padding: '20px',
+          padding: '10px',
           mt: theme => theme.spacing(6),
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'start'
+          alignItems: 'start',
+          border: '1px solid #e2e8f0',
         }}
       >
         <Grid
@@ -53,18 +74,18 @@ const InfluenceScore = ({ data }: { data: Data }) => {
           lg={6}
           sx={{
             my: 5,
-            border: '1px solid ',
             display: 'flex',
             flexDirection: 'column',
-            padding: '20px 10px',
-            borderRadius: '10px',
-            gap: '10px'
+            padding: '10px 10px',
+           // borderRadius: '10px',
+            gap: '10px',
+            borderRight : '1px solid #e2e8f0',
           }}
         >
-          <Typography variant='h6' style={{ display: 'block' }}>
+          <Typography variant='h6' style={{ display: 'block', color: '#000', fontWeight: 'bold' }}>
             Industries & Niches
           </Typography>
-          <Typography variant='subtitle2' style={{ display: 'block' }}>
+          <Typography variant='subtitle2' style={{ display: 'block', fontWeight: 'bold', color: '#5045bc' }}>
             {data.creator.industries[Object.keys(data.creator.industries)[0]].name}
           </Typography>
         </Grid>

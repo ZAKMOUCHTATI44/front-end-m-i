@@ -7,7 +7,8 @@ const styles: { [key: string]: React.CSSProperties } = {
     gap: '2rem',
     padding: '1rem',
     borderRadius: '8px',
-    backgroundColor: '#f9f9f9'
+    backgroundColor: '#f9f9f9',
+
   },
   section: {
     display: 'flex',
@@ -42,8 +43,8 @@ const badgeStyle = (backgroundColor: string, color: string): React.CSSProperties
 
 const StatusCard = ({ data }: { data: Data }) => {
   return (
-    <div style={styles.container}>
-      <div style={styles.section}>
+    <div style={styles.container} >
+      <div style={styles.section}  >
         <div style={styles.label}>
           Growth <span style={badgeStyle('#e6f4ea', '#1c7c54')}>● Gaining</span>
         </div>

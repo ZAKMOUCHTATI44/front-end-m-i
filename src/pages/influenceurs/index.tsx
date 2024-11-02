@@ -46,9 +46,9 @@ const Page = () => {
     <>
       <Grid container spacing={6}>
         <Grid item xs={12} lg={12}>
-          <Card sx={{ position: 'relative', padding: '40px 60px' }}>
+          <Card sx={{ position: 'relative', padding: '30px 60px',  overflow: 'visible' }}>
             <Box>
-              <Typography variant='h4' sx={{ mb: 1.5, textAlign: 'center', fontWeight: 'bold' }}>
+              <Typography variant='h4' sx={{ mb: 1.5, textAlign: 'center', fontWeight: 'bold', color: '#000' }}>
                 Find the right creators according to your needs
               </Typography>
               <FiltersInfluenceurs open={addUserOpen} toggle={toggleAddUserDrawer} />
@@ -79,6 +79,22 @@ const Page = () => {
                   Search
                 </Button>
               </Box>
+              {/* Image ajoutée à droite du Box */}
+              <Box
+                component="img"
+                src="/images/avatars/illustration-influ.png"
+                alt="Description de l'image"
+                sx={{
+                  position: 'absolute',
+                  bottom: '-90px',
+                  right: '0px',
+                  width: '288px',
+                  height: 'auto',
+                  transform: 'translateY(-50%)', // Décale pour dépasser légèrement en haut
+                  display: { xs: 'none', sm: 'none', md: 'block' }
+                }}
+              />
+              {/* Fin de l'ajout de l'image */}
             </Box>
           </Card>
         </Grid>
@@ -95,12 +111,12 @@ const Page = () => {
         {data &&
           data.length > 0 &&
           data.map(influencer => (
-            <Grid item xs={12} sm={6} md={4} key={influencer._id}>
+            <Grid item xs={12} sm={6} md={3} key={influencer._id}>
               <CardInfluencer influencer={influencer} />
             </Grid>
           ))}
         {/* {data.map(influencer => (
-        
+
         ))} */}
       </Grid>
 

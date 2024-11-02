@@ -24,17 +24,20 @@ const navigation = (): VerticalNavItemsType => {
     {
       title: 'Dashbaord',
       path: '/second-page',
-      icon: 'tabler:mail'
+      icon: 'tabler:home'
+    },
+    {
+      sectionTitle: ''
     },
     {
       title: 'Influencers',
       path: '/influenceurs',
-      icon: 'tabler:users'
+      icon: 'wpf:search'
     },
     {
       title: 'Manage My Projects',
       path: '/manager-mes-projets',
-      icon: 'tabler:list'
+      icon: 'tabler:layout-kanban'
     },
     {
       title: 'Ranking',
@@ -44,7 +47,7 @@ const navigation = (): VerticalNavItemsType => {
     {
       title: 'Social Listening',
       path: '/social-listening',
-      icon: 'tabler:speakerphone'
+      icon: 'grommet-icons:assist-listening'
     },
 
     {
@@ -55,12 +58,12 @@ const navigation = (): VerticalNavItemsType => {
     {
       title: 'Niches',
       path: '/niches',
-      icon: 'tabler:list'
+      icon: 'octicon:goal-24'
     },
     {
       title: 'Marketplace',
       path: '/marketplace',
-      icon: 'tabler:world',
+      icon: 'mdi:marketplace-outline',
       children: [
         {
           title: 'Products',
@@ -73,10 +76,14 @@ const navigation = (): VerticalNavItemsType => {
       ]
     },
     {
+      sectionTitle: ''
+    },
+    {
       title: 'Academy',
       path: '/academy',
-      icon: 'tabler:clipboard-text'
+      icon: 'carbon:ibm-watson-machine-learning'
     },
+
     {
       title: 'Support',
       path: '/support',

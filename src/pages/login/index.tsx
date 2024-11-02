@@ -47,10 +47,10 @@ const LoginIllustration = styled('img')(({ theme }) => ({
   marginTop: theme.spacing(12),
   marginBottom: theme.spacing(12),
   [theme.breakpoints.down(1540)]: {
-    maxHeight: 550
+    maxHeight:650
   },
   [theme.breakpoints.down('lg')]: {
-    maxHeight: 500
+    maxHeight: 550
   }
 }))
 
@@ -127,7 +127,7 @@ const LoginPage = () => {
     })
   }
 
-  const imageSource = skin === 'bordered' ? 'auth-v2-login-illustration-bordered' : 'auth-v2-login-illustration'
+  const imageSource = skin === 'bordered' ? 'auth-v2-login-illustration-bordered' : 'new-auth-v2-login-illustration'
 
   return (
     <Box className='content-right' sx={{ backgroundColor: 'background.paper' }}>
@@ -138,11 +138,12 @@ const LoginPage = () => {
             display: 'flex',
             position: 'relative',
             alignItems: 'center',
-            borderRadius: '20px',
+           // borderRadius: '20px',
             justifyContent: 'center',
-            backgroundColor: 'customColors.bodyBg',
-            margin: theme => theme.spacing(8, 0, 8, 8)
-          }}
+           // backgroundColor: 'customColors.bodyBg',
+            background: 'linear-gradient(to bottom, #655cd3, #a85cd3);',
+           // margin: theme => theme.spacing(8, 0, 8, 8)
+           }}
         >
           <LoginIllustration alt='login-illustration' src={`/images/pages/${imageSource}-${theme.palette.mode}.png`} />
           <FooterIllustrationsV2 />
@@ -181,7 +182,7 @@ const LoginPage = () => {
                       value={value}
                       onBlur={onBlur}
                       onChange={onChange}
-                      placeholder='admin@vuexy.com'
+                      placeholder='exampl@gmail.com'
                       error={Boolean(errors.email)}
                       {...(errors.email && { helperText: errors.email.message })}
                     />
@@ -267,6 +268,9 @@ const LoginPage = () => {
                 >
                   <Icon icon='mdi:google' />
                 </IconButton>
+                <IconButton href='/' component={Link} sx={{ color: '#497ce2' }} onClick={e => e.preventDefault()}>
+                  <Icon icon='mdi:facebook' />
+                </IconButton>
               </Box>
             </form>
           </Box>
@@ -279,5 +283,4 @@ const LoginPage = () => {
 LoginPage.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
 
 LoginPage.guestGuard = true
-
 export default LoginPage
