@@ -40,7 +40,6 @@ const AutoCompleteSearchInfluencers = () => {
         renderInput={params => <CustomTextField {...params} placeholder='Search for a creator or a brand' fullWidth
                                                 InputProps={{
                                                   ...params.InputProps,
-                                                  // Utilisation d'Iconify pour afficher une icône de recherche sans dépendances supplémentaires
                                                   startAdornment: (
                                                     <InputAdornment position="start">
                                                       {/* Icône de recherche avec Iconify */}

@@ -76,7 +76,6 @@ const InfluenceScore = ({ data }: { data: Data }) => {
             display: 'flex',
             flexDirection: 'column',
             padding: '10px 10px',
-           // borderRadius: '10px',
             gap: '10px',
             borderRight : '1px solid #e2e8f0',
           }}

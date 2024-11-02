@@ -95,11 +95,8 @@ const Register = () => {
             display: 'flex',
             position: 'relative',
             alignItems: 'center',
-          //  borderRadius: '20px',
             justifyContent: 'center',
             background: 'linear-gradient(to bottom, #655cd3, #a85cd3);',
-          //  backgroundColor: 'customColors.bodyBg',
-          //  margin: theme => theme.spacing(8, 0, 8, 8)
           }}
         >
           <RegisterIllustration

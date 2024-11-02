@@ -138,11 +138,8 @@ const LoginPage = () => {
             display: 'flex',
             position: 'relative',
             alignItems: 'center',
-           // borderRadius: '20px',
             justifyContent: 'center',
-           // backgroundColor: 'customColors.bodyBg',
             background: 'linear-gradient(to bottom, #655cd3, #a85cd3);',
-           // margin: theme => theme.spacing(8, 0, 8, 8)
            }}
         >
           <LoginIllustration alt='login-illustration' src={`/images/pages/${imageSource}-${theme.palette.mode}.png`} />
