@@ -41,7 +41,6 @@ const MediaDetails = ({ data }: { data: Data }) => {
       >
         <Tab value='media' label='Posts' />
         <Tab value='social-coverage' label='Social Coverage' />
-        <Tab value='billing-plan' label='Creator Network' />
         <Tab value='audience' label='Audience' />
         <Tab value='scoring' label='Scoring' />
       </MuiTabList>
