@@ -28,7 +28,7 @@ const CardNiche = ({ category }: { category: Category }) => {
           </Button>
           {category.label.slice(2)}
         </div>
-        <Link href={`influenceurs/${category.value}`}>
+        <Link href={`/ranking?niche=${category.value}`}>
           <Icon icon='tabler:arrow-left-from-arc' fontSize={20} />
         </Link>
       </Typography>

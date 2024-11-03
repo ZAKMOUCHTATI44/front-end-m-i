@@ -3,8 +3,10 @@ import categories from '../../data/categories.json'
 import SelectBox from 'src/components/ui/SelectBox'
 import { Button, Grid } from '@mui/material'
 import Icon from 'src/@core/components/icon'
+import { useRouter } from 'next/router'
 
 const FilterRanking = ({ setCategroy }: { setCategroy: (e: string) => void }) => {
+  const router = useRouter()
   const socialMedia = [
     {
       label: 'Twitter',
@@ -58,6 +60,9 @@ const FilterRanking = ({ setCategroy }: { setCategroy: (e: string) => void }) =>
           <SelectBox
             handleChange={e => {
               setCategroy(e)
+              router.push({
+                query: { ...router.query, niche: e }
+              })
             }}
             items={categories}
             label='All Industries'

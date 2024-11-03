@@ -4,12 +4,12 @@ import React, { useState } from 'react'
 import Box from '@mui/material/Box'
 import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
-import MuiTab from '@mui/material/Tab'
 import MuiTabList from '@mui/lab/TabList'
 import PostMedia from 'src/components/influencers/PostMedia'
 import SocialCoverage from 'src/components/influencers/SocialCoverage'
 import Scoring from 'src/components/influencers/Scoring'
 import Tab from '@mui/material/Tab'
+import AudienceChart from './show/AudienceChart'
 
 const MediaDetails = ({ data }: { data: Data }) => {
   // ** State
@@ -42,7 +42,7 @@ const MediaDetails = ({ data }: { data: Data }) => {
         <Tab value='media' label='Posts' />
         <Tab value='social-coverage' label='Social Coverage' />
         <Tab value='billing-plan' label='Creator Network' />
-        <Tab value='notification' label='Audience' />
+        <Tab value='audience' label='Audience' />
         <Tab value='scoring' label='Scoring' />
       </MuiTabList>
       <Box sx={{ mt: 4 }}>
@@ -53,23 +53,13 @@ const MediaDetails = ({ data }: { data: Data }) => {
           <TabPanel sx={{ p: 0 }} value='social-coverage'>
             <SocialCoverage />
           </TabPanel>
+          <TabPanel sx={{ p: 0 }} value='audience'>
+            <AudienceChart />
+          </TabPanel>
           <TabPanel sx={{ p: 0 }} value='scoring'>
             <Scoring />
           </TabPanel>
         </Box>
-        <MuiTab value='media' label='Posts' />
-        <MuiTab value='social-coverage' label='Social Coverage' />
-        <MuiTab value='billing-plan' label='Creator Network' />
-        <MuiTab value='notification' label='Audience' />
-        <MuiTab value='connection' label='Scoring' />
-      </Box>
-      <Box sx={{ mt: 8 }}>
-        <TabPanel sx={{ p: 0 }} value='media'>
-          <PostMedia data={data} />
-        </TabPanel>
-        <TabPanel sx={{ p: 0 }} value='social-coverage'>
-          <SocialCoverage />
-        </TabPanel>
       </Box>
     </TabContext>
   )

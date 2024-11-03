@@ -1,11 +1,14 @@
 import { Box, Card, Grid, Typography } from '@mui/material'
 import React, { useState } from 'react'
-import categories from '../../data/categories.json'
 import DataTableInfluencers from '../Tables/DataTableInfluencers'
 import FilterRanking from './FilterRanking'
+import { useRouter } from 'next/router'
 
 const Page = () => {
-  const [currentCategroy, setCategroy] = useState<string>(categories[0].value)
+  const router = useRouter()
+
+  const { niche } = router.query
+  const [currentCategroy, setCategroy] = useState<string>(niche?.toString() ?? 'all-categories')
 
   return (
     <div>
