@@ -7,9 +7,9 @@ import TabContext from '@mui/lab/TabContext'
 import MuiTabList from '@mui/lab/TabList'
 import PostMedia from 'src/components/influencers/PostMedia'
 import SocialCoverage from 'src/components/influencers/SocialCoverage'
-import Scoring from 'src/components/influencers/Scoring'
 import Tab from '@mui/material/Tab'
 import AudienceChart from './show/AudienceChart'
+import ScoringTab from 'src/components/influencers/ScoringTab'
 
 const MediaDetails = ({ data }: { data: Data }) => {
   // ** State
@@ -57,7 +57,7 @@ const MediaDetails = ({ data }: { data: Data }) => {
             <AudienceChart />
           </TabPanel>
           <TabPanel sx={{ p: 0 }} value='scoring'>
-            <Scoring />
+            <ScoringTab />
           </TabPanel>
         </Box>
       </Box>
