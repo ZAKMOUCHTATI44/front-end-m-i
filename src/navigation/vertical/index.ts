@@ -23,7 +23,7 @@ const navigation = (): VerticalNavItemsType => {
     // },
     {
       title: 'Dashbaord',
-      path: '/second-page',
+      path: '/dashboard',
       icon: 'tabler:home'
     },
     {

@@ -1,21 +1,26 @@
 import { Button, Card, Grid, Pagination, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React, { useState } from 'react'
-import CustomTextField from 'src/@core/components/mui/text-field'
-import Icon from 'src/@core/components/icon'
 import FiltersInfluenceurs from 'src/components/FiltersInfluenceurs'
 import CardInfluencer from './CardInfluencer'
-
-import { useQuery } from 'react-query'
 import api from 'src/lib/api'
 import Loading from 'src/components/Loading'
 import Error500 from '../500'
 import { useRouter } from 'next/router'
+import UseQueryHooks from 'src/lib/react-query'
+import Icon from 'src/@core/components/icon'
+import ManageFavorites from './ManageFavorites'
 
+interface Response {
+  totalCount: number
+  data: Influencer[]
+  currentPage: number
+  lastPage: number
+}
 const Page = () => {
-  const [addUserOpen, setAddUserOpen] = useState<boolean>(false)
-  const toggleAddUserDrawer = () => setAddUserOpen(!addUserOpen)
   const router = useRouter()
+  const [selectedInfluencers, setSelectedInfluencers] = useState<Set<Influencer>>(new Set())
+
   const routerParams = router.query
 
   const buildQueryString = (): string => {
@@ -24,7 +29,7 @@ const Page = () => {
       // Loop through the object keys dynamically
       for (const key in obj) {
         if (obj.hasOwnProperty(key)) {
-          if (obj[key]) {
+          if (obj[key] && obj[key] !== '0') {
             queryString += `&${key}=${obj[key]}`
           }
         }
@@ -35,8 +40,25 @@ const Page = () => {
     return queryString
   }
 
-  const { error, isLoading, data } = useQuery<Influencer[]>([buildQueryString()], async () => {
-    const response = await api.get<Influencer[]>(buildQueryString())
+  const objectExists = (id: string): boolean => {
+    for (const obj of selectedInfluencers) {
+      if (obj.id === id) return true
+    }
+
+    return false
+  }
+
+  const selectedAll = () => {
+    data?.data.map(influencer => {
+      setSelectedInfluencers(prevSet => new Set(prevSet).add(influencer))
+    })
+  }
+  const clearSet = () => {
+    setSelectedInfluencers(new Set()) // Replace with a new empty Set
+  }
+
+  const { error, isLoading, data } = UseQueryHooks<Response>([buildQueryString()], async () => {
+    const response = await api.get<Response>(buildQueryString())
 
     return response.data
   })
@@ -46,12 +68,11 @@ const Page = () => {
     <>
       <Grid container spacing={6}>
         <Grid item xs={12} lg={12}>
-          <Card sx={{ position: 'relative', padding: '30px 60px',  overflow: 'visible' }}>
+          <Card sx={{ position: 'relative', padding: '30px 20px', overflow: 'visible' }}>
             <Box>
               <Typography variant='h4' sx={{ mb: 1.5, textAlign: 'center', fontWeight: 'bold', color: '#000' }}>
                 Find the right creators according to your needs
               </Typography>
-              <FiltersInfluenceurs open={addUserOpen} toggle={toggleAddUserDrawer} />
 
               <Box
                 sx={{
@@ -65,24 +86,12 @@ const Page = () => {
                   justifyContent: 'center'
                 }}
               >
-                <Button
-                  onClick={toggleAddUserDrawer}
-                  variant='contained'
-                  sx={{ '& svg': { mr: 2 }, backgroundColor: '#655BD3' }}
-                >
-                  <Icon fontSize='1.125rem' icon='tabler:adjustments' />
-                  Filters
-                </Button>
-                <CustomTextField autoFocus value={''} placeholder='Add  a Keyword' />
-                <Button variant='contained' sx={{ '& svg': { mr: 2 }, backgroundColor: '#655BD3' }}>
-                  <Icon fontSize='1.125rem' icon='tabler:search' />
-                  Search
-                </Button>
+                <FiltersInfluenceurs />
               </Box>
               {/* Image ajoutée à droite du Box */}
-              <Box
-                component="img"
-                src="/images/avatars/illustration-influ.png"
+              {/* <Box
+                component='img'
+                src='/images/avatars/illustration-influ.png'
                 alt="Description de l'image"
                 sx={{
                   position: 'absolute',
@@ -93,7 +102,7 @@ const Page = () => {
                   transform: 'translateY(-50%)', // Décale pour dépasser légèrement en haut
                   display: { xs: 'none', sm: 'none', md: 'block' }
                 }}
-              />
+              /> */}
               {/* Fin de l'ajout de l'image */}
             </Box>
           </Card>
@@ -108,11 +117,32 @@ const Page = () => {
             <Loading />
           </Grid>
         )}
+        <Grid item xs={12} sm={12} md={12}>
+          <Typography variant='h6' sx={{ fontWeight: 'bold' }}>
+            {data?.totalCount} result
+          </Typography>
+        </Grid>
+
         {data &&
-          data.length > 0 &&
-          data.map(influencer => (
+          data.data.length > 0 &&
+          data.data.map(influencer => (
             <Grid item xs={12} sm={6} md={3} key={influencer._id}>
-              <CardInfluencer influencer={influencer} />
+              <CardInfluencer
+                influencer={influencer}
+                selected={objectExists(influencer.id)}
+                setSelectedInfluencer={influencer => {
+                  setSelectedInfluencers(prevSet => {
+                    const newSet = new Set(prevSet)
+                    if (newSet.has(influencer)) {
+                      newSet.delete(influencer)
+                    } else {
+                      newSet.add(influencer)
+                    }
+
+                    return newSet
+                  })
+                }}
+              />
             </Grid>
           ))}
         {/* {data.map(influencer => (
@@ -120,11 +150,12 @@ const Page = () => {
         ))} */}
       </Grid>
 
+      {/* Pagination */}
       {!isLoading && (
         <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: theme => theme.spacing(6) }}>
           <Pagination
-            count={200}
-            page={Number(routerParams.page) || 1}
+            count={data?.lastPage}
+            page={Number(data?.currentPage) || 1}
             color='primary'
             onChange={(e, value) => {
               router.push({
@@ -134,7 +165,112 @@ const Page = () => {
           />
         </Box>
       )}
+      <SelectedInfluencers selectedInfluencers={selectedInfluencers} selectedAll={selectedAll} clearSet={clearSet} />
     </>
   )
 }
 export default Page
+
+const SelectedInfluencers = ({
+  selectedInfluencers,
+  selectedAll,
+  clearSet
+}: {
+  selectedInfluencers: Set<Influencer>
+  selectedAll: () => void
+  clearSet: () => void
+}) => {
+  return (
+    <>
+      {selectedInfluencers.size > 0 && (
+        <Card
+          sx={{
+            position: 'fixed',
+            borderRadius: '15px',
+            minWidth: '950px',
+            padding: '10px 20px',
+            width: 'fit-content',
+            boxShadow: '0 4px 16px 0 rgba(0,0,0,.2)',
+            bottom: '75px',
+            left: '50%',
+            transform: 'translate(-50%,-50%)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '15px'
+            }}
+          >
+            <Button
+              variant='outlined'
+              size='small'
+              sx={{
+                borderRadius: '8px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px'
+              }}
+            >
+              {Array.from(selectedInfluencers)
+                .slice(0, 4)
+                .map((influencer, index) => (
+                  <div key={index}>
+                    <img
+                      src={influencer.pictureUrl}
+                      alt={influencer.fullName}
+                      width={35}
+                      height={35}
+                      style={{
+                        borderRadius: '50%',
+                        marginLeft: `-${5 * index}px`
+                      }}
+                    />
+                  </div>
+                ))}
+              {selectedInfluencers.size} creator
+            </Button>
+
+            <Button
+              variant='outlined'
+              size='small'
+              color='primary'
+              onClick={selectedAll}
+              sx={{
+                borderRadius: '12px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px'
+              }}
+            >
+              Select All 12 creator
+              <Icon icon='tabler:checks' fontSize={20} />
+            </Button>
+
+            <Button
+              variant='outlined'
+              color='secondary'
+              size='small'
+              onClick={clearSet}
+              sx={{
+                borderRadius: '12px',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px'
+              }}
+            >
+              Clear All
+              <Icon icon='tabler:checks' fontSize={20} />
+            </Button>
+          </Box>
+
+          <ManageFavorites selectedInfluencers={selectedInfluencers} clearSet={clearSet} />
+        </Card>
+      )}
+    </>
+  )
+}

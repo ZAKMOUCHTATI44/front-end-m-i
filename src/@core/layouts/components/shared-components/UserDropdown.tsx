@@ -143,7 +143,7 @@ const UserDropdown = (props: Props) => {
             Aperçu du compte
           </Box>
         </MenuItemStyled>
-        <MenuItemStyled sx={{ p: 0 }} onClick={() => handleDropdownClose()}>
+        <MenuItemStyled sx={{ p: 0 }} onClick={() => router.push('/my-files')}>
           <Box sx={styles}>
             <Icon icon='tabler:settings' />
             Mes fichiers

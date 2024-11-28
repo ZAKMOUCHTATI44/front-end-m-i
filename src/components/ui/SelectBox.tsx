@@ -13,12 +13,14 @@ const SelectBox = ({
   label,
   items,
   defaultValue,
+  value,
   id,
   handleChange
 }: {
   label: string
   items: SelectItems[]
   defaultValue?: string
+  value?: string | null
   id: string
   handleChange: (value: string) => void
 }) => {
@@ -29,6 +31,7 @@ const SelectBox = ({
       <CustomTextField
         fullWidth
         select
+        value={value}
         defaultValue={defaultValue}
         id={id}
         onChange={e => handleChange(e.target.value)}

@@ -1,11 +1,6 @@
 // ** React Imports
 
 // ** MUI Imports
-import Drawer from '@mui/material/Drawer'
-import { styled } from '@mui/material/styles'
-import IconButton from '@mui/material/IconButton'
-import Typography from '@mui/material/Typography'
-import Box, { BoxProps } from '@mui/material/Box'
 
 // ** Custom Component Import
 
@@ -14,44 +9,41 @@ import Box, { BoxProps } from '@mui/material/Box'
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
 import SelectBox from './ui/SelectBox'
-import categories from '../data/categories.json'
-import CustoumRadio from './ui/CustoumRadio'
-import { Button } from '@mui/material'
+import { Button, Grid } from '@mui/material'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import api from 'src/lib/api'
+import Error500 from 'src/pages/500'
+import Loading from './Loading'
+import UseQueryHooks from 'src/lib/react-query'
 
 // ** Store Imports
 
 // ** Actions Imports
 
-const Header = styled(Box)<BoxProps>(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  padding: theme.spacing(3),
-  justifyContent: 'space-between'
-}))
-
-const FiltersInfluenceurs = ({ open, toggle }: { open: boolean; toggle: () => void }) => {
+interface NiceResponse {
+  data: {
+    label: string
+    value: string
+  }[]
+}
+const FiltersInfluenceurs = () => {
   // ** Props
 
   const router = useRouter()
 
-  const handleClose = () => {
-    toggle()
-  }
+  // const scoreList = [
+  //   { label: 'Audience Growth', value: 'audienceGrowth' },
+  //   { label: 'Instagram Score', value: 'instagramScore' },
+  //   { label: 'Tiktok Score', value: 'tiktokScore' },
+  //   { label: 'Youtube Score', value: 'youtubeScore' },
+  //   { label: 'Twitter Score', value: 'twitterScore' },
+  //   { label: 'Linkedin Score', value: 'linkedinScore' },
+  //   { label: 'Instagram Followers', value: 'instagramFollowers' },
+  //   { label: 'Tiktok Followers', value: 'tiktokFollowers' }
+  // ]
 
-  const scoreList = [
-    { label: 'Audience Growth', value: 'audienceGrowth' },
-    { label: 'Instagram Score', value: 'instagramScore' },
-    { label: 'Tiktok Score', value: 'tiktokScore' },
-    { label: 'Youtube Score', value: 'youtubeScore' },
-    { label: 'Twitter Score', value: 'twitterScore' },
-    { label: 'Linkedin Score', value: 'linkedinScore' },
-    { label: 'Instagram Followers', value: 'instagramFollowers' },
-    { label: 'Tiktok Followers', value: 'tiktokFollowers' }
-  ]
-
-  const socialMedia = [
+  const socialMediaList = [
     {
       label: 'Twitter',
       value: 'twitter',
@@ -84,135 +76,194 @@ const FiltersInfluenceurs = ({ open, toggle }: { open: boolean; toggle: () => vo
     }
   ]
 
+  // const influencerCategories = ['nano', 'micro', 'micro', 'celebrities']
+  const influencerCategories = [
+    {
+      label: 'Nano (1k - 30k)',
+      value: 'nano'
+    },
+    {
+      label: 'Micro (31k - 300k)',
+      value: 'micro'
+    },
+    {
+      label: 'Macro (300k - 2M)',
+      value: 'macro'
+    },
+    {
+      label: 'Celebrities ( +2M)',
+      value: 'celebrities'
+    }
+  ]
+
   const genders = [
     {
-      title: 'All',
-      value: 'all',
-      isSelected: true
+      label: 'Male',
+      value: 'male',
+      image: '/images/icons/male.png'
     },
     {
-      title: 'Male',
-      value: 'male'
-    },
-    {
-      title: 'Female',
-      value: 'female'
+      label: 'Female',
+      value: 'female',
+      image: '/images/icons/female.png'
     }
   ]
 
-  const profileType = [
+  const countries = [
     {
-      title: 'All',
-      value: 'all',
-      isSelected: true
+      label: 'Morocco',
+      value: 'MA',
+      image: 'https://flagcdn.com/w320/ma.png' // Flag image for Morocco
     },
     {
-      title: 'Creators',
-      value: 'creators'
+      label: 'Emirates',
+      value: 'AE',
+      image: 'https://flagcdn.com/w320/ae.png' // Flag image for UAE
     },
     {
-      title: 'Brands',
-      value: 'brands'
+      label: 'Qatar',
+      value: 'QA',
+      image: 'https://flagcdn.com/w320/qa.png' // Flag image for Qatar
     }
   ]
+
+  const { influencerCategory, category, socialMedia, gender } = router.query as {
+    influencerCategory?: string
+    category?: string
+    socialMedia?: string
+    gender?: string
+  }
 
   const [filters, setFilters] = useState({
+    influencerCategory: '0',
     orderBy: '0',
-    category: '',
-    socialMedia: '',
-    gender: '',
-    profileType: ''
+    category: '0',
+    socialMedia: '0',
+    gender: '0',
+    country: ''
   })
 
   const setTheFilters = () => {
     router.push({
       query: { ...router.query, ...filters }
     })
-    handleClose()
   }
 
+  const { error, isLoading, data } = UseQueryHooks<NiceResponse>(['niches'], async () => {
+    const response = await api.get<NiceResponse>('/niches')
+
+    return response.data
+  })
+
+  if (isLoading) return <Loading />
+  if (error) return <Error500 />
+
   return (
-    <Drawer
-      open={open}
-      anchor='right'
-      variant='temporary'
-      onClose={handleClose}
-      ModalProps={{ keepMounted: true }}
-      sx={{ '& .MuiDrawer-paper': { width: { xs: 300, sm: 400 } } }}
-    >
-      <Header sx={{ borderBottom: theme => `2px solid rgba(${theme.palette.customColors.main}, 0.16)` }}>
-        <Typography variant='h5'>Filters</Typography>
-        <IconButton
-          size='small'
-          onClick={handleClose}
-          sx={{
-            p: '0.438rem',
-            borderRadius: 1,
-            color: 'text.primary',
-            backgroundColor: 'action.selected',
-            '&:hover': {
-              backgroundColor: theme => `rgba(${theme.palette.customColors.main}, 0.16)`
-            }
-          }}
-        >
-          <Icon icon='tabler:x' fontSize='1.125rem' />
-        </IconButton>
-      </Header>
-      <Box
-        className='height-fill-available'
-        sx={{ display: 'flex', flexDirection: 'column', gap: theme => theme.spacing(6), p: theme => theme.spacing(3) }}
-      >
-        <SelectBox
-          handleChange={e => {
-            setFilters({ ...filters, orderBy: e })
-          }}
-          items={scoreList}
-          label='Sélectionner un ordre'
-          id='orderBy'
-          defaultValue='0'
-        />
-        <SelectBox
-          handleChange={e => {
-            setFilters({ ...filters, category: e })
-          }}
-          items={categories}
-          label='Sélectionner une niche'
-          id='category'
-          defaultValue='0'
-        />
-        <SelectBox
-          handleChange={e => {
-            setFilters({ ...filters, socialMedia: e })
-          }}
-          items={socialMedia}
-          label='Social Media'
-          id='social-media'
-          defaultValue='0'
-        />
-        <CustoumRadio
-          handleChange={e => {
-            setFilters({ ...filters, socialMedia: e })
-          }}
-          data={genders}
-          label='Le sexe'
-        />
-        <CustoumRadio
-          handleChange={e => {
-            setFilters({ ...filters, socialMedia: e })
-          }}
-          data={profileType}
-          label='Type de profil'
-        />
-      </Box>
-      <Box sx={{ display: 'flex', gap: theme => theme.spacing(2), p: theme => theme.spacing(3) }}>
-        <Button onClick={() => setTheFilters()} variant='contained' color='primary' style={{ width: '75%' }}>
-          Rafraîchir la recherche
-        </Button>
-        <Button onClick={handleClose} variant='outlined' color='secondary' style={{ width: '50%' }}>
-          Clear
-        </Button>
-      </Box>
-    </Drawer>
+    <form action='' method='get' style={{ width: '100%' }}>
+      <Grid container mt={2} spacing={6} sx={{ alignItems: 'end' }}>
+        <Grid item xs={2}>
+          <SelectBox
+            handleChange={e => {
+              setFilters({ ...filters, socialMedia: e })
+            }}
+            items={socialMediaList}
+            defaultValue={socialMedia}
+            value={filters.socialMedia}
+            label='Social Media'
+            id='social-media'
+          />
+        </Grid>
+        <Grid item xs={2}>
+          {data && data.data.length > 0 && (
+            <>
+              <SelectBox
+                handleChange={e => {
+                  setFilters({ ...filters, category: e })
+                }}
+                items={data.data}
+                label='Niche'
+                value={filters.category}
+                defaultValue={category}
+                id='category'
+              />
+            </>
+          )}
+        </Grid>
+
+        <Grid item xs={2}>
+          <SelectBox
+            handleChange={e => {
+              setFilters({ ...filters, influencerCategory: e })
+            }}
+            items={influencerCategories}
+            label='Influencer category'
+            value={filters.influencerCategory}
+            defaultValue={influencerCategory}
+            id='influencerCategory'
+          />
+        </Grid>
+
+        <Grid item xs={2}>
+          <SelectBox
+            handleChange={e => {
+              setFilters({ ...filters, gender: e })
+            }}
+            items={genders}
+            defaultValue={gender}
+            value={filters.gender}
+            label='All Genders'
+            id='gender'
+          />
+        </Grid>
+        <Grid item xs={2}>
+          <SelectBox
+            handleChange={e => {
+              setFilters({ ...filters, country: e })
+            }}
+            items={countries}
+            defaultValue='0'
+            label='Country'
+            id='country'
+          />
+        </Grid>
+        <Grid item xs={2}>
+          <div
+            style={{
+              display: 'flex',
+              gap: '10px'
+            }}
+          >
+            <Button
+              onClick={() => setTheFilters()}
+              variant='contained'
+              sx={{ '& svg': { mr: 1 }, backgroundColor: '#655BD3' }}
+            >
+              <Icon fontSize='1.125rem' icon='tabler:search' />
+              Search
+            </Button>
+            <Button
+              type='button'
+              onClick={() => {
+                router.push(router.pathname)
+                setFilters({
+                  orderBy: '0',
+                  influencerCategory: '0',
+                  category: '0',
+                  socialMedia: '0',
+                  gender: '0',
+                  country: ''
+                })
+              }}
+              variant='outlined'
+              sx={{ '& svg': { mr: 1 } }}
+            >
+              <Icon fontSize='1.125rem' icon='tabler:refresh' />
+              Reset
+            </Button>
+          </div>
+        </Grid>
+      </Grid>
+    </form>
   )
 }
 

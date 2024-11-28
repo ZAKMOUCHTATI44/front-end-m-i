@@ -9,7 +9,7 @@ ChartJS.register(ArcElement, Tooltip, Legend)
 
 const InfluenceScore = ({ data }: { data: Data }) => {
   return (
-    <Grid item xs={12} lg={8} spacing={6}>
+    <Grid item xs={12} lg={6} spacing={6}>
       <Card sx={{ padding: '20px', border: '1px solid #e2e8f0' }}>
         <Typography variant='h6' style={{ color: '#000', fontWeight: 'bold' }}>
           Influence Score
@@ -18,7 +18,7 @@ const InfluenceScore = ({ data }: { data: Data }) => {
         <Box
           sx={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
+            gridTemplateColumns: 'repeat(3, 1fr)',
             alignItems: 'center',
             gap: theme => theme.spacing(6),
             marginTop: '20px'
@@ -51,7 +51,7 @@ const InfluenceScore = ({ data }: { data: Data }) => {
                   textAlign: 'center' // Centre le texte horizontalement
                 }}
               >
-                {network.comment === 'low' ? '-' : '+'} {network.score} / 100
+                {network.comment === 'low' ? '-' : '+'} {Number(network.score).toFixed(2)} / 100
               </span>
             </Box>
           ))}
@@ -86,7 +86,7 @@ const InfluenceScore = ({ data }: { data: Data }) => {
             Industries & Niches
           </Typography>
           <Typography variant='subtitle2' style={{ display: 'block', fontWeight: 'bold', color: '#5045bc' }}>
-            {data.creator.industries[Object.keys(data.creator.industries)[0]].name}
+            {data.creator.industries?.name}
           </Typography>
         </Grid>
         <Grid xs={12} lg={6} sx={{ display: 'flex', justifyContent: 'center' }}>

@@ -33,6 +33,8 @@ interface NetworkStats {
   profileUrl: string
   score: string | null
   growth: Growth
+  username: string
+  isVerified: boolean
 }
 
 interface Country {
@@ -41,6 +43,7 @@ interface Country {
 }
 
 interface Influencer {
+  id: string
   _id: string
   pictureUrl: string
   fullName: string
@@ -275,8 +278,12 @@ interface Comment {
 
 interface CreatorData {
   _id: string
+  id: string
   isVerified: boolean
-  industries: Record<string, Industry>
+  industries: {
+    name: string
+  }
+  networksStats: NetworkStats[]
   topRanks: TopRank[]
   pictureUrl: string
   fullName: string
@@ -311,6 +318,7 @@ interface Data {
   networksCount: NetworksCount
   posts: Post[]
   totalCount: number
+  similarProfiles: Influencer[]
   creator: CreatorData
 }
 
@@ -455,4 +463,31 @@ interface Category {
   id: string
   label: string
   value: string
+}
+
+interface Project {
+  id: string
+  total_influencers_count: number
+  name: string
+  statutProjets: StatutProjets[]
+  created_at: string
+  updated_at: string
+}
+
+interface StatutProjets {
+  id: string
+  name: string
+  order: string
+  influencers: Influencer[]
+  influencers_count: string
+}
+
+interface ListType {
+  name: string
+  id: string
+  influencers_count: string
+  influencers: Influencer[]
+  isSelected: boolean
+  created_at: string
+  updated_at: string
 }

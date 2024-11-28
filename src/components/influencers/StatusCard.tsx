@@ -7,8 +7,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     gap: '2rem',
     padding: '1rem',
     borderRadius: '8px',
-    backgroundColor: '#f9f9f9',
-
+    backgroundColor: '#f9f9f9'
   },
   section: {
     display: 'flex',
@@ -43,24 +42,24 @@ const badgeStyle = (backgroundColor: string, color: string): React.CSSProperties
 
 const StatusCard = ({ data }: { data: Data }) => {
   return (
-    <div style={styles.container} >
-      <div style={styles.section}  >
+    <div style={styles.container}>
+      <div style={styles.section}>
         <div style={styles.label}>
           Growth <span style={badgeStyle('#e6f4ea', '#1c7c54')}>● Gaining</span>
         </div>
-        <div style={styles.value}>{data.creator.metrics.growth.value}</div>
+        <div style={styles.value}>{data.creator.metrics.growth?.value}</div>
       </div>
       <div style={styles.section}>
         <div style={styles.label}>
           Activity <span style={badgeStyle('#e6f4ea', '#1c7c54')}>● Recent</span>
         </div>
-        <div style={styles.value}>{data.creator.metrics.activity.value} </div>
+        <div style={styles.value}>{data.creator.metrics.activity?.value} </div>
       </div>
       <div style={styles.section}>
         <div style={styles.label}>
           Reachability <span style={badgeStyle('#f8e1e1', '#d9534f')}>● Out of Scope</span>
         </div>
-        <div style={styles.value}>{data.creator.metrics.reachability.value}</div>
+        <div style={styles.value}>{data.creator.metrics.reachability?.value}</div>
       </div>
     </div>
   )

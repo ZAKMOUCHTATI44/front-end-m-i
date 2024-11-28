@@ -12,6 +12,7 @@ import authConfig from 'src/configs/auth'
 
 // ** Types
 import { AuthValuesType, LoginParams, ErrCallbackType, UserDataType } from './types'
+import { setAuthToken } from 'src/lib/api'
 
 // ** Defaults
 const defaultProvider: AuthValuesType = {
@@ -39,9 +40,10 @@ const AuthProvider = ({ children }: Props) => {
 
   useEffect(() => {
     const initAuth = async (): Promise<void> => {
-      const storedToken = window.localStorage.getItem(authConfig.storageTokenKeyName)!
+      const storedToken = window.localStorage.getItem(authConfig.storageTokenKeyName)
       if (storedToken) {
         setLoading(true)
+        setAuthToken(storedToken)
         await axios
           .get(authConfig.meEndpoint, {
             headers: {
@@ -76,12 +78,15 @@ const AuthProvider = ({ children }: Props) => {
       .post(authConfig.loginEndpoint, params)
       .then(async response => {
         params.rememberMe
-          ? window.localStorage.setItem(authConfig.storageTokenKeyName, response.data.accessToken)
+          ? window.localStorage.setItem(authConfig.storageTokenKeyName, response.data.response.accessToken)
           : null
         const returnUrl = router.query.returnUrl
 
-        setUser({ ...response.data.userData })
-        params.rememberMe ? window.localStorage.setItem('userData', JSON.stringify(response.data.userData)) : null
+        setUser({ ...response.data.response.userData })
+
+        params.rememberMe
+          ? window.localStorage.setItem('userData', JSON.stringify(response.data.response.userData))
+          : null
 
         const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : '/'
 

@@ -1,6 +1,7 @@
 import { Box } from '@mui/system'
 import React from 'react'
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
+import { formatNumber } from 'src/lib/numbers'
 
 // Define types for data
 interface ChartData {
@@ -95,7 +96,7 @@ const SocialMediaChart = ({ data }: { data: Data }) => {
                   className='legend-item'
                 >
                   <img src={entry.icon} alt={`${entry.name} icon`} width='17' height='17' />
-                  <span>{`${entry.label}`}</span>
+                  <span>{`${formatNumber(Number(entry.label))}`}</span>
                 </Box>
               )}
             </>

@@ -3,17 +3,18 @@ import React from 'react'
 import DataTable, { TableColumn } from 'react-data-table-component'
 import AudienceGrowthChart from './AudienceGrowthChart'
 import { useRouter } from 'next/router'
-import { useQuery } from 'react-query'
 import api from 'src/lib/api'
 import Error500 from 'src/pages/500'
 import Loading from '../Loading'
+import { formatNumber } from 'src/lib/numbers'
+import UseQueryHooks from 'src/lib/react-query'
 
 const SocialCoverage = () => {
   const router = useRouter()
 
   const { id } = router.query
 
-  const { error, isLoading, data } = useQuery<DataSocialCoverage>(
+  const { error, isLoading, data } = UseQueryHooks<DataSocialCoverage>(
     [`/influencers-social-coverage/${id}`],
     async () => {
       const response = await api.get<DataSocialCoverage>(`/influencers/social-coverage/${id}`)
@@ -45,10 +46,12 @@ const SocialCoverage = () => {
             <Typography variant='h6'>{row.fullName}</Typography>
             <Typography variant='caption'>@{row.username}</Typography>
           </div>
-          {row.isVerified && (
+          {row.isVerified ? (
             <span>
               <img src={`/images/social-media/verified.png`} alt={row.fullName} width={15} height={15} />
             </span>
+          ) : (
+            <></>
           )}
         </Box>
       )
@@ -80,17 +83,21 @@ const SocialCoverage = () => {
       width: '150px',
       sortable: true,
       id: 'follower_Count',
-      selector: row => row.follower_Count
-    },
-    {
-      name: 'Last Activity',
-      width: '150px',
-      sortable: true,
-      id: 'niche',
+      selector: row => row.follower_Count,
       cell(row) {
-        return <p>{row.metrics.last_activity_str.value} </p>
+        return <p>{formatNumber(Number(row.follower_Count))}</p>
       }
     },
+
+    // {
+    //   name: 'Last Activity',
+    //   width: '150px',
+    //   sortable: true,
+    //   id: 'niche',
+    //   cell(row) {
+    //     return <p>{row.metrics.last_activity_str.value} </p>
+    //   }
+    // },
     {
       name: 'Activity',
       width: '200px',
