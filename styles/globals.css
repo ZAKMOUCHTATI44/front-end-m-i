@@ -35,7 +35,6 @@ code[class*='language-'] {
 
 .growth.high {
   background-color: rgba(33, 186, 69, 0.15);
-  color: #000;
   padding: 10px;
   border-radius: 10px;
 }
@@ -70,4 +69,26 @@ code[class*='language-'] {
 
 .hover-icon-heart:hover {
   color: red;
+}
+
+.title-gradient {
+  background: linear-gradient(90deg, #12b5de -30%, #3dd1fe 30%, #ff3bd4 90%);
+  text-transform: capitalize;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark-datatable .dknajr,
+.dark-datatable .hudJpJ,
+.dark-datatable .iGxMlw,
+.dark-datatable .hDPlLz,
+.dark-datatable .cPTFZC {
+  background-color: #2f3348 !important;
+  color: white !important;
+  fill: white !important;
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list {
+  max-height: 450px !important;
 }

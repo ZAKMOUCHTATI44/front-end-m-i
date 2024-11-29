@@ -124,6 +124,16 @@ const FiltersInfluenceurs = () => {
       label: 'Qatar',
       value: 'QA',
       image: 'https://flagcdn.com/w320/qa.png' // Flag image for Qatar
+    },
+    {
+      label: 'Egypte',
+      value: 'eg',
+      image: 'https://flagcdn.com/w320/eg.png' // Flag image for Qatar
+    },
+    {
+      label: 'Saudi Arabia',
+      value: 'sa',
+      image: 'https://flagcdn.com/w320/sa.png' // Flag image for Qatar
     }
   ]
 
@@ -233,11 +243,7 @@ const FiltersInfluenceurs = () => {
               gap: '10px'
             }}
           >
-            <Button
-              onClick={() => setTheFilters()}
-              variant='contained'
-              sx={{ '& svg': { mr: 1 }, backgroundColor: '#655BD3' }}
-            >
+            <Button color='primary' onClick={() => setTheFilters()} variant='contained' sx={{ '& svg': { mr: 1 } }}>
               <Icon fontSize='1.125rem' icon='tabler:search' />
               Search
             </Button>
@@ -258,7 +264,6 @@ const FiltersInfluenceurs = () => {
               sx={{ '& svg': { mr: 1 } }}
             >
               <Icon fontSize='1.125rem' icon='tabler:refresh' />
-              Reset
             </Button>
           </div>
         </Grid>

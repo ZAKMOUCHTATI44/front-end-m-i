@@ -1,16 +1,33 @@
+import { Typography } from '@mui/material'
+import { Box } from '@mui/system'
+import Link from 'next/link'
 import React from 'react'
 import DataTable, { TableColumn } from 'react-data-table-component'
-import { Box } from '@mui/system'
-import { Typography } from '@mui/material'
-import Link from 'next/link'
-import { formatNumber } from 'src/lib/numbers'
-import DeleteInfluencersFavoris from '../favoris/[id]/DeleteInfluencersFavoris'
 import { useSettings } from 'src/@core/hooks/useSettings'
+import { formatNumber } from 'src/lib/numbers'
 
-const DataTableInfluencers = ({ data }: { data: Influencer[] }) => {
+const DataTableInfluencersRanking = ({ data }: { data: Influencer[] }) => {
   const { settings } = useSettings()
 
   const columns: TableColumn<Influencer>[] = [
+    {
+      name: 'Ranking',
+      sortable: true,
+      id: 'rank',
+      maxWidth: '15px',
+      selector: row => row.rank,
+      cell(row) {
+        return (
+          <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
+            {[1, 2, 3].includes(row.rank) ? (
+              <img width={25} height={25} src={`/images/icons/${row.rank}.png`} alt={row.fullName} />
+            ) : (
+              <Typography variant='h6'># {row.rank}</Typography>
+            )}
+          </Box>
+        )
+      }
+    },
     {
       name: 'Creator',
       sortable: true,
@@ -32,12 +49,33 @@ const DataTableInfluencers = ({ data }: { data: Influencer[] }) => {
         </Link>
       )
     },
-
     {
       name: 'Niche',
       sortable: true,
       id: 'niche',
       maxWidth: '250px',
+      selector: row => row.title
+    },
+    {
+      name: 'Country',
+      sortable: true,
+      id: 'country',
+      maxWidth: '150px',
+      cell(row) {
+        return (
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              flexDirection: 'column',
+              alignItems: 'center'
+            }}
+          >
+            <img src='/ma.png' alt='' height={25} />
+            <Typography variant='caption'>{row.country.name}</Typography>
+          </Box>
+        )
+      },
       selector: row => row.title
     },
     {
@@ -67,19 +105,11 @@ const DataTableInfluencers = ({ data }: { data: Influencer[] }) => {
       }
     },
     {
-      name: 'Croissance',
+      name: 'Growth',
       sortable: true,
       id: 'growth',
       cell(row) {
         return <span className={`growth ${row.growth.type === 'greater' ? 'high' : 'lower'}`}>{row.growth.value}</span>
-      }
-    },
-    {
-      name: 'Action',
-      sortable: true,
-      id: 'growth',
-      cell(row) {
-        return <DeleteInfluencersFavoris id={row.id} />
       }
     }
   ]
@@ -97,4 +127,4 @@ const DataTableInfluencers = ({ data }: { data: Influencer[] }) => {
   )
 }
 
-export default DataTableInfluencers
+export default DataTableInfluencersRanking

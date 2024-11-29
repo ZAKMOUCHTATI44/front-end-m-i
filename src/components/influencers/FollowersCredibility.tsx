@@ -77,7 +77,7 @@ const FollowersCredibility = ({ props }: { props: PropsType }) => {
         <div style={{ width: '150px' }}>
           <Doughnut data={breakdownData} options={options} />
         </div>
-        <div style={{ marginTop: '1rem', fontSize: '14px', color: '#666' }}>
+        <div style={{ marginTop: '1rem', fontSize: '14px' }}>
           <p>
             <span
               style={{

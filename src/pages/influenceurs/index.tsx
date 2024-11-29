@@ -70,7 +70,11 @@ const Page = () => {
         <Grid item xs={12} lg={12}>
           <Card sx={{ position: 'relative', padding: '30px 20px', overflow: 'visible' }}>
             <Box>
-              <Typography variant='h4' sx={{ mb: 1.5, textAlign: 'center', fontWeight: 'bold', color: '#000' }}>
+              <Typography
+                variant='h4'
+                className='title-gradient '
+                sx={{ mb: 1.5, textAlign: 'center', fontWeight: 'bold' }}
+              >
                 Find the right creators according to your needs
               </Typography>
 

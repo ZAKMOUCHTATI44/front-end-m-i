@@ -14,13 +14,12 @@ const Niches = () => {
             padding: '40px 60px',
             display: 'flex',
             flexDirection: 'column',
-            gap: '25px',
-            boxShadow: `0 0 0 2px #EFEFEF`
+            gap: '25px'
           }}
         >
           <Box>
             <Typography variant='h4' sx={{ mb: 1.5, textAlign: 'center', fontWeight: 'bold' }}>
-              Parcourir plus de 600+ Niches
+              Discover Influencers in Every Niche
             </Typography>
           </Box>
           <Box sx={{ display: 'flex', justifyContent: 'center', width: '50%', marginInline: 'auto' }}>
@@ -29,7 +28,7 @@ const Niches = () => {
         </Card>
       </Grid>
       <Grid item xs={12} lg={12}>
-        <Typography variant='h5'>Toutes les industries et tous les créneaux</Typography>
+        <Typography variant='h5'>All Industries and All Categories</Typography>
       </Grid>
       {categories.map(category => (
         <Grid key={category.id} item xs={12} sm={6} md={4}>

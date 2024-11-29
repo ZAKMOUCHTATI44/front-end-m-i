@@ -1,6 +1,5 @@
 import React from 'react'
-import { Box, Button, Typography } from '@mui/material'
-import Link from 'next/link'
+import { Box, Button, Card, Typography } from '@mui/material'
 import { useRouter } from 'next/router'
 import Icon from 'src/@core/components/icon'
 import SettingsFavoris from './SettingsFavoris'
@@ -14,15 +13,14 @@ const containerStyle: React.CSSProperties = {
   color: '#C0B6E0',
   fontFamily: 'Arial, sans-serif',
   fontSize: '18px',
-  fontWeight: '500',
-  backgroundColor: '#FFF'
+  fontWeight: '500'
 }
 
 const CardFavoris = ({ favorite, queryKey }: { favorite: ListType; queryKey: string }) => {
   const router = useRouter()
 
   return (
-    <div style={containerStyle}>
+    <Card style={containerStyle}>
       <Box
         sx={{
           // borderBottom: '1px solid #D3D3D3',
@@ -32,16 +30,16 @@ const CardFavoris = ({ favorite, queryKey }: { favorite: ListType; queryKey: str
           alignItems: 'center'
         }}
       >
-        <Link
+        <Typography
+          onClick={() => {
+            router.push(`favoris/${favorite.id}`)
+          }}
           style={{
-            textDecoration: 'none',
-            color: '#000',
             fontWeight: 'bold'
           }}
-          href={`favoris/${favorite.id}`}
         >
           {favorite.name}
-        </Link>
+        </Typography>
         <Button
           size='small'
           sx={{
@@ -68,7 +66,6 @@ const CardFavoris = ({ favorite, queryKey }: { favorite: ListType; queryKey: str
               </div>
             ))}
         </Button>
-        {/* <EditProjetName id={project.id} name={project.name} /> */}
       </Box>
       <div
         onClick={() => {
@@ -89,7 +86,7 @@ const CardFavoris = ({ favorite, queryKey }: { favorite: ListType; queryKey: str
             gap: '5px'
           }}
         >
-          <Icon icon='tabler:users' fontSize={15} color='#000' />
+          <Icon icon='tabler:users' fontSize={15} />
           <Typography>{favorite.influencers_count} Influencers</Typography>
         </div>
       </div>
@@ -119,7 +116,7 @@ const CardFavoris = ({ favorite, queryKey }: { favorite: ListType; queryKey: str
           <SettingsFavoris id={favorite.id} name={favorite.name} queryKey={queryKey} />
         </Box>
       </div>
-    </div>
+    </Card>
   )
 }
 

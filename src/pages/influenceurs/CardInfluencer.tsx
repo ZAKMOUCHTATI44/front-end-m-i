@@ -19,7 +19,7 @@ const CardInfluencer = ({
   return (
     <Card
       sx={{
-        backgroundColor: selected ? '#ebecff' : '#FFF !important',
+        border: selected ? '1px solid #ff56e3' : 'none', // Ombre sur le survol
         padding: '15px',
         display: 'flex',
         flexDirection: 'column',
@@ -27,6 +27,7 @@ const CardInfluencer = ({
         height: '100%',
         justifyContent: 'start',
         transition: 'transform 0.3s ease, box-shadow 0.3s ease', // Animation pour l'effet d'ombre et de transformation
+        color: '#ccceef',
         '&:hover': {
           boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.2)', // Ombre sur le survol
           transform: 'translateY(-5px)' // Légère élévation sur le survol
@@ -42,10 +43,10 @@ const CardInfluencer = ({
           justifyContent: 'space-between'
         }}
       >
-        <Typography variant='h4' sx={{ color: '#673fb5' }}>
+        <Typography variant='h4' sx={{ color: '#ff56e3' }}>
           # {influencer.rank}
         </Typography>
-        <Link href={`influenceurs/show/${influencer._id}`} target='_blank'>
+        <Link href={`influenceurs/show/${influencer._id}`} target='_blank' style={{ color: '#ff56e3' }}>
           <Icon icon='tabler:arrow-left-from-arc' fontSize={20} />
         </Link>
       </Box>
@@ -83,14 +84,12 @@ const CardInfluencer = ({
             />
           </Box>
           <div>
-            <Typography sx={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#000', fontWeight: 'bold' }}>
+            <Typography sx={{ display: 'flex', alignItems: 'center', gap: '5px', fontWeight: 'bold' }}>
               {influencer.fullName}
               <img src='/images/social-media/verified.png' width={18} height={18} alt='Verified' />
             </Typography>
             <Typography>{influencer.nicheName}</Typography>
-            <Typography variant='caption' sx={{ color: '#000' }}>
-              {influencer.title}
-            </Typography>
+            <Typography variant='caption'>{influencer.title}</Typography>
           </div>
         </Box>
       </Box>
@@ -103,7 +102,7 @@ const CardInfluencer = ({
         >
           {influencer.growth.value}
         </Button>
-        <Button color={'secondary'} variant='tonal' sx={{ gap: '15px', fontWeight: 'bold', color: '#000' }}>
+        <Button color={'secondary'} variant='tonal' sx={{ gap: '15px', fontWeight: 'bold' }}>
           <img
             src={`/images/social-media/${influencer.networksStats[0]?.network}.png`}
             alt={influencer.networksStats[0]?.network}

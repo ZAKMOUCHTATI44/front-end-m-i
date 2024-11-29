@@ -8,9 +8,11 @@ import Error500 from 'src/pages/500'
 import Loading from '../Loading'
 import { formatNumber } from 'src/lib/numbers'
 import UseQueryHooks from 'src/lib/react-query'
+import { useSettings } from 'src/@core/hooks/useSettings'
 
 const SocialCoverage = () => {
   const router = useRouter()
+  const { settings } = useSettings()
 
   const { id } = router.query
 
@@ -169,7 +171,9 @@ const SocialCoverage = () => {
 
   return (
     <>
-      {data && data.socialCoverage && <DataTable columns={columns} data={data.socialCoverage.networks} />}
+      {data && data.socialCoverage && (
+        <DataTable className={`${settings.mode}-datatable`} columns={columns} data={data.socialCoverage.networks} />
+      )}
       <Grid container spacing={6} mt={6}>
         {data?.socialCoverage.audienceEvolutions.map(item => (
           <AudienceGrowthChart key={item.network} network={item.network} data={item.data} />

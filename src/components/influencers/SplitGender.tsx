@@ -54,7 +54,7 @@ const SplitGender = ({ props }: { props: GenderProps }) => {
           </div>
         </div>
 
-        <div style={{ marginTop: '1rem', fontSize: '14px', color: '#666' }}>
+        <div style={{ marginTop: '1rem', fontSize: '14px' }}>
           <p>
             <span
               style={{

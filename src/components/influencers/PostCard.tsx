@@ -32,7 +32,7 @@ const PostCard = ({ post }: { post: Post }) => {
           <img src={`/images/social-media/${post.network}.png`} alt='' width={15} height={15} />
           <span>{post.postType.label}</span>
           <Link href={post.mediaUrl} target='_blank'>
-            <Icon icon='tabler:share-2' fontSize={20} color='#000' />
+            <Icon icon='tabler:share-2' fontSize={20} color='#ff56e3' />
           </Link>
         </Box>
       </Box>

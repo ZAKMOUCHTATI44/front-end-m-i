@@ -2,7 +2,8 @@ import { Card, Grid, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
-import StatusCard from 'src/components/influencers/StatusCard'
+
+// import StatusCard from 'src/components/influencers/StatusCard'
 import SocialMediaChart from 'src/components/influencers/SocialMediaChart'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
@@ -10,8 +11,8 @@ ChartJS.register(ArcElement, Tooltip, Legend)
 const InfluenceScore = ({ data }: { data: Data }) => {
   return (
     <Grid item xs={12} lg={6} spacing={6}>
-      <Card sx={{ padding: '20px', border: '1px solid #e2e8f0' }}>
-        <Typography variant='h6' style={{ color: '#000', fontWeight: 'bold' }}>
+      <Card sx={{ padding: '20px' }}>
+        <Typography variant='h6' style={{ fontWeight: 'bold' }}>
           Influence Score
         </Typography>
 
@@ -57,17 +58,18 @@ const InfluenceScore = ({ data }: { data: Data }) => {
           ))}
         </Box>
       </Card>
-      <Card sx={{ padding: '20px', mt: theme => theme.spacing(6) }}>
+      {/* <Card sx={{ padding: '20px', mt: theme => theme.spacing(6) }}>
         <StatusCard data={data} />
-      </Card>
+      </Card> */}
       <Card
         sx={{
           padding: '10px',
           mt: theme => theme.spacing(6),
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'start',
-          border: '1px solid #e2e8f0'
+          alignItems: 'start'
+
+          // border: '1px solid #e2e8f0'
         }}
       >
         <Grid
@@ -82,10 +84,10 @@ const InfluenceScore = ({ data }: { data: Data }) => {
             borderRight: '1px solid #e2e8f0'
           }}
         >
-          <Typography variant='h6' style={{ display: 'block', color: '#000', fontWeight: 'bold' }}>
+          <Typography variant='h6' style={{ display: 'block', fontWeight: 'bold' }}>
             Industries & Niches
           </Typography>
-          <Typography variant='subtitle2' style={{ display: 'block', fontWeight: 'bold', color: '#5045bc' }}>
+          <Typography variant='subtitle2' style={{ display: 'block', fontWeight: 'bold', fontSize: '1.1em' }}>
             {data.creator.industries?.name}
           </Typography>
         </Grid>

@@ -7,7 +7,7 @@ import CardMedia from '@mui/material/CardMedia'
 
 const CardDetails = ({ influencer }: { influencer: CreatorData }) => {
   return (
-    <Card sx={{ border: '1px solid #e2e8f0' }}>
+    <Card>
       <CardMedia
         component='img'
         alt='profile-header'
@@ -36,7 +36,7 @@ const CardDetails = ({ influencer }: { influencer: CreatorData }) => {
           />
         </Box>
 
-        <Typography variant='h4' sx={{ mb: 1, color: '#000' }}>
+        <Typography variant='h4' sx={{ mb: 1 }}>
           {influencer.fullName}&nbsp;
           <img
             src='/images/social-media/verified.png'

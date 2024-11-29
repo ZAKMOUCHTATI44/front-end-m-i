@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Card, Typography } from '@mui/material'
 import React, { useState, CSSProperties } from 'react'
 import DialogInfluencers from './DialogInfluencers'
 import UseQueryHooks from 'src/lib/react-query'
@@ -36,7 +36,6 @@ const styles = {
   column: {
     flex: '1',
     minWidth: '300px',
-    backgroundColor: '#f9fafb',
     borderRadius: '8px',
     border: '1px solid #e5e7eb'
   },
@@ -73,7 +72,6 @@ const styles = {
   } as CSSProperties,
   task: {
     padding: '12px',
-    backgroundColor: 'white',
     borderRadius: '8px',
     border: '1px solid #e5e7eb',
     boxShadow: '0 1px 2px rgba(0, 0, 0, 0.05)',
@@ -197,7 +195,7 @@ const KanbanBoard = ({ id }: { id: string }) => {
             {data &&
               data.statutProjets.length > 0 &&
               data.statutProjets.map(column => (
-                <div
+                <Card
                   key={column.id}
                   style={styles.column}
                   onDragOver={handleDragOver}
@@ -220,7 +218,7 @@ const KanbanBoard = ({ id }: { id: string }) => {
                   </div>
                   <div style={styles.columnContent}>
                     {column.influencers.map(influencer => (
-                      <div
+                      <Card
                         key={influencer._id}
                         draggable
                         onDragStart={() => handleDragStart(influencer, column.id)}
@@ -239,7 +237,7 @@ const KanbanBoard = ({ id }: { id: string }) => {
                             <div style={styles.taskDescription}>{influencer.nicheName}</div>
                           </div>
                         </div>
-                      </div>
+                      </Card>
                     ))}
                   </div>
                   <DialogInfluencers
@@ -247,7 +245,7 @@ const KanbanBoard = ({ id }: { id: string }) => {
                       handleAddInfluencers(column.id, influencer)
                     }}
                   />
-                </div>
+                </Card>
               ))}
           </div>
         </div>

@@ -2,6 +2,7 @@ import { Button, Card, Typography } from '@mui/material'
 import React from 'react'
 import CustomTextField from 'src/@core/components/mui/text-field'
 import Icon from 'src/@core/components/icon'
+import EmptyFilters from './EmptyFilters'
 
 const Page = () => {
   return (
@@ -61,28 +62,7 @@ const Page = () => {
           gap: '20px'
         }}
       >
-        <Typography
-          variant='h5'
-          sx={{
-            fontWeight: 'bold'
-          }}
-        >
-          My Recent Audits
-        </Typography>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', marginTop: '40px' }}>
-          {/* {data &&
-            data.data.length > 0 &&
-            data.data.slice(0.6).map(item => (
-              <div key={item._id}>
-                <img src={item.pictureUrl} alt={item.fullName} />
-                <div>
-                  <Typography>{item.fullName}</Typography>
-                  <Typography>{item.growth.value}</Typography>
-                </div>
-              </div>
-            ))} */}
-        </div>
+        <EmptyFilters />
       </Card>
     </div>
   )

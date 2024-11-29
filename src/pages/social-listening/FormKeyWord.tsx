@@ -53,7 +53,7 @@ const FormKeyWord = (props: Props) => {
     <Card>
       <CardContent sx={{ pt: 24, textAlign: 'center', pb: theme => `${theme.spacing(24)} !important` }}>
         <Typography sx={{ mb: 4, fontWeight: 500, fontSize: '1.225rem', lineHeight: 1.385 }}>
-          Analyseur de Mots-Clés pour la Veille Sociale
+          Keyword Analyzer for Social Monitoring
         </Typography>
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
           <CustomTextFieldStyled
