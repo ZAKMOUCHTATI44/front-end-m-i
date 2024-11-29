@@ -1,6 +1,8 @@
-import { Button, Card, Typography } from '@mui/material'
+import { Card, Typography } from '@mui/material'
+import { Box } from '@mui/system'
 import React from 'react'
 import Icon from 'src/@core/components/icon'
+import NotAvailable from './NotAvailable'
 
 interface Product {
   id: number
@@ -10,38 +12,45 @@ interface Product {
 }
 const ProductsCard = ({ product }: { product: Product }) => {
   return (
-    <Card sx={{ padding: '20px', position: 'relative' }}>
-      <div
-        className='product-image'
-        style={{
-          backgroundImage: `url(${product.image})`,
-          width: '100%',
-          height: '200px',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
+    <Card
+      sx={{
+        padding: '20px',
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between'
+      }}
+    >
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center'
         }}
-      ></div>
+      >
+        <img src={product.image} width={250} alt='' />
+      </Box>
       <span style={{ position: 'absolute', top: '15px', right: '15px' }}>
         <Icon icon='tabler:heart' fontSize={20} className='hover-icon-heart' />
       </span>
-
       <div
         style={{
           display: 'flex',
           flexDirection: 'column',
           gap: '15px',
-          borderTop: '2px solid #f8f7fa',
           paddingTop: '25px',
           marginTop: '25px'
         }}
       >
         <Typography variant='caption'>{product.category}</Typography>
-        <Typography variant='h6' sx={{ fontWeight: '900' }}>
+        <Typography variant='h6' sx={{ fontWeight: '900', height: '25px' }}>
           {product.title}
         </Typography>
-        <Button variant='contained' size='medium' color='primary'>
-          Show details
-        </Button>
+        <Typography>
+          <Icon icon='tabler:dollar' fontSize={20} />
+          Commission: 15 $
+        </Typography>
+
+        <NotAvailable />
       </div>
     </Card>
   )

@@ -79,9 +79,9 @@ code[class*='language-'] {
   -webkit-text-fill-color: transparent;
 }
 
-.dark-datatable .dknajr,
-.dark-datatable .hudJpJ,
-.dark-datatable .iGxMlw,
+.dark-datatable .rdt_TableHeadRow,
+.dark-datatable .rdt_TableBody,
+.dark-datatable .rdt_Pagination,
 .dark-datatable .hDPlLz,
 .dark-datatable .cPTFZC {
   background-color: #2f3348 !important;
