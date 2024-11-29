@@ -21,7 +21,7 @@ import UseQueryHooks from 'src/lib/react-query'
 
 // ** Actions Imports
 
-interface NiceResponse {
+interface NicheResponse {
   data: {
     label: string
     value: string
@@ -159,8 +159,8 @@ const FiltersInfluenceurs = () => {
     })
   }
 
-  const { error, isLoading, data } = UseQueryHooks<NiceResponse>(['niches'], async () => {
-    const response = await api.get<NiceResponse>('/niches')
+  const { error, isLoading, data } = UseQueryHooks<NicheResponse>(['niches'], async () => {
+    const response = await api.get<NicheResponse>('/niches')
 
     return response.data
   })

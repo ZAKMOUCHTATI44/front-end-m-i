@@ -1,36 +1,66 @@
-import { Button, Card, Typography } from '@mui/material'
-import Link from 'next/link'
+import { Card, Typography } from '@mui/material'
 import React from 'react'
-import Icon from 'src/@core/components/icon'
 
 interface Category {
-  id: string
   value: string
   label: string
+  image: string
 }
+
 const CardNiche = ({ category }: { category: Category }) => {
   return (
     <Card
       sx={{
+        position: 'relative',
         padding: '15px',
-        boxShadow: `0 0 0 2px #EFEFEF`,
+        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
         display: 'flex',
         flexDirection: 'column',
-        height: '100%',
-        gap: '15px',
-        justifyContent: 'start'
+        justifyContent: 'flex-end',
+        backgroundImage: `url("${category.image}")`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        height: '250px',
+        borderRadius: '10px',
+        overflow: 'hidden',
+        color: '#fff'
       }}
     >
-      <Typography variant='h5' sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <div>
-          <Button sx={{ padding: '5px 5px', fontSize: '25px', marginRight: '10px' }} color='primary' variant='tonal'>
-            {category.label.split(' ', 1)}
-          </Button>
-          {category.label.slice(2)}
-        </div>
-        <Link href={`/ranking?niche=${category.value}`}>
-          <Icon icon='tabler:arrow-left-from-arc' fontSize={20} />
-        </Link>
+      {/* Semi-transparent overlay */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          background: 'rgba(0, 0, 0 , 0.2)',
+          zIndex: -1
+        }}
+      />
+      {/* Content */}
+      <Typography
+        variant='h5'
+        sx={{
+          position: 'relative',
+          zIndex: 2,
+          color: '#fff',
+          fontWeight: 'bold',
+          marginBottom: '8px'
+        }}
+      >
+        {category.label || 'Marketing & Sales'}
+      </Typography>
+      <Typography
+        variant='h6'
+        sx={{
+          position: 'relative',
+          color: '#fff',
+          zIndex: 2,
+          fontSize: '0.9rem'
+        }}
+      >
+        Discover insights and resources in {category.label.toLowerCase()}.
       </Typography>
     </Card>
   )
