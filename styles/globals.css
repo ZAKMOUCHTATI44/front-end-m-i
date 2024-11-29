@@ -82,7 +82,8 @@ code[class*='language-'] {
 .dark-datatable .rdt_TableHeadRow,
 .dark-datatable .rdt_TableBody,
 .dark-datatable .rdt_Pagination,
-.dark-datatable .hDPlLz,
+.dark-datatable .rdt_Pagination button,
+.dark-datatable .rdt_TableRow,
 .dark-datatable .cPTFZC {
   background-color: #2f3348 !important;
   color: white !important;
