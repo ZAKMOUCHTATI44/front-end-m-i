@@ -94,28 +94,28 @@ const VerticalNavHeader = (props: Props) => {
       ) : (
         <LinkStyled href='/'>
           <img
-            width={35}
+            width={30}
             height={40}
             style={{ marginTop: '20px' }}
             src='/images/logo-icon.png'
-            alt='logo maroc Influence'
+            alt='logo InflAuditor'
           />
           <HeaderTitle variant='h4' sx={{ ...menuCollapsedStyles, ...(navCollapsed && !navHover ? {} : { ml: 2.5 }) }}>
             {settings.mode === 'light' ? (
               <img
-                width={100}
-                height={25}
+                width={140}
+                height={40}
                 style={{ marginTop: '20px' }}
                 src='/images/logo-text.png'
-                alt='logo maroc Influence'
+                alt='logo InflAuditor'
               />
             ) : (
               <img
-                width={100}
-                height={25}
+                width={150}
+                height={30}
                 style={{ marginTop: '20px' }}
                 src='/images/logo-text-dark.png'
-                alt='logo maroc Influence'
+                alt='logo InflAuditor'
               />
             )}
           </HeaderTitle>

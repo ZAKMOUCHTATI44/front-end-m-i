@@ -63,7 +63,7 @@ const SocialCoverage = () => {
       sortable: true,
       id: 'influenceScore.score',
       selector: row => row.influenceScore.score,
-      width: '150px',
+      width: '140px',
       cell(row) {
         return (
           <>
@@ -102,7 +102,7 @@ const SocialCoverage = () => {
     // },
     {
       name: 'Activity',
-      width: '200px',
+      width: '150px',
       sortable: true,
       id: 'growth',
       cell(row) {
@@ -117,7 +117,7 @@ const SocialCoverage = () => {
       name: 'Engage. Rate',
       sortable: true,
       id: 'growth',
-      width: '150px',
+      width: '120px',
       cell(row) {
         return (
           <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>

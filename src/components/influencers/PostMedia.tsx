@@ -5,14 +5,12 @@ import { Box } from '@mui/system'
 
 const PostMedia = ({ data }: { data: Data }) => {
   return (
-    <Grid spacing={6}>
-      <Grid container spacing={6}>
-        {data.posts.map(post => (
-          <Grid item xs={12} sm={6} md={3} key={post.media_id}>
-            <PostCard post={{ ...post, profileImageUrl: data.creator.pictureUrl }} />
-          </Grid>
-        ))}
-      </Grid>
+    <Grid item container>
+      {data.posts.map(post => (
+        <Grid item xs={12} sm={6} md={3} spacing={5} sx={{ padding: 1 }} key={post.media_id}>
+          <PostCard post={{ ...post, profileImageUrl: data.creator.pictureUrl }} />
+        </Grid>
+      ))}
       <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: theme => theme.spacing(6) }}>
         {/*         
         <Pagination

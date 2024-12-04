@@ -10,6 +10,7 @@ import { useRouter } from 'next/router'
 import UseQueryHooks from 'src/lib/react-query'
 import Icon from 'src/@core/components/icon'
 import ManageFavorites from './ManageFavorites'
+import { useSettings } from 'src/@core/hooks/useSettings'
 
 interface Response {
   totalCount: number
@@ -20,6 +21,7 @@ interface Response {
 const Page = () => {
   const router = useRouter()
   const [selectedInfluencers, setSelectedInfluencers] = useState<Set<Influencer>>(new Set())
+  const { settings } = useSettings()
 
   const routerParams = router.query
 
@@ -130,7 +132,7 @@ const Page = () => {
         {data &&
           data.data.length > 0 &&
           data.data.map(influencer => (
-            <Grid item xs={12} sm={6} md={3} key={influencer._id}>
+            <Grid item xs={12} sm={6} md={settings.navCollapsed ? 3 : 4} key={influencer._id}>
               <CardInfluencer
                 influencer={influencer}
                 selected={objectExists(influencer.id)}

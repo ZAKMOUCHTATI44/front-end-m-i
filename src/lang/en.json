@@ -1,0 +1,14 @@
+[
+    {
+        "dashbaord": {
+            "title": "Influencer Auditor",
+            "subtitle": "Disclaimer: This report relies on statistics from a sample set of followers and should only be used as an estimate guide. The report results may vary and may be significantly different from real life data.",
+            "cta": "search",
+            "form": {
+                "title": "The whole creator economy is at your fingertips.",
+                "subtitle": "Start by selecting some filters.",
+                "cta": "search with filters"
+            }
+        }
+    }
+]

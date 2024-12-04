@@ -16,8 +16,8 @@ const Card = styled(MuiCard)<CardProps>(() => ({
 const index = () => {
   const questions = [
     {
-      title: 'What is Maroc Influence?',
-      desc: 'Maroc Influence is a Moroccan platform that connects local and international brands with local influencers. It allows businesses to find, analyze, and collaborate with content creators to launch effective influencer campaigns.',
+      title: 'What is InflAuditor?',
+      desc: 'InflAuditor is a Moroccan platform that connects local and international brands with local influencers. It allows businesses to find, analyze, and collaborate with content creators to launch effective influencer campaigns.',
       isExpand: true
     },
     {
@@ -26,13 +26,13 @@ const index = () => {
       isExpand: false
     },
     {
-      title: 'What types of brands can use Maroc Influence?',
-      desc: 'All brands, whether small or large, can use Maroc Influence. The platform is designed to meet the needs of various sectors, from fashion to tech, beauty, and many more.',
+      title: 'What types of brands can use InflAuditor?',
+      desc: 'All brands, whether small or large, can use InflAuditor. The platform is designed to meet the needs of various sectors, from fashion to tech, beauty, and many more.',
       isExpand: false
     },
     {
       title: 'How does campaign management work on the platform?',
-      desc: 'You can track and manage all your projects directly on Maroc Influence, from creating briefs to analyzing final performance. All tools are centralized for simplified management.',
+      desc: 'You can track and manage all your projects directly on InflAuditor, from creating briefs to analyzing final performance. All tools are centralized for simplified management.',
       isExpand: false
     },
     {
@@ -42,7 +42,7 @@ const index = () => {
     },
     {
       title: 'Is the platform only for Moroccan brands?',
-      desc: 'No, Maroc Influence is open to international brands looking to collaborate with Moroccan influencers. Our database connects local influencers with businesses of all sizes and sectors.',
+      desc: 'No, InflAuditor is open to international brands looking to collaborate with Moroccan influencers. Our database connects local influencers with businesses of all sizes and sectors.',
       isExpand: false
     }
   ]

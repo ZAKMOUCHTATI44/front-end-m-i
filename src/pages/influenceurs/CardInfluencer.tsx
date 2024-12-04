@@ -74,7 +74,7 @@ const CardInfluencer = ({
             }}
           >
             <Avatar
-              alt='Maroc influence'
+              alt='InflAuditor'
               src={influencer.pictureUrl}
               sx={{
                 width: 55,

@@ -318,10 +318,16 @@ interface Data {
   networksCount: NetworksCount
   posts: Post[]
   totalCount: number
-  similarProfiles: Influencer[]
+  similarProfiles: ProfilesSimilar[]
   creator: CreatorData
 }
 
+type ProfilesSimilar = {
+  id: number
+  fullName: string
+  niche: string
+  pictureUrl: string
+}
 interface OverviewEvolution {
   id: string
   data: EvolutionData[]

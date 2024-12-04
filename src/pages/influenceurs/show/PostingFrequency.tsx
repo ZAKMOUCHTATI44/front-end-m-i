@@ -48,6 +48,7 @@ const PostingFrequency = () => {
 
   return (
     <Grid
+      item
       lg={8}
       pl={2}
       sx={{

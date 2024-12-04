@@ -3,7 +3,14 @@ import { Card, Grid, Typography } from '@mui/material'
 import Icon from 'src/@core/components/icon'
 import CustomAvatar from 'src/@core/components/mui/avatar'
 
-const ProfilesSimilar = ({ influencers }: { influencers: Influencer[] }) => {
+type ProfilesSimilar = {
+  id: number
+  fullName: string
+  niche: string
+  pictureUrl: string
+}
+
+const ProfilesSimilar = ({ influencers }: { influencers: ProfilesSimilar[] }) => {
   return (
     <Card sx={{ width: '100%', padding: '30px 10px' }}>
       <Typography
@@ -11,7 +18,8 @@ const ProfilesSimilar = ({ influencers }: { influencers: Influencer[] }) => {
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '5px'
+          gap: '5px',
+          marginBottom: '25px'
         }}
       >
         <Icon icon='tabler:users' fontSize={20} />
@@ -23,8 +31,8 @@ const ProfilesSimilar = ({ influencers }: { influencers: Influencer[] }) => {
             item
             xs={12}
             sm={6}
-            md={2}
-            key={influencer._id}
+            md={3}
+            key={influencer.id}
             style={{
               display: 'flex',
               alignItems: 'center',
