@@ -10,6 +10,7 @@ import SocialCoverage from 'src/components/influencers/SocialCoverage'
 import Tab from '@mui/material/Tab'
 import AudienceChart from './show/AudienceChart'
 import ScoringTab from 'src/components/influencers/ScoringTab'
+import CreatorNetwork from './show/CreatorNetwork'
 
 const MediaDetails = ({ data }: { data: Data }) => {
   // ** State
@@ -41,6 +42,7 @@ const MediaDetails = ({ data }: { data: Data }) => {
       >
         <Tab value='media' label='Posts' />
         <Tab value='social-coverage' label='Social Coverage' />
+        <Tab value='creator-network' label='Creator Network' />
         <Tab value='audience' label='Audience' />
         <Tab value='scoring' label='Scoring' />
       </MuiTabList>
@@ -51,6 +53,9 @@ const MediaDetails = ({ data }: { data: Data }) => {
           </TabPanel>
           <TabPanel sx={{ p: 0 }} value='social-coverage'>
             <SocialCoverage />
+          </TabPanel>
+          <TabPanel sx={{ p: 0 }} value='creator-network'>
+            <CreatorNetwork />
           </TabPanel>
           <TabPanel sx={{ p: 0 }} value='audience'>
             <AudienceChart />

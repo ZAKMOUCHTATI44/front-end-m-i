@@ -100,3 +100,74 @@ code[class*='language-'] {
   flex-direction: column;
   align-items: center;
 }
+
+.box-network {
+  inset: 50%;
+  translate: -50% -50%;
+  position: absolute;
+  border-radius: 50%;
+  animation: rotating-backwards infinite var(--duration, 30s) linear;
+}
+.box-network:hover {
+  animation-play-state: paused;
+}
+.group-icon {
+  z-index: 99;
+}
+
+.children-container {
+  animation: rotating infinite var(--duration, 30s) linear;
+}
+.box-0 {
+  position: absolute;
+  top: 0%;
+  right: 0px;
+}
+.box-1 {
+  position: absolute;
+  top: 0%;
+  left: 0px;
+}
+.box-2 {
+  position: absolute;
+  bottom: 0%;
+  left: 0px;
+}
+.box-3 {
+  position: absolute;
+  bottom: 0%;
+  right: 0px;
+}
+
+.box-network::after {
+  content: '';
+  width: var(--size, 100px);
+  height: var(--size, 100px);
+  opacity: var(--opacity, 10%);
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(50% 50% at 50% 50%, #fff 75%, #d2d4fe 100%);
+  inset: 50%;
+  translate: -50% -50%;
+  position: absolute;
+}
+/* .creator-network .box-network .box-item {
+  animation: rotating-backwards infinite var(--duration, 30s) linear;
+} */
+@keyframes rotating-backwards {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-1turn);
+  }
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
