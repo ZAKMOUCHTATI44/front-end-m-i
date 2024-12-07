@@ -8,7 +8,7 @@ import SocialMediaChart from 'src/components/influencers/SocialMediaChart'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 
-const InfluenceScore = ({ data }: { data: Data }) => {
+const InfluenceScore = ({ data }: { data: any }) => {
   return (
     <Grid item xs={12} lg={6} spacing={6}>
       <Card sx={{ padding: '20px' }}>
@@ -25,7 +25,7 @@ const InfluenceScore = ({ data }: { data: Data }) => {
             marginTop: '20px'
           }}
         >
-          {data.creator.networkScores.map(network => (
+          {data.creator.networkScores.map((network: any) => (
             <Box
               sx={{
                 display: 'flex',

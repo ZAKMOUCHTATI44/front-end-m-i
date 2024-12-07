@@ -5,7 +5,7 @@ import CardContent from '@mui/material/CardContent'
 import CustomAvatar from 'src/@core/components/mui/avatar'
 import CardMedia from '@mui/material/CardMedia'
 
-const CardDetails = ({ influencer }: { influencer: CreatorData }) => {
+const CardDetails = ({ influencer }: { influencer: any }) => {
   return (
     <Card>
       <CardMedia
@@ -38,13 +38,6 @@ const CardDetails = ({ influencer }: { influencer: CreatorData }) => {
 
         <Typography variant='h4' sx={{ mb: 1 }}>
           {influencer.fullName}&nbsp;
-          <img
-            src='/images/social-media/verified.png'
-            width={22}
-            height={22}
-            style={{ marginTop: '4px', position: 'absolute' }}
-            alt='Verified'
-          />
         </Typography>
         <Typography variant='subtitle2' style={{ display: 'block' }}>
           {influencer.title}

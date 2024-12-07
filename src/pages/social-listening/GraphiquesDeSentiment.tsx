@@ -58,7 +58,7 @@ const GraphiquesDeSentiment = (props: LineProps) => {
   }
 
   const data: ChartData<'line'> = {
-    labels: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140],
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     datasets: [
       {
         fill: false,
@@ -73,7 +73,7 @@ const GraphiquesDeSentiment = (props: LineProps) => {
         pointHoverBorderColor: white,
         pointBorderColor: 'transparent',
         pointHoverBackgroundColor: '#28a745',
-        data: [80, 150, 180, 270, 210, 160, 160, 202, 265, 210, 270, 255, 290, 360, 375]
+        data: [80, 150, 180, 270, 210, 160, 160, 202, 265, 210, 270, 255]
       },
       {
         fill: false,
@@ -88,7 +88,7 @@ const GraphiquesDeSentiment = (props: LineProps) => {
         pointHoverBorderColor: white,
         pointBorderColor: 'transparent',
         pointHoverBackgroundColor: '#dc3545',
-        data: [80, 125, 105, 130, 215, 195, 140, 160, 230, 300, 220, 170, 210, 200, 280]
+        data: [80, 125, 105, 130, 215, 195, 140, 160, 230, 300, 220, 170]
       },
       {
         fill: false,
@@ -103,7 +103,7 @@ const GraphiquesDeSentiment = (props: LineProps) => {
         pointHoverBorderColor: white,
         pointBorderColor: 'transparent',
         pointHoverBackgroundColor: '#6c757d',
-        data: [80, 99, 82, 90, 115, 115, 74, 75, 130, 155, 125, 90, 140, 130, 180]
+        data: [80, 99, 82, 90, 115, 115, 74, 75, 130, 155, 125, 90]
       }
     ]
   }

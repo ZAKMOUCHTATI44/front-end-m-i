@@ -3,11 +3,11 @@ import PostCard from './PostCard'
 import { Grid } from '@mui/material'
 import { Box } from '@mui/system'
 
-const PostMedia = ({ data }: { data: Data }) => {
+const PostMedia = ({ data, gridSize }: { data: any; gridSize?: number }) => {
   return (
     <Grid item container>
-      {data.posts.map(post => (
-        <Grid item xs={12} sm={6} md={3} spacing={5} sx={{ padding: 1 }} key={post.media_id}>
+      {data.posts.map((post: any) => (
+        <Grid item xs={12} sm={6} md={gridSize ?? 3} spacing={5} sx={{ padding: 4 }} key={post.media_id}>
           <PostCard post={{ ...post, profileImageUrl: data.creator.pictureUrl }} />
         </Grid>
       ))}

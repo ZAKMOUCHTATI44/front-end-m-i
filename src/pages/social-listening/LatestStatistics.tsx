@@ -111,7 +111,7 @@ const LatestStatistics = (props: BarProp) => {
           >
             <Typography variant='body2'>Mentions</Typography>
             <Box sx={{ mb: 3, rowGap: 1, columnGap: 2.5, display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-              <Typography variant='h1'>25</Typography>
+              <Typography variant='h1'>340</Typography>
               <CustomChip rounded size='small' skin='light' color='success' label='+4.2%' />
             </Box>
           </Grid>
