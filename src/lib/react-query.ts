@@ -7,7 +7,7 @@ const UseQueryHooks = <TData>(
   fetchDataFunction: QueryFunction<TData>,
   options?: UseCustomQueryOptions<TData>
 ) => {
-  const accessToken = window.localStorage.getItem('accessToken')
+  const accessToken = window.localStorage.getItem('accessToken') || ''
 
   const defaultOptions: UseCustomQueryOptions<TData> = {
     // Your default options here
