@@ -13,7 +13,11 @@ import ManageFavorites from './ManageFavorites'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
 interface Response {
-  totalCount: number
+  cursor: {
+    count: number
+    total: number
+    next: boolean
+  }
   data: Influencer[]
   currentPage: number
   lastPage: number
@@ -26,7 +30,7 @@ const Page = () => {
   const routerParams = router.query
 
   const buildQueryString = (): string => {
-    let queryString = `/influencers?key=1`
+    let queryString = `/creators/search?limit=12`
     function concatenateVariableNamesAndValues(obj: any) {
       // Loop through the object keys dynamically
       for (const key in obj) {
@@ -113,6 +117,7 @@ const Page = () => {
             </Box>
           </Card>
         </Grid>
+
         {isLoading && (
           <Grid
             item
@@ -125,7 +130,7 @@ const Page = () => {
         )}
         <Grid item xs={12} sm={12} md={12}>
           <Typography variant='h6' sx={{ fontWeight: 'bold' }}>
-            {data?.totalCount} result
+            {data?.cursor.total} result
           </Typography>
         </Grid>
 
@@ -151,17 +156,18 @@ const Page = () => {
               />
             </Grid>
           ))}
+
         {/* {data.map(influencer => (
 
         ))} */}
       </Grid>
 
       {/* Pagination */}
-      {!isLoading && (
+      {data && (
         <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: theme => theme.spacing(6) }}>
           <Pagination
-            count={data?.lastPage}
-            page={Number(data?.currentPage) || 1}
+            count={Math.round(data.cursor.total / data?.cursor.count)}
+            page={Number(routerParams.page) || 1}
             color='primary'
             onChange={(e, value) => {
               router.push({

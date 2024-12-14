@@ -29,20 +29,20 @@ const CardDetails = ({ influencer }: { influencer: any }) => {
           }}
         >
           <CustomAvatar
-            src={influencer.pictureUrl}
+            src={`https://api.inflauditor.ma/media/account?id=${influencer.accounts[0].id}`}
             variant='rounded'
-            alt={influencer.fullName}
+            alt={influencer.name}
             sx={{ width: 100, height: 100, backgroundColor: '#fff', borderRadius: '50%' }}
           />
         </Box>
 
         <Typography variant='h4' sx={{ mb: 1 }}>
-          {influencer.fullName}&nbsp;
+          {influencer.name}&nbsp;
         </Typography>
         <Typography variant='subtitle2' style={{ display: 'block' }}>
           {influencer.title}
         </Typography>
-        <p style={{ textAlign: 'justify' }}>{influencer.biography}</p>
+        <p style={{ textAlign: 'justify' }}>{influencer.description}</p>
       </CardContent>
     </Card>
   )

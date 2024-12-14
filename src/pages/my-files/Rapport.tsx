@@ -7,7 +7,8 @@ import Error500 from 'src/pages/500'
 import CustomAvatar from 'src/@core/components/mui/avatar'
 import { Box } from '@mui/system'
 import Link from 'next/link'
-import SocialMediaChart from 'src/components/influencers/SocialMediaChart'
+
+// import SocialMediaChart from 'src/components/influencers/SocialMediaChart'
 
 // import { formatNumber } from 'src/lib/numbers'
 import FollowersCredibility from 'src/components/influencers/FollowersCredibility'
@@ -241,7 +242,7 @@ const Rapport = ({ id }: { id: string }) => {
                         </Typography>
                       </Grid>
                       <Grid xs={12} lg={6} sx={{ display: 'flex', justifyContent: 'center' }}>
-                        <SocialMediaChart data={data} />
+                        {/* <SocialMediaChart data={data} /> */}
                       </Grid>
                     </Card>
                   </Grid>

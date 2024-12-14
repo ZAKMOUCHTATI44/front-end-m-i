@@ -14,34 +14,45 @@ interface ChartData {
 
 // Sample data
 
+type Account = {
+  id: string
+  name: string
+  network: string
+  handle: string
+  bio: string | null
+  verified: boolean | null
+  subscribers: number | null
+  score: number
+}
+
 // Component for rendering pie chart with labels
-const SocialMediaChart = ({ data }: { data: Data }) => {
+const SocialMediaChart = ({ data }: { data: Account[] }) => {
   const dataChart: ChartData[] = [
     {
       name: 'YouTube',
-      value: data.creator.networkFollowers.find(network => network.network === 'youtube')?.followerCount || 0,
-      label: data.creator.networkFollowers.find(network => network.network === 'youtube')?.followerCountText || '',
+      value: data.find(network => network.network === 'YT')?.subscribers || 0,
+      label: data.find(network => network.network === 'YT')?.subscribers?.toString() || '',
       color: 'url(#color-youtube)',
       icon: '/images/social-media/youtube.png'
     },
     {
       name: 'Instagram',
-      value: data.creator.networkFollowers.find(network => network.network === 'instagram')?.followerCount || 0,
-      label: data.creator.networkFollowers.find(network => network.network === 'instagram')?.followerCountText || '',
+      value: data.find(network => network.network === 'IG')?.subscribers || 0,
+      label: data.find(network => network.network === 'IG')?.subscribers?.toString() || '',
       color: 'url(#color-instagram)',
       icon: '/images/social-media/instagram.png'
     },
     {
       name: 'TikTok',
-      value: data.creator.networkFollowers.find(network => network.network === 'tiktok')?.followerCount || 0,
-      label: data.creator.networkFollowers.find(network => network.network === 'tiktok')?.followerCountText || '',
+      value: data.find(network => network.network === 'TK')?.subscribers || 0,
+      label: data.find(network => network.network === 'TK')?.subscribers?.toString() || '',
       color: 'url(#color-tiktok)',
       icon: '/images/social-media/tiktok.png'
     },
     {
       name: 'Twitter',
-      value: data.creator.networkFollowers.find(network => network.network === 'twitter')?.followerCount || 0,
-      label: data.creator.networkFollowers.find(network => network.network === 'twitter')?.followerCountText || '',
+      value: data.find(network => network.network === 'TW')?.subscribers || 0,
+      label: data.find(network => network.network === 'TW')?.subscribers?.toString() || '',
       color: 'url(#color-twitter)',
       icon: '/images/social-media/twitter.png'
     }

@@ -10,16 +10,47 @@ import { formatNumber } from 'src/lib/numbers'
 import UseQueryHooks from 'src/lib/react-query'
 import { useSettings } from 'src/@core/hooks/useSettings'
 
+interface SocialCoverageType {
+  id: string
+  name: string
+  network: string
+  handle: string
+  bio: string
+  verified: boolean
+  insights: {
+    subscribers: number
+    score: number
+    activity: string
+    engagement_average: string
+    engagement_rate: number
+    growth: number
+    growth_rate: number
+    views_average: number
+  }
+  audience: {
+    history: {
+      data: {
+        date: string
+        value: string
+        displayedValue: string
+        timestamp: number
+      }[]
+      title: string
+      network: string
+    }
+  }
+}
+
 const SocialCoverage = () => {
   const router = useRouter()
   const { settings } = useSettings()
 
   const { id } = router.query
 
-  const { error, isLoading, data } = UseQueryHooks<DataSocialCoverage>(
-    [`/influencers-social-coverage/${id}`],
+  const { error, isLoading, data } = UseQueryHooks<SocialCoverageType[]>(
+    [`/creators/${id}/social-coverage`],
     async () => {
-      const response = await api.get<DataSocialCoverage>(`/influencers/social-coverage/${id}`)
+      const response = await api.get<SocialCoverageType[]>(`/creators/${id}/social-coverage`)
 
       return response.data
     },
@@ -29,7 +60,7 @@ const SocialCoverage = () => {
 
   if (isLoading) return <Loading />
 
-  const columns: TableColumn<Network>[] = [
+  const columns: TableColumn<SocialCoverageType>[] = [
     {
       name: 'Social Media',
       sortable: true,
@@ -39,18 +70,24 @@ const SocialCoverage = () => {
       cell: row => (
         <Box sx={{ display: 'flex', alignItems: 'center', padding: '15px', gap: theme => theme.spacing(2) }}>
           <span>
-            <img src={`/images/social-media/${row.network}.png`} alt={row.fullName} width={25} height={25} />
+            <img src={`/images/social-media/new/${row.network}.png`} alt={row.name} width={25} height={25} />
           </span>
           <span>
-            <img src={row.pictureUrl} style={{ borderRadius: '50%' }} alt={row.fullName} width={35} height={35} />
+            <img
+              src={`https://api.inflauditor.ma/media/account?id=${row.id}`}
+              style={{ borderRadius: '50%' }}
+              alt={row.name}
+              width={35}
+              height={35}
+            />
           </span>
           <div>
-            <Typography variant='h6'>{row.fullName}</Typography>
-            <Typography variant='caption'>@{row.username}</Typography>
+            <Typography variant='h6'>{row.name}</Typography>
+            <Typography variant='caption'>@{row.handle}</Typography>
           </div>
-          {row.isVerified ? (
+          {row.verified ? (
             <span>
-              <img src={`/images/social-media/verified.png`} alt={row.fullName} width={15} height={15} />
+              <img src={`/images/social-media/verified.png`} alt={row.name} width={15} height={15} />
             </span>
           ) : (
             <></>
@@ -62,57 +99,44 @@ const SocialCoverage = () => {
       name: 'Influence Score',
       sortable: true,
       id: 'influenceScore.score',
-      selector: row => row.influenceScore.score,
+      selector: row => row.insights.score,
       width: '140px',
       cell(row) {
         return (
           <>
-            {row.influenceScore && (
-              <span
-                style={{ display: 'flex', gap: '5px', alignItems: 'center' }}
-                className={`growth ${row.influenceScore?.comment === 'low' ? 'lower' : 'high'}`}
-              >
-                <span className={`circle ${row.influenceScore?.comment}`}></span>
-                {row.influenceScore.score} / 100
+            {/* className={`growth ${row.influenceScore?.comment === 'low' ? 'lower' : 'high'}`} */}
+            {row.insights.score && (
+              <span style={{ display: 'flex', gap: '5px', alignItems: 'center' }} className={`growth high`}>
+                <span className={`circle high`}></span>
+                {row.insights.score} / 100
               </span>
             )}
           </>
         )
       }
     },
+
     {
       name: 'Followers',
       width: '150px',
       sortable: true,
       id: 'follower_Count',
-      selector: row => row.follower_Count,
+      selector: row => row.insights.subscribers,
       cell(row) {
-        return <p>{formatNumber(Number(row.follower_Count))}</p>
+        return <p>{formatNumber(Number(row.insights.subscribers))}</p>
       }
     },
 
-    // {
-    //   name: 'Last Activity',
-    //   width: '150px',
-    //   sortable: true,
-    //   id: 'niche',
-    //   cell(row) {
-    //     return <p>{row.metrics.last_activity_str.value} </p>
-    //   }
-    // },
     {
       name: 'Activity',
       width: '150px',
       sortable: true,
       id: 'growth',
       cell(row) {
-        return (
-          <p>
-            {row.metrics.activity.value} {row.metrics.activity.title}
-          </p>
-        )
+        return <p>{row.insights.activity}</p>
       }
     },
+
     {
       name: 'Engage. Rate',
       sortable: true,
@@ -121,7 +145,7 @@ const SocialCoverage = () => {
       cell(row) {
         return (
           <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-            <span className={`circle ${row.metrics.avg_engagement.score}`}></span> {row.metrics.engagement.value}
+            <span className={`circle high`}></span> {row.insights.engagement_rate * 100} %
           </p>
         )
       }
@@ -135,9 +159,9 @@ const SocialCoverage = () => {
         return (
           <div>
             <p style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0px' }}>
-              <span className={`circle ${row.metrics.growth.score}`}></span> {row.metrics.growth.value}
+              <span className={`circle high`}></span> {row.insights.growth_rate} %
             </p>
-            <Typography variant='caption'>{row.metrics.raw_growth.value}</Typography>
+            <Typography variant='caption'>{formatNumber(row.insights.growth)}</Typography>
           </div>
         )
       }
@@ -150,7 +174,7 @@ const SocialCoverage = () => {
       cell(row) {
         return (
           <p style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0px' }}>
-            <span className={`circle ${row.metrics.avg_engagement.score}`}></span> {row.metrics.avg_engagement.value}
+            <span className={`circle high`}></span> {formatNumber(Number(row.insights.engagement_average))}
           </p>
         )
       }
@@ -162,7 +186,7 @@ const SocialCoverage = () => {
       cell(row) {
         return (
           <p style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '0px' }}>
-            <span className={`circle ${row.metrics.avg_views.score}`}></span> {row.metrics.avg_views.value}
+            <span className={`circle high`}></span> {formatNumber(row.insights.views_average)}
           </p>
         )
       }
@@ -170,16 +194,22 @@ const SocialCoverage = () => {
   ]
 
   return (
-    <>
-      {data && data.socialCoverage && (
-        <DataTable className={`${settings.mode}-datatable`} columns={columns} data={data.socialCoverage.networks} />
+    <div>
+      {data && (
+        <>
+          <DataTable className={`${settings.mode}-datatable`} columns={columns} data={data} />
+          <Grid container spacing={6} mt={6}>
+            {data.map(item => (
+              <AudienceGrowthChart
+                key={item.network}
+                network={item.audience.history.network}
+                data={item.audience.history.data}
+              />
+            ))}
+          </Grid>
+        </>
       )}
-      <Grid container spacing={6} mt={6}>
-        {data?.socialCoverage.audienceEvolutions.map(item => (
-          <AudienceGrowthChart key={item.network} network={item.network} data={item.data} />
-        ))}
-      </Grid>
-    </>
+    </div>
   )
 }
 

@@ -28,6 +28,7 @@ interface Badge {
 }
 
 interface NetworkStats {
+  id: string
   network: string
   followers: string
   profileUrl: string
@@ -35,6 +36,8 @@ interface NetworkStats {
   growth: Growth
   username: string
   isVerified: boolean
+
+  subscribers: number
 }
 
 interface Country {
@@ -46,6 +49,7 @@ interface Influencer {
   id: string
   _id: string
   pictureUrl: string
+
   fullName: string
   title: string
   nicheName: string
@@ -61,6 +65,11 @@ interface Influencer {
   country: Country
   badges: Badge
   networksStats: NetworkStats[]
+
+  // NEW STRUCTURE
+  accounts: NetworkStats[]
+  name: string
+  description: string
 }
 
 type Network = {

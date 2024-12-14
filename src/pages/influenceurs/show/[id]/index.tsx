@@ -10,15 +10,35 @@ import Loading from 'src/components/Loading'
 import UseQueryHooks from 'src/lib/react-query'
 import GeneratePDFButton from 'src/@core/components/influenceurs/GenerateReport'
 
+type Account = {
+  id: string
+  name: string
+  network: string
+  handle: string
+  bio: string | null
+  verified: boolean | null
+  subscribers: number | null
+  score: number
+}
+
+type Data = {
+  id: string
+  name: string
+  title: string
+  description: string | null
+  categories: string[]
+  accounts: Account[]
+}
+
 const Page = () => {
   const router = useRouter()
 
   const { id } = router.query
 
   const { error, isLoading, data } = UseQueryHooks<Data>(
-    [`/influencers/${id}`],
+    [`/creators/${id}`],
     async () => {
-      const response = await api.get<Data>(`/influencers/${id}`)
+      const response = await api.get<Data>(`/creators/${id}`)
 
       return response.data
     },
@@ -39,13 +59,13 @@ const Page = () => {
         <div>
           <Grid container spacing={6}>
             <Grid item xs={12} md={6} lg={6}>
-              <CardDetails influencer={data.creator} />
-              <GeneratePDFButton id={data.creator.id} />
+              <CardDetails influencer={data} />
+              <GeneratePDFButton id={data.id} />
             </Grid>
             <InfluenceScore data={data} />
           </Grid>
           <div style={{ marginTop: '80px' }}>
-            <MediaDetails data={data} />
+            <MediaDetails id={data.id} />
           </div>
         </div>
       )}

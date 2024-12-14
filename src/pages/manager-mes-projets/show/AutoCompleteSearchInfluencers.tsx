@@ -15,8 +15,8 @@ interface Response {
 const AutoCompleteSearchInfluencers = ({ handleChange }: { handleChange(value: Influencer): void }) => {
   const [keyword, setKeyword] = useState<string>('')
 
-  const { error, isLoading, data } = useQuery<Response>([`/influencers?username=${keyword}`], async () => {
-    const response = await api.get<Response>(`/influencers?username=${keyword}&limit=10`)
+  const { error, isLoading, data } = useQuery<Response>([`/creators/search?name=${keyword}`], async () => {
+    const response = await api.get<Response>(`/creators/search?username=${keyword}&limit=10`)
 
     return response.data
   })
@@ -56,9 +56,13 @@ const AutoCompleteSearchInfluencers = ({ handleChange }: { handleChange(value: I
         renderOption={(props, option) => (
           <ListItem {...props}>
             <ListItemAvatar>
-              <Avatar src={`${option.pictureUrl}`} alt={option.fullName} sx={{ height: 28, width: 28 }} />
+              <Avatar
+                src={`https://api.inflauditor.ma/media/account?id=${option.accounts[0].id}`}
+                alt={option.name}
+                sx={{ height: 28, width: 28 }}
+              />
             </ListItemAvatar>
-            <ListItemText primary={option.fullName} />
+            <ListItemText primary={option.name} />
           </ListItem>
         )}
       />

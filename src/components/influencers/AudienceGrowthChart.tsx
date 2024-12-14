@@ -5,7 +5,7 @@ import ReactApexcharts from 'src/@core/components/react-apexcharts'
 
 type Data = {
   date: string
-  value: number
+  value: string
   displayedValue: string
   timestamp: number
 }
@@ -97,7 +97,12 @@ const AudienceGrowthChart = ({ network, data }: { network: string; data: Data[] 
             <Typography variant='caption'>{data[data.length - 1].date}</Typography>
           </div>
         </Box>
-        <ReactApexcharts type='area' height={110} options={options} series={[{ data: data.map(item => item.value) }]} />
+        <ReactApexcharts
+          type='area'
+          height={110}
+          options={options}
+          series={[{ data: data.map(item => Number(item.value)) }]}
+        />
       </Card>
     </Grid>
   )

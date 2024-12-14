@@ -6,9 +6,9 @@ import { Box } from '@mui/system'
 const PostMedia = ({ data, gridSize }: { data: any; gridSize?: number }) => {
   return (
     <Grid item container>
-      {data.posts.map((post: any) => (
+      {data.map((post: any) => (
         <Grid item xs={12} sm={6} md={gridSize ?? 3} spacing={5} sx={{ padding: 4 }} key={post.media_id}>
-          <PostCard post={{ ...post, profileImageUrl: data.creator.pictureUrl }} />
+          <PostCard post={{ ...post, profileImageUrl: `https://api.inflauditor.ma/media/post?id=${post.id}` }} />
         </Grid>
       ))}
       <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: theme => theme.spacing(6) }}>

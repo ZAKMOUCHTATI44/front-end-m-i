@@ -25,7 +25,7 @@ const InfluenceScore = ({ data }: { data: any }) => {
             marginTop: '20px'
           }}
         >
-          {data.creator.networkScores.map((network: any) => (
+          {data.accounts.map((network: any) => (
             <Box
               sx={{
                 display: 'flex',
@@ -38,7 +38,7 @@ const InfluenceScore = ({ data }: { data: any }) => {
               <img
                 width={35}
                 height={35}
-                src={`/images/social-media/${network.network}.png`}
+                src={`/images/social-media/new/${network.network}.png`}
                 alt={network.network}
                 style={{ display: 'block', marginRight: '0px' }} // Enlève tout espacement supplémentaire
               />
@@ -88,11 +88,11 @@ const InfluenceScore = ({ data }: { data: any }) => {
             Industries & Niches
           </Typography>
           <Typography variant='subtitle2' style={{ display: 'block', fontWeight: 'bold', fontSize: '1.1em' }}>
-            {data.creator.industries?.name}
+            {data.categories[0].name}
           </Typography>
         </Grid>
         <Grid xs={12} lg={6} sx={{ display: 'flex', justifyContent: 'center' }}>
-          <SocialMediaChart data={data} />
+          <SocialMediaChart data={data.accounts} />
         </Grid>
       </Card>
     </Grid>

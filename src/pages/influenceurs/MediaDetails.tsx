@@ -8,13 +8,36 @@ import MuiTabList from '@mui/lab/TabList'
 import PostMedia from 'src/components/influencers/PostMedia'
 import SocialCoverage from 'src/components/influencers/SocialCoverage'
 import Tab from '@mui/material/Tab'
-import AudienceChart from './show/AudienceChart'
-import ScoringTab from 'src/components/influencers/ScoringTab'
-import CreatorNetwork from './show/CreatorNetwork'
 
-const MediaDetails = ({ data }: { data: Data }) => {
+// import AudienceChart from './show/AudienceChart'
+// import ScoringTab from 'src/components/influencers/ScoringTab'
+// import CreatorNetwork from './show/CreatorNetwork'
+import UseQueryHooks from 'src/lib/react-query'
+import api from 'src/lib/api'
+import Error500 from '../500'
+import Loading from 'src/components/Loading'
+
+const MediaDetails = ({ id }: { id: string }) => {
   // ** State
   const [activeTab, setActiveTab] = useState<string>('media')
+
+  const { error, isLoading, data } = UseQueryHooks<Data>(
+    [`/creators/${id}/posts`],
+    async () => {
+      const response = await api.get<Data>(`/creators/${id}/posts`)
+
+      return response.data
+    },
+    { enabled: !!id }
+  )
+  if (error) return <Error500 />
+
+  if (isLoading)
+    return (
+      <div style={{ height: '100vh', display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'center' }}>
+        <Loading />
+      </div>
+    )
 
   return (
     <TabContext value={activeTab}>
@@ -54,6 +77,7 @@ const MediaDetails = ({ data }: { data: Data }) => {
           <TabPanel sx={{ p: 0 }} value='social-coverage'>
             <SocialCoverage />
           </TabPanel>
+          {/* 
           <TabPanel sx={{ p: 0 }} value='creator-network'>
             <CreatorNetwork />
           </TabPanel>
@@ -62,7 +86,7 @@ const MediaDetails = ({ data }: { data: Data }) => {
           </TabPanel>
           <TabPanel sx={{ p: 0 }} value='scoring'>
             <ScoringTab />
-          </TabPanel>
+          </TabPanel> */}
         </Box>
       </Box>
     </TabContext>
