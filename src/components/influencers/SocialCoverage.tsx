@@ -145,7 +145,7 @@ const SocialCoverage = () => {
       cell(row) {
         return (
           <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-            <span className={`circle high`}></span> {row.insights.engagement_rate * 100} %
+            <span className={`circle high`}></span> {(row.insights.engagement_rate * 100).toFixed(2)} %
           </p>
         )
       }

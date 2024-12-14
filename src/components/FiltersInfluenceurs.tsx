@@ -80,19 +80,19 @@ const FiltersInfluenceurs = () => {
   const influencerCategories = [
     {
       label: 'Nano (1k - 30k)',
-      value: 'nano'
+      value: '1-30'
     },
     {
       label: 'Micro (31k - 300k)',
-      value: 'micro'
+      value: '31-300'
     },
     {
       label: 'Macro (300k - 2M)',
-      value: 'macro'
+      value: '301-2000'
     },
     {
       label: 'Celebrities ( +2M)',
-      value: 'celebrities'
+      value: '20001'
     }
   ]
 
@@ -109,16 +109,16 @@ const FiltersInfluenceurs = () => {
     }
   ]
 
-  // const { influencerCategory, category, networks, gender }
-  const { influencerCategory, networks, gender } = router.query as {
-    influencerCategory?: string
+  // const { range, category, networks, gender }
+  const { range, networks, gender } = router.query as {
+    range?: string
     category?: string
     networks?: string
     gender?: string
   }
 
   const [filters, setFilters] = useState({
-    influencerCategory: '0',
+    range: '0',
     orderBy: '0',
     category: '0',
     networks: '0',
@@ -190,13 +190,13 @@ const FiltersInfluenceurs = () => {
         <Grid item xs={2}>
           <SelectBox
             handleChange={e => {
-              setFilters({ ...filters, influencerCategory: e })
+              setFilters({ ...filters, range: e })
             }}
             items={influencerCategories}
             label='Influencer category'
-            value={filters.influencerCategory}
-            defaultValue={influencerCategory}
-            id='influencerCategory'
+            value={filters.range}
+            defaultValue={range}
+            id='range'
           />
         </Grid>
 
@@ -240,7 +240,7 @@ const FiltersInfluenceurs = () => {
                 router.push(router.pathname)
                 setFilters({
                   orderBy: '0',
-                  influencerCategory: '0',
+                  range: '0',
                   category: '0',
                   networks: '0',
                   gender: '0',
