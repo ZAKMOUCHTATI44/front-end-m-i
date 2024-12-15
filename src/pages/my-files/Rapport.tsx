@@ -11,8 +11,6 @@ import Link from 'next/link'
 // import SocialMediaChart from 'src/components/influencers/SocialMediaChart'
 
 // import { formatNumber } from 'src/lib/numbers'
-import FollowersCredibility from 'src/components/influencers/FollowersCredibility'
-import SplitGender from 'src/components/influencers/SplitGender'
 import fakedata from '../../data/audience.json'
 import SocialCoverage from 'src/components/influencers/SocialCoverage'
 
@@ -248,12 +246,12 @@ const Rapport = ({ id }: { id: string }) => {
                   </Grid>
                 </Grid>
                 <Grid sx={{ display: 'flex', gap: '10px' }}>
-                  <Grid xs={12} lg={8}>
+                  {/* <Grid xs={12} lg={8}>
                     <FollowersCredibility props={fakedata.audience_type} />
                   </Grid>
                   <Grid xs={12} lg={4}>
                     <SplitGender props={fakedata.audience_type} />
-                  </Grid>
+                  </Grid> */}
                 </Grid>
               </Box>
             </Grid>
