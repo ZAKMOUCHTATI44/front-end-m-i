@@ -3,14 +3,15 @@ import React from 'react'
 import { Doughnut } from 'react-chartjs-2'
 
 interface GenderProps {
-  core_male_percent: number
-  core_female_percent: number
+  F: number
+  M: number
+  U: number
 }
 const SplitGender = ({ props }: { props: GenderProps }) => {
   const credibilityData = {
     datasets: [
       {
-        data: [props.core_male_percent, props.core_female_percent], // 63% Bad, 37% Remaining
+        data: [props.M, props.F],
         backgroundColor: ['#FF6384', '#4BC0C0'], // Red for "Bad", Grey for remaining
         borderWidth: 0
       }
@@ -49,7 +50,7 @@ const SplitGender = ({ props }: { props: GenderProps }) => {
               textAlign: 'center'
             }}
           >
-            <div style={{ fontSize: '20px', fontWeight: 'bold' }}>{props.core_male_percent}%</div>
+            <div style={{ fontSize: '20px', fontWeight: 'bold' }}>{props.M}%</div>
             <div style={{ color: '#FF6384' }}>Male</div>
           </div>
         </div>
@@ -65,7 +66,7 @@ const SplitGender = ({ props }: { props: GenderProps }) => {
                 backgroundColor: '#FF6384'
               }}
             ></span>{' '}
-            Male {props.core_male_percent}%
+            Male {(props.M * 100).toFixed(2)}%
           </p>
           <p>
             <span
@@ -77,7 +78,7 @@ const SplitGender = ({ props }: { props: GenderProps }) => {
                 backgroundColor: '#4BC0C0'
               }}
             ></span>{' '}
-            Female {props.core_female_percent}%
+            Female {(props.F * 100).toFixed(2)}%
           </p>
         </div>
       </Box>

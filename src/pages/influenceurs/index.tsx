@@ -17,6 +17,7 @@ interface Response {
     count: number
     total: number
     next: boolean
+    page: number
   }
   data: Influencer[]
   currentPage: number
@@ -167,7 +168,7 @@ const Page = () => {
         <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: theme => theme.spacing(6) }}>
           <Pagination
             count={Math.round(data.cursor.total / data?.cursor.count)}
-            page={Number(routerParams.page) || 1}
+            page={Number(data.cursor.page) || 1}
             color='primary'
             onChange={(e, value) => {
               router.push({

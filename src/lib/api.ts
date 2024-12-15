@@ -5,9 +5,9 @@ const api = axios.create({
 
   // baseURL: 'https://accounts.mayycrm.com/api',
 
-  baseURL: 'http://127.0.0.1:8000/api',
+  // baseURL: 'http://127.0.0.1:8000/api',
 
-  // baseURL: 'https://api.inflauditor.ma',
+  baseURL: 'https://api.inflauditor.ma',
 
   // withCredentials: true,
   headers: {

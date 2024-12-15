@@ -6,17 +6,18 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 ChartJS.register(ArcElement, Tooltip, Legend)
 
 interface PropsType {
-  influencer_percent: number
-  suspicious_accounts_percent: number
-  mass_followers_percent: number
-  real_people_percent: number
+  cleared: number
+  flagged: number
+
+  // mass_followers_percent: number
+  // real_people_percent: number
 }
 const FollowersCredibility = ({ props }: { props: PropsType }) => {
   const credibilityData = {
     datasets: [
       {
-        data: [props.real_people_percent, 100 - props.real_people_percent], // 63% Bad, 37% Remaining
-        backgroundColor: ['#FF6384', '#EDEDED'], // Red for "Bad", Grey for remaining
+        data: [props.cleared, props.flagged], // 63% Bad, 37% Remaining
+        backgroundColor: ['#32CD32', '#FF6384'], // Red for "Bad", Grey for remaining
         borderWidth: 0
       }
     ],
@@ -28,16 +29,17 @@ const FollowersCredibility = ({ props }: { props: PropsType }) => {
     datasets: [
       {
         data: [
-          props.mass_followers_percent,
-          props.suspicious_accounts_percent,
-          props.influencer_percent,
-          props.real_people_percent
+          props.cleared,
+          props.flagged
+
+          // props.influencer_percent,
+          // props.real_people_percent
         ], // Mass followers, Suspicious, Influencers, Real
-        backgroundColor: ['#FFA500', '#FF6384', '#8A2BE2', '#32CD32'], // Colors for each category
+        backgroundColor: ['#32CD32', '#FF6384'], // Colors for each category
         borderWidth: 0
       }
     ],
-    labels: ['Mass followers', 'Suspicious', 'Influencers', 'Real']
+    labels: ['Real', 'Suspicious']
   }
   const options = {
     plugins: {
@@ -58,7 +60,7 @@ const FollowersCredibility = ({ props }: { props: PropsType }) => {
   return (
     <Card sx={{ padding: '30px', height: '100%' }}>
       <Typography variant='h6'>Followers Credibility</Typography>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginTop: '15px' }}>
         <div style={{ position: 'relative', width: '150px' }}>
           <Doughnut data={credibilityData} options={options} />
           <div
@@ -70,11 +72,11 @@ const FollowersCredibility = ({ props }: { props: PropsType }) => {
               textAlign: 'center'
             }}
           >
-            <div style={{ fontSize: '20px', fontWeight: 'bold' }}>{props.real_people_percent}%</div>
+            <div style={{ fontSize: '20px', fontWeight: 'bold' }}>{props.cleared * 100}%</div>
             <div style={{ color: '#FF6384' }}>Real People</div>
           </div>
         </div>
-        <div style={{ width: '150px' }}>
+        <div style={{ width: '150px', display: 'none' }}>
           <Doughnut data={breakdownData} options={options} />
         </div>
         <div style={{ marginTop: '1rem', fontSize: '14px' }}>
@@ -85,10 +87,10 @@ const FollowersCredibility = ({ props }: { props: PropsType }) => {
                 height: '10px',
                 display: 'inline-flex',
                 borderRadius: '50%',
-                backgroundColor: '#FFA500'
+                backgroundColor: '#32CD32'
               }}
             ></span>{' '}
-            Mass followers {props.mass_followers_percent}%
+            Real {(props.cleared * 100).toFixed(2)}%
           </p>
           <p>
             <span
@@ -100,9 +102,9 @@ const FollowersCredibility = ({ props }: { props: PropsType }) => {
                 backgroundColor: '#FF6384'
               }}
             ></span>{' '}
-            Suspicious {props.suspicious_accounts_percent}%
+            Suspicious {(props.flagged * 100).toFixed(2)}%
           </p>
-          <p>
+          {/* <p>
             <span
               style={{
                 width: '10px',
@@ -112,7 +114,7 @@ const FollowersCredibility = ({ props }: { props: PropsType }) => {
                 backgroundColor: '#8A2BE2'
               }}
             ></span>{' '}
-            Influencers {props.influencer_percent}%
+            Influencers {props.cleared}%
           </p>
           <p>
             <span
@@ -124,8 +126,8 @@ const FollowersCredibility = ({ props }: { props: PropsType }) => {
                 backgroundColor: '#32CD32'
               }}
             ></span>{' '}
-            Real {props.real_people_percent}%
-          </p>
+            Real {props.cleared}%
+          </p> */}
         </div>
       </div>
       <Typography variant='caption'>

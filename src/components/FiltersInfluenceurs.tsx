@@ -92,7 +92,7 @@ const FiltersInfluenceurs = () => {
     },
     {
       label: 'Celebrities ( +2M)',
-      value: '20001'
+      value: '2001'
     }
   ]
 

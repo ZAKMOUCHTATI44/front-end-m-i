@@ -16,6 +16,8 @@ import UseQueryHooks from 'src/lib/react-query'
 import api from 'src/lib/api'
 import Error500 from '../500'
 import Loading from 'src/components/Loading'
+import CreatorNetwork from './show/CreatorNetwork'
+import AudienceChart from './show/AudienceChart'
 
 const MediaDetails = ({ id }: { id: string }) => {
   // ** State
@@ -77,13 +79,15 @@ const MediaDetails = ({ id }: { id: string }) => {
           <TabPanel sx={{ p: 0 }} value='social-coverage'>
             <SocialCoverage />
           </TabPanel>
-          {/* 
           <TabPanel sx={{ p: 0 }} value='creator-network'>
             <CreatorNetwork />
           </TabPanel>
           <TabPanel sx={{ p: 0 }} value='audience'>
-            <AudienceChart />
+            <AudienceChart id={id} />
           </TabPanel>
+          {/* 
+        
+         
           <TabPanel sx={{ p: 0 }} value='scoring'>
             <ScoringTab />
           </TabPanel> */}
