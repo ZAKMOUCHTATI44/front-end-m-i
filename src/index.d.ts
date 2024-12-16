@@ -70,6 +70,17 @@ interface Influencer {
   accounts: NetworkStats[]
   name: string
   description: string
+
+  insights: {
+    top: {
+      id: string
+      network: string
+      subscribers: string
+      subscribers: string
+      score: string
+      growth: string
+    }
+  }
 }
 
 type Network = {

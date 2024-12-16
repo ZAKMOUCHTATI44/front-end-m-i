@@ -97,16 +97,16 @@ const CardInfluencer = ({
 
       <Box sx={{ display: 'flex', gap: '15px' }}>
         <Button color={'success'} variant='tonal' sx={{ fontWeight: 'bold' }}>
-          + {influencer.accounts[0].score}
+          {influencer.insights.top.growth}
         </Button>
         <Button color={'secondary'} variant='tonal' sx={{ gap: '15px', fontWeight: 'bold' }}>
           <img
-            src={`/images/social-media/new/${influencer.accounts[0]?.network}.png`}
-            alt={influencer.accounts[0]?.network}
+            src={`/images/social-media/new/${influencer.insights.top.network}.png`}
+            alt={influencer.insights.top.network}
             width={20}
             height={20}
           />
-          {Number(influencer.accounts[0]?.score).toFixed(2)} / 100
+          {Number(influencer.insights.top.score).toFixed(2)} / 100
         </Button>
       </Box>
       <Typography>{influencer.description.substring(0, 80)} ...</Typography>

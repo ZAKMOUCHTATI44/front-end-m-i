@@ -164,7 +164,7 @@ const Page = () => {
       </Grid>
 
       {/* Pagination */}
-      {data && (
+      {data && data.data.length > 0 && (
         <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: theme => theme.spacing(6) }}>
           <Pagination
             count={Math.round(data.cursor.total / data?.cursor.count)}

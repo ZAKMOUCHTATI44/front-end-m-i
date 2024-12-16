@@ -128,7 +128,7 @@ const FiltersInfluenceurs = () => {
 
   const setTheFilters = () => {
     router.push({
-      query: { ...router.query, ...filters }
+      query: { ...router.query, ...filters, page: 1 }
     })
   }
 
