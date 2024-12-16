@@ -181,7 +181,7 @@ const PostCard = ({ post }: { post: any }) => {
             height={35}
             style={{ borderRadius: '50%' }}
           />
-          <Typography variant='caption'>@filorga_france</Typography>
+          <Typography variant='caption'>@filorga_maroc</Typography>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
           <img src={`/images/social-media/${post.network}.png`} alt='' width={15} height={15} />
