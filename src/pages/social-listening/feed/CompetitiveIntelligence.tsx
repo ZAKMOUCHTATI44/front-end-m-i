@@ -24,33 +24,44 @@ interface BankData {
 
 const data: BankData[] = [
   {
-    name: 'Marjane',
-    picture: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/9842718687.jpg',
-    fansTotal: 1586635,
-    fansNew: 20387,
+    name: 'Nuxe',
+    picture: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/378313297.jpg',
+    fansTotal: 492200,
+    fansNew: 6100,
     fansGrwoth: -468,
     postsAdmin: 35,
     interactionsTotal: 147191,
-    score: 92,
-    avg_views: 71291,
-    engagementPage: '0.413%',
+    score: 86,
+    avg_views: 62300,
+    engagementPage: '0.5%',
     engagementPosts: '0.263%'
   },
   {
-    name: 'BIM',
-    picture: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/6428046303.jpg',
-    fansTotal: 965155,
-    fansNew: 12006,
-    fansGrwoth: -468,
-    score: 82,
-    postsAdmin: 25,
+    name: 'Clarins',
+    picture: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/4842594961.jpg',
+    fansTotal: 847192,
+    fansNew: 4006,
+    fansGrwoth: -528,
+    score: 75,
+    postsAdmin: 19,
+    avg_views: 34291,
+    interactionsTotal: 1213,
+    engagementPage: '0.155%',
+    engagementPosts: '0.422%'
+  },
+  {
+    name: 'Clinique',
+    picture: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/409035188.jpg',
+    fansTotal: 3892293,
+    fansNew: 13006,
+    fansGrwoth: -268,
+    score: 92,
+    postsAdmin: 13,
     avg_views: 34291,
     interactionsTotal: 154885,
-    engagementPage: '0.755%',
-    engagementPosts: '0.722%'
+    engagementPage: '0.355%',
+    engagementPosts: '0.522%'
   }
-
-  // Add more rows as needed
 ]
 
 const CompetitiveIntelligence = () => {

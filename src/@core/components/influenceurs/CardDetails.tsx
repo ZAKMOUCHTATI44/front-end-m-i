@@ -29,7 +29,9 @@ const CardDetails = ({ influencer }: { influencer: any }) => {
           }}
         >
           <CustomAvatar
-            src={`https://api.inflauditor.ma/media/account?id=${influencer.accounts[0].id}`}
+            src={
+              influencer.accounts[0].src ?? `https://api.inflauditor.ma/media/account?id=${influencer.accounts[0].id}`
+            }
             variant='rounded'
             alt={influencer.name}
             sx={{ width: 100, height: 100, backgroundColor: '#fff', borderRadius: '50%' }}

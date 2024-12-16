@@ -13,23 +13,23 @@ import Icon from 'src/@core/components/icon'
 
 const data = [
   {
-    name: 'Marjane',
+    name: 'Nuxe',
     fans: 80
   },
   {
-    name: 'BIM',
+    name: 'Clarins',
     fans: 100
   },
   {
-    name: 'Carrefour',
+    name: 'Estée Lauder',
     fans: 80
   },
   {
-    name: 'Carrefour Express',
+    name: 'La prairie',
     fans: 100
   },
   {
-    name: 'Kazyon',
+    name: 'Guerlain',
     fans: 50
   }
 ]

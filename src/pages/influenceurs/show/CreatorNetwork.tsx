@@ -2,19 +2,16 @@ import { Grid } from '@mui/material'
 import React from 'react'
 
 const data = [
-  'https://favikon-creator.s3.eu-west-3.amazonaws.com/li/ACoAAAd0exoBIN_0AfZRBaSikeLttW2IOmNhhQU',
-  'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/3072411364.jpg',
-  'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/1598288633.jpg',
-  'https://favikon-creator.s3.eu-west-3.amazonaws.com/li/ACoAAB6wGF4BFg1pXXpOFTvdgrVurXaQZsCLWRY',
-  'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/1099276.jpg',
-  'https://favikon-creator.s3.eu-west-3.amazonaws.com/li/ACoAAATEdn0BxUq0tKAwlxeDHDoapGrZhvJyGbM',
-  'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/14634719.jpg',
-  'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/465280560.jpg',
-  'https://favikon-medias.s3.eu-west-3.amazonaws.com/yt/UC9hJ5XcjHXYjwDOqrlQUuow.jpg',
-  'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/54725478.jpg',
-  'https://favikon-creator.s3.eu-west-3.amazonaws.com/li/ACoAAAd0exoBIN_0AfZRBaSikeLttW2IOmNhhQU',
-  'https://favikon-creator.s3.eu-west-3.amazonaws.com/li/1714864',
-  'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/1598288633.jpg'
+  '/logos/Clinique-logo-A48B76E112-seeklogo.com.png',
+  '/logos/Estee-Lauder-Logo.png',
+  '/logos/images (1).png',
+  '/logos/images.png',
+  '/logos/la-mer1660.jpg',
+  '/logos/la-prairie-logo.png',
+  '/logos/Nuxe Paris.jpg',
+  '/logos/images (2).png',
+  '/logos/Caudalie-Symbole.png',
+  '/logos/lancome-3-logo-png-transparent.png'
 ]
 const CreatorNetwork = () => {
   return (
@@ -73,7 +70,7 @@ const MiddleElement = () => {
       }}
     >
       <img
-        src='https://favikon-medias.s3.eu-west-3.amazonaws.com/in/2282863738.jpg'
+        src='https://favikon-medias.s3.eu-west-3.amazonaws.com/in/1314863628.jpg'
         width={75}
         height={75}
         style={{
