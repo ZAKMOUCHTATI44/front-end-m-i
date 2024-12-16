@@ -47,7 +47,7 @@ const CardInfluencer = ({
         <Typography variant='h4' sx={{ color: '#ff56e3' }}>
           # {influencer.rank}
         </Typography>
-        <Link href={`influenceurs/show/${influencer.id}`} target='_blank' style={{ color: '#ff56e3' }}>
+        <Link href={`influenceurs/show/${influencer.id}`} style={{ color: '#ff56e3' }}>
           <Icon icon='tabler:arrow-left-from-arc' fontSize={20} />
         </Link>
       </Box>
