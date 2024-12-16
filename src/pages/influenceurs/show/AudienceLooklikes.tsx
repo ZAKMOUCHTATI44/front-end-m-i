@@ -13,7 +13,7 @@ const AudienceLooklikes = ({ data }: { data: Lookalike[] }) => {
   return (
     <Card sx={{ padding: '30px', height: '100%' }}>
       <Typography variant='h6' mb={6}>
-        Languages
+        Audience Looklikes
       </Typography>
       <Box>
         {data.map(item => (

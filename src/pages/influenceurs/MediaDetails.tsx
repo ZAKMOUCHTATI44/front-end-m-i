@@ -69,7 +69,7 @@ const MediaDetails = ({ id }: { id: string }) => {
         <Tab value='social-coverage' label='Social Coverage' />
         <Tab value='creator-network' label='Creator Network' />
         <Tab value='audience' label='Audience' />
-        <Tab value='scoring' label='Scoring' />
+        {/* <Tab value='scoring' label='Scoring' /> */}
       </MuiTabList>
       <Box sx={{ mt: 4 }}>
         <Box>
