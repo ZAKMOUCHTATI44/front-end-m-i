@@ -13,7 +13,8 @@ import { Button, Grid } from '@mui/material'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import api from 'src/lib/api'
-import Error500 from 'src/pages/500'
+
+// import Error500 from 'src/pages/500'x
 import Loading from './Loading'
 import UseQueryHooks from 'src/lib/react-query'
 
@@ -146,13 +147,13 @@ const FiltersInfluenceurs = () => {
     isLoading: countriesLoading,
     data: countries
   } = UseQueryHooks<any>(['countries'], async () => {
-    const response = await api.get<any>('/countries')
+    const response = await api.get<any>('/country')
 
     return response.data
   })
 
   if (errorCountries) return <Loading />
-  if (countriesLoading) return <Error500 />
+  if (countriesLoading) return <>HELLO WORLD</>
 
   return (
     <form action='' method='get' style={{ width: '100%' }}>

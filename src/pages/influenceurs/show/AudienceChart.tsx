@@ -22,6 +22,12 @@ import TabPanel from '@mui/lab/TabPanel'
 import TabContext from '@mui/lab/TabContext'
 import { styled } from '@mui/material/styles'
 import MuiTabList, { TabListProps } from '@mui/lab/TabList'
+import AgeAndGenderSplit from 'src/components/influencers/AgeAndGenderSplit'
+import LocationByCountries from 'src/components/influencers/LocationByCountries'
+import LocationByCities from './LocationByCities'
+import Languages from 'src/components/influencers/Languages'
+import DetailsList from './DetailsList'
+import AudienceLooklikes from './AudienceLooklikes'
 
 // Styled TabList component
 const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
@@ -44,33 +50,71 @@ const TabList = styled(MuiTabList)<TabListProps>(({ theme }) => ({
   }
 }))
 
+type AgeGroup = {
+  [key: string]: number // Key represents age range as a string, e.g., "13-17", "18-24".
+}
+
+type Country = {
+  code: string
+  name: string
+  value: number
+}
+
+type City = {
+  country_code: string
+  name: string
+  value: number
+}
+
+type Language = {
+  code: string
+  name: string
+  value: number
+}
+
+type Affinity = {
+  id: number
+  name: string
+  weight: number
+}
+
+type Lookalike = {
+  username: string
+  full_name: string
+  picture_url: string
+  url: string
+}
+
+type Audience = {
+  analysis: {
+    cleared: number
+    flagged: number
+  }
+  gender: {
+    F: number
+    M: number
+    U: number
+  }
+  age_groups: AgeGroup[]
+  countries: Country[]
+  cities: City[]
+  languages: Language[]
+  affinities: {
+    brands: Affinity[]
+    interests: Affinity[]
+  }
+  lookalikes: Lookalike[]
+}
+
 interface ResponseType {
   id: string
   handle: string
   network: string
   snapshot: string
-  audience: {
-    analysis: {
-      cleared: number
-      flagged: number
-    }
-    gender: {
-      F: number
-      M: number
-      U: number
-    }
-    age_groups: any[]
-    countries: any[]
-    cities: any[]
-    languages: any[]
-    affinities: {
-      brands: any[]
-      interests: any[]
-    }
-    lookalikes: any[]
-  }
+  audience: Audience
 }
-;[]
+
+// Example array of social profiles
 
 const AudienceChart = ({ id }: { id: string }) => {
   const [value, setValue] = useState<string>('IG')
@@ -208,12 +252,33 @@ const AudienceChart = ({ id }: { id: string }) => {
                 <Grid item lg={4} pl={2}>
                   <SplitGender props={item.audience.gender} />
                 </Grid>
+                <Grid item lg={4} pl={2}>
+                  <AgeAndGenderSplit props={item.audience.age_groups} />
+                </Grid>
+                <Grid item lg={4} pl={2}>
+                  <LocationByCountries countries={item.audience.countries} />
+                </Grid>
+                <Grid item lg={4} pl={2}>
+                  <LocationByCities cities={item.audience.cities} />
+                </Grid>
+                <Grid item lg={4} pl={2}>
+                  <Languages data={item.audience.languages} />
+                </Grid>
+                <Grid item lg={4} pl={2}>
+                  <DetailsList data={item.audience.affinities.brands} title='Brand affinity' />
+                </Grid>
+                <Grid item lg={4} pl={2}>
+                  <DetailsList data={item.audience.affinities.interests} title='Interests' />
+                </Grid>
+                <Grid item lg={4} pl={2}>
+                  <AudienceLooklikes data={item.audience.lookalikes} />
+                </Grid>
               </Grid>
             </TabPanel>
           ))}
       </TabContext>
       {/* <Grid container spacing={2} mt={2}>
-          <LocationByCountries />
+      
   
           <Grid item lg={8}>
             <MostPopularPosting />
@@ -265,7 +330,7 @@ const AudienceChart = ({ id }: { id: string }) => {
           }}
         >
           <LocationByCities />
-          <Languages />
+          
         </Box>
         <Box
           sx={{
@@ -275,7 +340,7 @@ const AudienceChart = ({ id }: { id: string }) => {
             marginTop: '20px'
           }}
         >
-          <AgeAndGenderSplit />
+          
         </Box> */}
     </>
   )

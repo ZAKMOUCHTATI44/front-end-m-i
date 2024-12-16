@@ -12,13 +12,13 @@ import React from 'react'
 
 // const : React.FC<DemographyProps> = ({ demography }) => {
 
-type Country = {
-  code: string
+type City = {
+  country_code: string
   name: string
   value: number
 }
 
-const LocationByCountries = ({ countries }: { countries: Country[] }) => {
+const LocationByCities = ({ cities }: { cities: City[] }) => {
   // const data = [
   //   {
   //     country: 'United States',
@@ -68,14 +68,14 @@ const LocationByCountries = ({ countries }: { countries: Country[] }) => {
   // ]
 
   return (
-    <Card sx={{ padding: '30px' }}>
+    <Card sx={{ padding: '30px', height: '100%' }}>
       <Typography variant='h6' mb={6}>
-        Location by countries
+        Location by cities
       </Typography>
       <Box>
-        {countries.map(item => (
-          <Box key={item.code} sx={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
-            <img src={`https://flagcdn.com/w40/${item.code.toLocaleLowerCase()}.png`} alt={item.code} height={15} />
+        {cities.map(item => (
+          <Box key={item.country_code} sx={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
+            {/* <img src={`https://flagcdn.com/w40/${item.code.toLocaleLowerCase()}.png`} alt={item.code} height={15} /> */}
             <div style={{ width: '-webkit-fill-available' }}>
               <Typography
                 variant='subtitle2'
@@ -116,4 +116,4 @@ const LocationByCountries = ({ countries }: { countries: Country[] }) => {
   )
 }
 
-export default LocationByCountries
+export default LocationByCities

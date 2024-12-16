@@ -2,29 +2,27 @@ import { Card, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 
-type Language = {
-  code: string
+interface Type {
+  id: number
   name: string
-  value: number
+  weight: number
 }
-
-const Languages = ({ data }: { data: Language[] }) => {
+const DetailsList = ({ data, title }: { data: Type[]; title: string }) => {
   return (
     <Card sx={{ padding: '30px', height: '100%' }}>
       <Typography variant='h6' mb={6}>
-        Languages
+        {title}
       </Typography>
       <Box>
         {data.map(item => (
-          <Box key={item.code} sx={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
-            <img src={'https://app.favikon.com/icons/speaking.png'} alt={'Icon speaking'} width={15} height={15} />
+          <Box key={item.id} sx={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
             <div style={{ width: '-webkit-fill-available' }}>
               <Typography
                 variant='subtitle2'
                 style={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}
               >
                 <span style={{ textTransform: 'capitalize' }}>{item.name}</span>
-                <Typography variant='caption'>{item.value} %</Typography>
+                <Typography variant='caption'>{item.weight.toFixed(2)} %</Typography>
               </Typography>
               <span
                 className='border-progress'
@@ -42,7 +40,7 @@ const Languages = ({ data }: { data: Language[] }) => {
                   style={{
                     content: '""',
                     height: `100%`,
-                    width: `${item.value * 3}%`,
+                    width: `${item.weight * 3}%`,
                     backgroundColor: '#7a6af6',
                     position: 'absolute',
                     top: 0,
@@ -58,4 +56,4 @@ const Languages = ({ data }: { data: Language[] }) => {
   )
 }
 
-export default Languages
+export default DetailsList

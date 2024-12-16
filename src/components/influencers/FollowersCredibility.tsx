@@ -130,9 +130,6 @@ const FollowersCredibility = ({ props }: { props: PropsType }) => {
           </p> */}
         </div>
       </div>
-      <Typography variant='caption'>
-        Bots have been detected even though the overall audience remains authentic.
-      </Typography>
     </Card>
   )
 }
