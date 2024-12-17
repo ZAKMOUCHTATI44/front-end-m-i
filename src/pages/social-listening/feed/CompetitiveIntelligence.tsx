@@ -24,11 +24,24 @@ interface BankData {
 
 const data: BankData[] = [
   {
-    name: 'Nuxe',
-    picture: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/378313297.jpg',
-    fansTotal: 492200,
+    name: 'Filorga Maroc',
+    picture: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/7097417265.jpg',
+    fansTotal: 42920,
+    fansNew: 0,
+    fansGrwoth: 0,
+    postsAdmin: 35,
+    interactionsTotal: 147191,
+    score: 71,
+    avg_views: 115200,
+    engagementPage: '136',
+    engagementPosts: '0.263%'
+  },
+  {
+    name: 'Clarins France',
+    picture: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/1581059383.jpg',
+    fansTotal: 322500,
     fansNew: 6100,
-    fansGrwoth: -468,
+    fansGrwoth: 0.33,
     postsAdmin: 35,
     interactionsTotal: 147191,
     score: 86,
@@ -37,8 +50,8 @@ const data: BankData[] = [
     engagementPosts: '0.263%'
   },
   {
-    name: 'Clarins',
-    picture: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/4842594961.jpg',
+    name: 'Estée Lauder',
+    picture: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/yt/UCl-joYa3XaoAv3udOeQOt8w.jpg',
     fansTotal: 847192,
     fansNew: 4006,
     fansGrwoth: -528,
@@ -52,12 +65,12 @@ const data: BankData[] = [
   {
     name: 'Clinique',
     picture: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/409035188.jpg',
-    fansTotal: 3892293,
+    fansTotal: 318300,
     fansNew: 13006,
     fansGrwoth: -268,
     score: 92,
     postsAdmin: 13,
-    avg_views: 34291,
+    avg_views: 47200,
     interactionsTotal: 154885,
     engagementPage: '0.355%',
     engagementPosts: '0.522%'
@@ -130,15 +143,16 @@ const CompetitiveIntelligence = () => {
         )
       }
     },
-    {
-      name: 'Posts (Admin)',
-      width: '150px',
-      selector: row => row.postsAdmin,
-      sortable: true,
-      cell(row) {
-        return <p>{formatNumber(Number(row.postsAdmin))}</p>
-      }
-    },
+
+    // {
+    //   name: 'Posts (Admin)',
+    //   width: '150px',
+    //   selector: row => row.postsAdmin,
+    //   sortable: true,
+    //   cell(row) {
+    //     return <p>{formatNumber(Number(row.postsAdmin))}</p>
+    //   }
+    // },
     {
       name: 'Interactions (Total)',
       selector: row => row.interactionsTotal.toLocaleString(),

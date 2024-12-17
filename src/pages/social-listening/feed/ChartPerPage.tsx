@@ -13,11 +13,11 @@ import Icon from 'src/@core/components/icon'
 
 const data = [
   {
-    name: 'Nuxe',
+    name: 'Filorga Maroc',
     fans: 80
   },
   {
-    name: 'Clarins',
+    name: 'Clarins France',
     fans: 100
   },
   {
@@ -25,12 +25,8 @@ const data = [
     fans: 80
   },
   {
-    name: 'La prairie',
+    name: 'Clinique',
     fans: 100
-  },
-  {
-    name: 'Guerlain',
-    fans: 50
   }
 ]
 
