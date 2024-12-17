@@ -96,7 +96,11 @@ const CardInfluencer = ({
       </Box>
 
       <Box sx={{ display: 'flex', gap: '15px' }}>
-        <Button color={'success'} variant='tonal' sx={{ fontWeight: 'bold' }}>
+        <Button
+          color={influencer.insights.top.growth >= '0' ? 'success' : 'error'}
+          variant='tonal'
+          sx={{ fontWeight: 'bold' }}
+        >
           {influencer.insights.top.growth}
         </Button>
         <Button color={'secondary'} variant='tonal' sx={{ gap: '15px', fontWeight: 'bold' }}>
