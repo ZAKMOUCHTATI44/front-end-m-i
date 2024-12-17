@@ -42,7 +42,7 @@ const Languages = ({ data }: { data: Language[] }) => {
                   style={{
                     content: '""',
                     height: `100%`,
-                    width: `${item.value * 3}%`,
+                    width: `${item.value}%`,
                     backgroundColor: '#7a6af6',
                     position: 'absolute',
                     top: 0,

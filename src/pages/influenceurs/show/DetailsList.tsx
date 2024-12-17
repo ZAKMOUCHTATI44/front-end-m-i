@@ -22,7 +22,7 @@ const DetailsList = ({ data, title }: { data: Type[]; title: string }) => {
                 style={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}
               >
                 <span style={{ textTransform: 'capitalize' }}>{item.name}</span>
-                <Typography variant='caption'>{item.weight.toFixed(2)} %</Typography>
+                <Typography variant='caption'>{(item.weight * 100).toFixed(2)} %</Typography>
               </Typography>
               <span
                 className='border-progress'
@@ -40,7 +40,7 @@ const DetailsList = ({ data, title }: { data: Type[]; title: string }) => {
                   style={{
                     content: '""',
                     height: `100%`,
-                    width: `${item.weight * 3}%`,
+                    width: `${item.weight * 100}%`,
                     backgroundColor: '#7a6af6',
                     position: 'absolute',
                     top: 0,
