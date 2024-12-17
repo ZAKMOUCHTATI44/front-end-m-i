@@ -41,16 +41,20 @@ interface SocialCoverageType {
   }
 }
 
+interface Data {
+  accounts: SocialCoverageType[]
+}
+
 const SocialCoverage = () => {
   const router = useRouter()
   const { settings } = useSettings()
 
   const { id } = router.query
 
-  const { error, isLoading, data } = UseQueryHooks<SocialCoverageType[]>(
+  const { error, isLoading, data } = UseQueryHooks<Data>(
     [`/creators/${id}/social-coverage`],
     async () => {
-      const response = await api.get<SocialCoverageType[]>(`/creators/${id}/social-coverage`)
+      const response = await api.get<Data>(`/creators/${id}/social-coverage`)
 
       return response.data
     },
@@ -197,14 +201,10 @@ const SocialCoverage = () => {
     <div>
       {data && (
         <>
-          <DataTable className={`${settings.mode}-datatable`} columns={columns} data={data} />
+          <DataTable className={`${settings.mode}-datatable`} columns={columns} data={data.accounts} />
           <Grid container spacing={6} mt={6}>
-            {data.map(item => (
-              <AudienceGrowthChart
-                key={item.network}
-                network={item.audience.history.network}
-                data={item.audience.history.data}
-              />
+            {data.accounts.map(item => (
+              <AudienceGrowthChart key={item.network} network={item.network} data={item.audience.history.data} />
             ))}
           </Grid>
         </>

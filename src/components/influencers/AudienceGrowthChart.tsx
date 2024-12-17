@@ -11,11 +11,11 @@ type Data = {
 }
 const AudienceGrowthChart = ({ network, data }: { network: string; data: Data[] }) => {
   const socialMediaColors = [
-    { platform: 'twitter', color: '#1DA1F2' },
-    { platform: 'instagram', color: '#E4405F' },
-    { platform: 'linkedIn', color: '#0077B5' },
-    { platform: 'youtube', color: '#FF0000' },
-    { platform: 'tiktok', color: '#000000' }
+    { platform: 'TW', color: '#1DA1F2' },
+    { platform: 'IG', color: '#E4405F' },
+    { platform: 'LK', color: '#0077B5' },
+    { platform: 'YT', color: '#FF0000' },
+    { platform: 'TK', color: '#000000' }
   ]
 
   const currentColor = socialMediaColors.find(platform => platform.platform === network)
@@ -84,7 +84,7 @@ const AudienceGrowthChart = ({ network, data }: { network: string; data: Data[] 
     <Grid item xs={12} sm={6} lg={4}>
       <Card sx={{ paddingTop: theme => theme.spacing(6) }}>
         <Box sx={{ display: 'flex', paddingInline: theme => theme.spacing(2), gap: '5px', paddingBottom: '25px' }}>
-          <img src={`/images/social-media/${network}.png`} alt='' width={25} height={25} />
+          <img src={`/images/social-media/new/${network}.png`} alt='' width={25} height={25} />
           <Typography sx={{ textTransform: 'capitalize' }}>{network} Audience</Typography>
         </Box>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', paddingInline: theme => theme.spacing(2) }}>
