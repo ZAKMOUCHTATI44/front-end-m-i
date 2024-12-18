@@ -21,7 +21,7 @@ const MostPopularDaysChart = ({ data }: { data: WeekDayType[] }) => {
   }))
 
   const formatLabel = (value: number) => {
-    return value.toString()
+    return `${value} %`
   }
 
   return (
