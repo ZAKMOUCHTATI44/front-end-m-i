@@ -57,7 +57,8 @@ const MostPopularDaysChart = ({ data }: { data: WeekDayType[] }) => {
               domain={[0, 'dataMax']}
               allowDecimals={false}
               interval={0}
-              ticks={[...Array(Math.ceil(Math.max(...data.map(d => d.posts)) + 1)).keys()]} // Dynamically generate ticks
+
+              // ticks={"ration"} // Dynamically generate ticks
             />
             <Tooltip
               contentStyle={{
@@ -69,9 +70,9 @@ const MostPopularDaysChart = ({ data }: { data: WeekDayType[] }) => {
               labelStyle={{ color: '#CCCCCC' }}
             />
             <Legend wrapperStyle={{ color: '#CCCCCC' }} />
-            <Bar dataKey='posts' fill={barColor} radius={[2, 2, 0, 0]} barSize={20}>
+            <Bar dataKey='ratio' fill={barColor} radius={[2, 2, 0, 0]} barSize={20}>
               <LabelList
-                dataKey='posts'
+                dataKey='ratio'
                 position='top'
                 formatter={formatLabel}
                 style={{ fontSize: 12, fill: '#EDEDED' }}
