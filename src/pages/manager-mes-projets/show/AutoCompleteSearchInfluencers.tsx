@@ -22,7 +22,7 @@ const AutoCompleteSearchInfluencers = ({ handleChange }: { handleChange(value: s
   const [keyword, setKeyword] = useState<string>('')
 
   const { error, isLoading, data } = useQuery<Response>([`/search?q=${keyword}`], async () => {
-    const response = await api.get<Response>(`/search?q=${keyword}&limit=10`)
+    const response = await api.get<Response>(`/search?q=${keyword}&limit=24`)
 
     return response.data
   })
