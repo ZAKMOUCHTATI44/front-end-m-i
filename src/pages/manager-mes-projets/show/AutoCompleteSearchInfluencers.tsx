@@ -9,6 +9,7 @@ import { Avatar, CircularProgress, ListItem, ListItemAvatar, ListItemText } from
 interface FilterResponse {
   id: string
   name: string
+  picture: string
 }
 
 interface Response {
@@ -62,7 +63,7 @@ const AutoCompleteSearchInfluencers = ({ handleChange }: { handleChange(value: s
           <ListItem {...props}>
             <ListItemAvatar>
               <Avatar
-                src={`https://api.inflauditor.ma/media/account?id=${option.id}`}
+                src={`https://api.inflauditor.ma/media/account?id=${option.picture}`}
                 alt={option.name}
                 sx={{ height: 28, width: 28 }}
               />
