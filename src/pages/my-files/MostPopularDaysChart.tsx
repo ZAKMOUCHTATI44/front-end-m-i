@@ -43,7 +43,7 @@ const MostPopularDaysChart = ({ data }: { data: WeekDayType[] }) => {
         }}
       >
         <Typography variant='h5' sx={{ textTransform: 'capitalize', fontWeight: 600, margin: '20px auto' }}>
-          Most Popular Days by Interaction
+          Posting activity
         </Typography>
       </Box>
       <Box sx={{ width: '100%', height: '300px' }}>
@@ -51,7 +51,14 @@ const MostPopularDaysChart = ({ data }: { data: WeekDayType[] }) => {
           <BarChart data={processedData} margin={{ top: 20, right: 30, left: 20, bottom: 10 }}>
             <CartesianGrid strokeDasharray='3 3' stroke='#444' />
             <XAxis dataKey='day' tick={{ fontSize: 12, fill: '#CCCCCC' }} />
-            <YAxis tickFormatter={formatLabel} tick={{ fontSize: 10, fill: '#CCCCCC' }} domain={[0, 'dataMax']} />
+            <YAxis
+              tickFormatter={formatLabel}
+              tick={{ fontSize: 10, fill: '#CCCCCC' }}
+              domain={[0, 'dataMax']}
+              allowDecimals={false}
+              interval={0}
+              ticks={[...Array(Math.ceil(Math.max(...data.map(d => d.posts)) + 1)).keys()]} // Dynamically generate ticks
+            />
             <Tooltip
               contentStyle={{
                 backgroundColor: '#2A2A3A',

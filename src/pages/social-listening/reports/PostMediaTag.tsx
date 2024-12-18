@@ -118,7 +118,7 @@ const PostMediaTag = () => {
       <Grid item lg={3} sx={{ position: 'sticky', top: '90px', height: '600px' }}>
         <Card>
           <Typography variant='h6' padding={5}>
-            Carrefour Market Maroc Network
+            Laboratoires Filorga Maroc
           </Typography>
           <TabContext value={value}>
             <TabList onChange={handleChange} aria-label='customized tabs example' sx={{ margin: 2 }}>
