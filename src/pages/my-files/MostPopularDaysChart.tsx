@@ -2,23 +2,26 @@ import { Box, Card, Typography } from '@mui/material'
 import React from 'react'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer, Legend, LabelList } from 'recharts'
 
-// Sample data for the chart (assuming data in the thousands to be represented in millions)
-const data = [
-  { day: 'Monday', interaction: 15200000 },
-  { day: 'Tuesday', interaction: 15400000 },
-  { day: 'Wednesday', interaction: 17400000 },
-  { day: 'Thursday', interaction: 15000000 },
-  { day: 'Friday', interaction: 17500000 },
-  { day: 'Saturday', interaction: 14300000 },
-  { day: 'Sunday', interaction: 13200000 }
-]
+interface WeekDayType {
+  posts: number
+  ratio: string
+  day: number
+}
 
-const MostPopularDaysChart: React.FC = () => {
+const MostPopularDaysChart = ({ data }: { data: WeekDayType[] }) => {
   const barColor = '#4C6EF5'
 
+  // Array to map day indices to names
+  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
+  // Preprocess data to replace numeric day index with day name
+  const processedData = data.map(item => ({
+    ...item,
+    day: days[item.day] // Map index to day name
+  }))
+
   const formatLabel = (value: number) => {
-    // Format numbers to show in millions (5M format)
-    return `${(value / 1000000).toFixed(1)}M`
+    return value.toString()
   }
 
   return (
@@ -45,16 +48,10 @@ const MostPopularDaysChart: React.FC = () => {
       </Box>
       <Box sx={{ width: '100%', height: '300px' }}>
         <ResponsiveContainer width='100%' height='100%'>
-          <BarChart data={data} margin={{ top: 1, right: 1, left: 0, bottom: 5 }}>
-            <CartesianGrid strokeDasharray='1 1' stroke='#444' />
+          <BarChart data={processedData} margin={{ top: 20, right: 30, left: 20, bottom: 10 }}>
+            <CartesianGrid strokeDasharray='3 3' stroke='#444' />
             <XAxis dataKey='day' tick={{ fontSize: 12, fill: '#CCCCCC' }} />
-            <YAxis
-              tickFormatter={formatLabel} // Format Y-axis to show values as millions (5M)
-              tick={{ fontSize: 10, fill: '#CCCCCC' }}
-              domain={[0, 'dataMax']} // Ensure the Y-axis starts at 0
-              interval='preserveStartEnd' // Keeps a neat display for large values
-              ticks={[5000000, 10000000, 15000000, 20000000, 25000000]} // Custom Y-axis ticks in "5M" increments
-            />
+            <YAxis tickFormatter={formatLabel} tick={{ fontSize: 10, fill: '#CCCCCC' }} domain={[0, 'dataMax']} />
             <Tooltip
               contentStyle={{
                 backgroundColor: '#2A2A3A',
@@ -65,27 +62,16 @@ const MostPopularDaysChart: React.FC = () => {
               labelStyle={{ color: '#CCCCCC' }}
             />
             <Legend wrapperStyle={{ color: '#CCCCCC' }} />
-            <Bar dataKey='interaction' fill={barColor} radius={[2, 2, 0, 0]} barSize={10}>
+            <Bar dataKey='posts' fill={barColor} radius={[2, 2, 0, 0]} barSize={20}>
               <LabelList
-                dataKey='interaction'
+                dataKey='posts'
                 position='top'
-                formatter={formatLabel} // Format the labels as millions (5M, 10M, etc.)
+                formatter={formatLabel}
                 style={{ fontSize: 12, fill: '#EDEDED' }}
               />
             </Bar>
           </BarChart>
         </ResponsiveContainer>
-      </Box>
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          marginTop: theme => theme.spacing(3)
-        }}
-      >
-        <Typography variant='caption' sx={{ color: '#AAAAAA' }}>
-          Data collected over a week
-        </Typography>
       </Box>
     </Card>
   )

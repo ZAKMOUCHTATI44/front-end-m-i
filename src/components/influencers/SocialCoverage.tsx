@@ -9,6 +9,7 @@ import Loading from '../Loading'
 import { formatNumber } from 'src/lib/numbers'
 import UseQueryHooks from 'src/lib/react-query'
 import { useSettings } from 'src/@core/hooks/useSettings'
+import MostPopularDaysChart from 'src/pages/my-files/MostPopularDaysChart'
 
 interface SocialCoverageType {
   id: string
@@ -41,8 +42,14 @@ interface SocialCoverageType {
   }
 }
 
+interface WeekDayType {
+  posts: number
+  ratio: string
+  day: number
+}
 interface Data {
   accounts: SocialCoverageType[]
+  activity_weekday: WeekDayType[]
 }
 
 const SocialCoverage = () => {
@@ -206,6 +213,11 @@ const SocialCoverage = () => {
             {data.accounts.map(item => (
               <AudienceGrowthChart key={item.network} network={item.network} data={item.audience.history.data} />
             ))}
+          </Grid>
+          <Grid container spacing={6} mt={6}>
+            <Grid item lg={6}>
+              <MostPopularDaysChart data={data.activity_weekday} />
+            </Grid>
           </Grid>
         </>
       )}
