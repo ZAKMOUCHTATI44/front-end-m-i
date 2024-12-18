@@ -6,17 +6,22 @@ import List from '@mui/material/List'
 import CustomTextField from 'src/@core/components/mui/text-field'
 import { Avatar, CircularProgress, ListItem, ListItemAvatar, ListItemText } from '@mui/material'
 
+interface FilterResponse {
+  id: string
+  name: string
+}
+
 interface Response {
   totalCount: number
-  data: Influencer[]
+  data: FilterResponse[]
   currentPage: number
   lastPage: number
 }
-const AutoCompleteSearchInfluencers = ({ handleChange }: { handleChange(value: Influencer): void }) => {
+const AutoCompleteSearchInfluencers = ({ handleChange }: { handleChange(value: string): void }) => {
   const [keyword, setKeyword] = useState<string>('')
 
-  const { error, isLoading, data } = useQuery<Response>([`/creators/search?name=${keyword}`], async () => {
-    const response = await api.get<Response>(`/creators/search?username=${keyword}&limit=10`)
+  const { error, isLoading, data } = useQuery<Response>([`/search?q=${keyword}`], async () => {
+    const response = await api.get<Response>(`/search?q=${keyword}&limit=10`)
 
     return response.data
   })
@@ -30,10 +35,10 @@ const AutoCompleteSearchInfluencers = ({ handleChange }: { handleChange(value: I
         fullWidth
         options={data?.data || []}
         ListboxComponent={List}
-        getOptionLabel={option => option.fullName || ''}
+        getOptionLabel={option => option.name || ''}
         onChange={(e, value) => {
           if (value) {
-            handleChange(value)
+            handleChange(value.id)
           }
         }}
         renderInput={params => (
@@ -57,7 +62,7 @@ const AutoCompleteSearchInfluencers = ({ handleChange }: { handleChange(value: I
           <ListItem {...props}>
             <ListItemAvatar>
               <Avatar
-                src={`https://api.inflauditor.ma/media/account?id=${option.accounts[0].id}`}
+                src={`https://api.inflauditor.ma/media/account?id=${option.id}`}
                 alt={option.name}
                 sx={{ height: 28, width: 28 }}
               />

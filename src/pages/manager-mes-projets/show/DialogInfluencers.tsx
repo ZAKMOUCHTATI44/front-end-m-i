@@ -80,8 +80,12 @@ const DialogInfluencers = ({ handleChange }: { handleChange: (e: Influencer) => 
           </Box>
           <div style={{ margin: '10px 0px' }}>
             <AutoCompleteSearchInfluencers
-              handleChange={infleuncer => {
-                setCurrentInfluencer(infleuncer)
+              handleChange={id => {
+                console.log(id)
+
+                setCurrentInfluencer(null)
+
+                // setCurrentInfluencer(infleuncer)
               }}
             />
           </div>

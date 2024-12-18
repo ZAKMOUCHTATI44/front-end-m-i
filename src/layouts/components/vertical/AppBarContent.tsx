@@ -29,8 +29,8 @@ const AppBarContent = (props: Props) => {
     <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
       <Box sx={{ width: '350px' }}>
         <AutoCompleteSearchInfluencers
-          handleChange={influencer => {
-            router.push(`/influenceurs/show/${influencer?._id}`)
+          handleChange={id => {
+            router.push(`/influenceurs/show/${id}`)
           }}
         />
       </Box>
