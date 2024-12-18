@@ -9,7 +9,7 @@ const api = axios.create({
 
   baseURL: 'https://api.inflauditor.ma',
 
-  // withCredentials: true,
+  withCredentials: true,
   headers: {
     'Content-Type': 'application/json'
   }
