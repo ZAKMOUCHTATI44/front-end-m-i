@@ -1,11 +1,35 @@
 import { Card, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Icon from 'src/@core/components/icon'
 import { formatNumber } from 'src/lib/numbers'
 
 const PostCard = ({ post }: { post: any }) => {
+  const [isInView, setIsInView] = useState(false)
+  const boxRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true)
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (boxRef.current) {
+      observer.observe(boxRef.current)
+    }
+
+    return () => {
+      if (boxRef.current) {
+        observer.unobserve(boxRef.current)
+      }
+    }
+  }, [])
+
   return (
     <Card
       sx={{
@@ -45,6 +69,7 @@ const PostCard = ({ post }: { post: any }) => {
       </Box>
       <Box>
         <Box
+          ref={boxRef}
           sx={{
             width: '100%',
             height: '270px',
@@ -52,10 +77,28 @@ const PostCard = ({ post }: { post: any }) => {
             borderRadius: '12px',
             marginInline: 'auto',
             my: theme => theme.spacing(3),
-            backgroundImage: `url(${post.profileImageUrl})`,
+            backgroundImage: isInView ? `url(${post.profileImageUrl})` : 'none',
             backgroundSize: 'cover'
+
+            // backgroundColor: '#f0f0f0' // Placeholder color while the image is loading
           }}
-        />
+        >
+          {!isInView && (
+            <Box
+              sx={{
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#888',
+                fontSize: '16px'
+              }}
+            >
+              Loading...
+            </Box>
+          )}
+        </Box>
       </Box>
 
       <Typography variant='caption'>{post.date}</Typography>

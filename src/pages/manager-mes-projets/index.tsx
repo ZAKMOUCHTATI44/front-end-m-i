@@ -7,9 +7,13 @@ import Loading from 'src/components/Loading'
 import CreateProject from './CreateProject'
 import ProjectDetails from './ProjectDetails'
 
+interface ProjectType {
+  data: Project[]
+  total: string
+}
 const Page = () => {
-  const { error, isLoading, data } = UseQueryHooks<Project[]>(['/projects'], async () => {
-    const response = await api.get<Project[]>('/projects')
+  const { error, isLoading, data } = UseQueryHooks<ProjectType>(['/projects'], async () => {
+    const response = await api.get<ProjectType>('/projects')
 
     return response.data
   })
@@ -34,7 +38,9 @@ const Page = () => {
           }}
         >
           <CreateProject />
-          {data && data.length > 0 && data.map(project => <ProjectDetails key={project.id} project={project} />)}
+          {data &&
+            data.data.length > 0 &&
+            data.data.map(project => <ProjectDetails key={project.id} project={project} />)}
         </div>
       </Card>
     </div>

@@ -494,7 +494,9 @@ interface Category {
 interface Project {
   id: string
   total_influencers_count: number
+  creators: number
   name: string
+  label: string
   statutProjets: StatutProjets[]
   created_at: string
   updated_at: string

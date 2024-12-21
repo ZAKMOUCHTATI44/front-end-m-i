@@ -5,6 +5,7 @@ import moment from 'moment'
 import { useRouter } from 'next/router'
 import EditProjetName from './EditProjetName'
 import { Box } from '@mui/system'
+import DeleteProjet from './show/DeleteProjet'
 
 const containerStyle: React.CSSProperties = {
   display: 'flex',
@@ -37,9 +38,10 @@ const ProjectDetails = ({ project }: { project: Project }) => {
             router.push(`manager-mes-projets/show/${project.id}`)
           }}
         >
-          {project.name}
+          {project.label}
         </Typography>
-        <EditProjetName id={project.id} name={project.name} />
+        <EditProjetName id={project.id} name={project.label} />
+        <DeleteProjet id={project.id} />
       </Box>
       <div
         onClick={() => {
@@ -61,7 +63,7 @@ const ProjectDetails = ({ project }: { project: Project }) => {
           }}
         >
           <Icon icon='tabler:users' fontSize={15} />
-          <Typography>{project.total_influencers_count} Influencers</Typography>
+          <Typography>{project.creators} Influencers</Typography>
         </div>
       </div>
 

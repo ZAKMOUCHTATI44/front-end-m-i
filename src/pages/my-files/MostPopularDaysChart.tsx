@@ -1,6 +1,6 @@
 import { Box, Card, Typography } from '@mui/material'
 import React from 'react'
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer, Legend, LabelList } from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer, Legend } from 'recharts'
 
 interface WeekDayType {
   posts: number
@@ -23,6 +23,9 @@ const MostPopularDaysChart = ({ data }: { data: WeekDayType[] }) => {
   const formatLabel = (value: number) => {
     return `${value} %`
   }
+
+  // Determine the max value of the data to calculate ticks
+  const maxValue = Math.ceil(Math.max(...processedData.map(item => parseFloat(item.ratio))) / 10) * 10
 
   return (
     <Card
@@ -54,11 +57,8 @@ const MostPopularDaysChart = ({ data }: { data: WeekDayType[] }) => {
             <YAxis
               tickFormatter={formatLabel}
               tick={{ fontSize: 10, fill: '#CCCCCC' }}
-              domain={[0, 'dataMax']}
-              allowDecimals={false}
-              interval={0}
-
-              // ticks={"ration"} // Dynamically generate ticks
+              ticks={Array.from({ length: maxValue / 10 + 1 }, (_, i) => i * 10)} // Define steps of 10
+              domain={[0, maxValue]} // Set domain based on max value
             />
             <Tooltip
               contentStyle={{
@@ -71,12 +71,13 @@ const MostPopularDaysChart = ({ data }: { data: WeekDayType[] }) => {
             />
             <Legend wrapperStyle={{ color: '#CCCCCC' }} />
             <Bar dataKey='ratio' fill={barColor} radius={[2, 2, 0, 0]} barSize={20}>
-              <LabelList
+              {/* <LabelList
                 dataKey='ratio'
                 position='top'
+
                 formatter={formatLabel}
                 style={{ fontSize: 12, fill: '#EDEDED' }}
-              />
+              /> */}
             </Bar>
           </BarChart>
         </ResponsiveContainer>

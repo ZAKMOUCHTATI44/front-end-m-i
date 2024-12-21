@@ -36,7 +36,7 @@ const EditProjetName = ({ id, name }: { id: string; name: string }) => {
 
   const handleCreateProject = async () => {
     try {
-      const res = await api.patch(`/projects/${id}`, { name: projectName })
+      const res = await api.patch(`/projects`, { name: projectName, id })
       setProjectName(res.data.name)
       queryClient.invalidateQueries({ queryKey: [`/projects`] })
     } catch (error) {

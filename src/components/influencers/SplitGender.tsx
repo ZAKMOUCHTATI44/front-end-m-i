@@ -12,7 +12,7 @@ const SplitGender = ({ props }: { props: GenderProps }) => {
     datasets: [
       {
         data: [props.M, props.F],
-        backgroundColor: ['#FF6384', '#4BC0C0'], // Red for "Bad", Grey for remaining
+        backgroundColor: ['#FF6384', '#4BC0C0'],
         borderWidth: 0
       }
     ],
@@ -50,7 +50,7 @@ const SplitGender = ({ props }: { props: GenderProps }) => {
               textAlign: 'center'
             }}
           >
-            <div style={{ fontSize: '20px', fontWeight: 'bold' }}>{props.M}%</div>
+            <div style={{ fontSize: '20px', fontWeight: 'bold' }}>{props.M * 100}%</div>
             <div style={{ color: '#FF6384' }}>Male</div>
           </div>
         </div>

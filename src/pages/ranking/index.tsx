@@ -20,7 +20,7 @@ const Page = () => {
   const routerParams = router.query
 
   const buildQueryString = (): string => {
-    let queryString = `/influencers?limit=50`
+    let queryString = `/creators/search?sort=rank&limit=50`
     function concatenateVariableNamesAndValues(obj: any) {
       // Loop through the object keys dynamically
       for (const key in obj) {

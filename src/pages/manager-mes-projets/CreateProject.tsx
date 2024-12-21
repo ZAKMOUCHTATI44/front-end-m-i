@@ -50,7 +50,8 @@ const CreateProject = () => {
 
   const handleCreateProject = async () => {
     try {
-      const res = await api.post('projects', { name: projectName })
+      const res = await api.post('projects', { name: projectName, template: 0 })
+
       router.push(`/manager-mes-projets/show/${res.data.id}`)
     } catch (error) {
       console.log(error)

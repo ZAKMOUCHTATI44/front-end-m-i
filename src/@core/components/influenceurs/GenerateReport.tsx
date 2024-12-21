@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Alert, Button } from '@mui/material'
+import { Button } from '@mui/material'
 import Icon from 'src/@core/components/icon'
 import api from 'src/lib/api'
+import Link from 'next/link'
 
 const GenerateReport = ({ id }: { id: string }) => {
   const [open, setOpen] = useState<boolean>(false)
@@ -23,31 +24,18 @@ const GenerateReport = ({ id }: { id: string }) => {
 
   return (
     <div>
-      {open && (
-        <Alert
-          variant='outlined'
-          severity='success'
-          style={{
-            position: 'absolute',
-            backgroundColor: '#fff',
-            top: '100px',
-            right: '30px'
-          }}
+      <Link href={`/my-files/${id}`} style={{ textDecoration: 'none' }}>
+        <Button
+          variant='contained'
+          sx={{ marginTop: '10px' }}
+          fullWidth
+          onClick={generateReport}
+          style={{ display: 'flex', alignItems: 'center', gap: '5px' }}
         >
-          Your report has been successfully downloaded. 🎉{' '}
-        </Alert>
-      )}
-
-      <Button
-        variant='contained'
-        sx={{ marginTop: '10px' }}
-        fullWidth
-        onClick={generateReport}
-        style={{ display: 'flex', alignItems: 'center', gap: '5px' }}
-      >
-        Download PDF
-        <Icon icon='tabler:download' fontSize={25} />
-      </Button>
+          Download PDF
+          <Icon icon='tabler:download' fontSize={25} />
+        </Button>
+      </Link>
     </div>
   )
 }

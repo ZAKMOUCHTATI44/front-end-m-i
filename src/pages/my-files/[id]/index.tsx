@@ -98,10 +98,9 @@ const Page = () => {
   return (
     <>
       <div>
-        <Button variant='contained' onClick={exportToPDF} style={{ marginTop: '20px' }}>
+        <Button variant='contained' onClick={exportToPDF} style={{ margin: '20px' }}>
           Export as PDF
         </Button>
-
         {Loading && (
           <>
             <Card
@@ -113,7 +112,6 @@ const Page = () => {
                 width: '500px'
               }}
             >
-              {' '}
               Exporting report, please wait...
             </Card>
           </>

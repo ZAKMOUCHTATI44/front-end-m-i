@@ -30,7 +30,11 @@ const DeleteProjet = ({ id }: { id: string }) => {
 
   const handleDelete = async () => {
     try {
-      await api.delete(`projects/${id}`)
+      await api.delete('projects', {
+        data: {
+          id: id
+        }
+      })
       router.push('/manager-mes-projets')
       setOpen(false)
     } catch (error) {

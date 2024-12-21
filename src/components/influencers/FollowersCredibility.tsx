@@ -16,12 +16,12 @@ const FollowersCredibility = ({ props }: { props: PropsType }) => {
   const credibilityData = {
     datasets: [
       {
-        data: [props.cleared, props.flagged], // 63% Bad, 37% Remaining
-        backgroundColor: ['#32CD32', '#FF6384'], // Red for "Bad", Grey for remaining
+        data: [props.cleared, props.flagged],
+        backgroundColor: ['#4CAF50', '#F44336'],
         borderWidth: 0
       }
     ],
-    labels: ['Bad', 'Good']
+    labels: ['Real', 'Suspicious']
   }
 
   // Data for the followers breakdown chart (right)
@@ -35,7 +35,7 @@ const FollowersCredibility = ({ props }: { props: PropsType }) => {
           // props.influencer_percent,
           // props.real_people_percent
         ], // Mass followers, Suspicious, Influencers, Real
-        backgroundColor: ['#32CD32', '#FF6384'], // Colors for each category
+        backgroundColor: ['#4CAF50', '#F44336'],
         borderWidth: 0
       }
     ],
@@ -87,7 +87,7 @@ const FollowersCredibility = ({ props }: { props: PropsType }) => {
                 height: '10px',
                 display: 'inline-flex',
                 borderRadius: '50%',
-                backgroundColor: '#32CD32'
+                backgroundColor: '#4CAF50'
               }}
             ></span>{' '}
             Real {(props.cleared * 100).toFixed(2)}%
@@ -99,7 +99,7 @@ const FollowersCredibility = ({ props }: { props: PropsType }) => {
                 height: '10px',
                 display: 'inline-flex',
                 borderRadius: '50%',
-                backgroundColor: '#FF6384'
+                backgroundColor: '#F44336'
               }}
             ></span>{' '}
             Suspicious {(props.flagged * 100).toFixed(2)}%
