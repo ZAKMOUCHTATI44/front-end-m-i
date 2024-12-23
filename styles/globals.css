@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   min-height: 100%;
@@ -45,6 +49,7 @@ code[class*='language-'] {
   padding: 10px;
   border-radius: 10px;
 }
+
 .circle {
   width: 10px;
   height: 10px;
@@ -56,13 +61,16 @@ code[class*='language-'] {
 .very_low {
   background-color: #b71818;
 }
+
 .average {
   background-color: #ff986b;
 }
+
 .high,
 .excellent {
   background-color: #16a34a;
 }
+
 .overflowX {
   overflow-x: auto;
 }
@@ -108,9 +116,11 @@ code[class*='language-'] {
   border-radius: 50%;
   animation: rotating-backwards infinite var(--duration, 30s) linear;
 }
+
 .box-network:hover {
   animation-play-state: paused;
 }
+
 .group-icon {
   z-index: 99;
 }
@@ -118,21 +128,25 @@ code[class*='language-'] {
 .children-container {
   animation: rotating infinite var(--duration, 30s) linear;
 }
+
 .box-0 {
   position: absolute;
   top: 0%;
   right: 0px;
 }
+
 .box-1 {
   position: absolute;
   top: 0%;
   left: 0px;
 }
+
 .box-2 {
   position: absolute;
   bottom: 0%;
   left: 0px;
 }
+
 .box-3 {
   position: absolute;
   bottom: 0%;
@@ -151,6 +165,7 @@ code[class*='language-'] {
   translate: -50% -50%;
   position: absolute;
 }
+
 /* .creator-network .box-network .box-item {
   animation: rotating-backwards infinite var(--duration, 30s) linear;
 } */
@@ -158,6 +173,7 @@ code[class*='language-'] {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(-1turn);
   }
@@ -167,6 +183,7 @@ code[class*='language-'] {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(1turn);
   }
