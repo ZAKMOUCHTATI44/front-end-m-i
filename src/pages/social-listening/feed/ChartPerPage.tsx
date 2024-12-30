@@ -13,20 +13,16 @@ import Icon from 'src/@core/components/icon'
 
 const data = [
   {
-    name: 'Filorga Maroc',
+    name: 'Mango Stores',
     fans: 80
   },
   {
-    name: 'Clarins France',
+    name: 'Zara',
     fans: 100
   },
   {
-    name: 'Estée Lauder',
+    name: 'Massimo Dutti',
     fans: 80
-  },
-  {
-    name: 'Clinique',
-    fans: 100
   }
 ]
 

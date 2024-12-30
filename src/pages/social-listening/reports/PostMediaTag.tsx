@@ -49,67 +49,57 @@ const PostMediaTag = () => {
 
   const hasTagged = [
     {
-      name: 'Mauboussin',
-      mention: '1',
-      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/336134941.jpg'
+      name: 'MANGO',
+      mention: '3',
+      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/5311574.jpg'
     },
     {
-      name: 'NOOĀNCE PARIS',
+      name: 'M Avenue Marrakech',
       mention: '1',
-      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/50925947296.jpg'
-    },
-    {
-      name: 'Julie Lellouche',
-      mention: '1',
-      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/468540951.jpg'
-    },
-    {
-      name: 'Tony Bouge',
-      mention: '1',
-      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/tt/6640437645468860421.jpg'
+      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/6977836581.jpg'
     }
   ]
 
   const wasTaggedBy = [
     {
-      name: 'Safae Hbirkou',
+      name: 'Sarah Zerafa',
       mention: '1',
-      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/965109348.jpg'
+      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/260832265.jpg'
     },
     {
-      name: 'Lina Agdour',
+      name: 'Imane Khallad',
       mention: '1',
-      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/3411018535.jpg'
+      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/53456861.jpg'
     },
     {
-      name: 'Selma Faida',
+      name: 'Yasmina Olfi',
       mention: '2',
       pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/1718712370.jpg'
     },
     {
-      name: 'Sara Laajaj',
+      name: 'AJAKKAF RIME',
       mention: '2',
-      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/588083112.jpg'
+      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/1598288633.jpg'
     },
     {
-      name: 'Safae Hbirkou',
+      name: 'Isleym Btr',
       mention: '1',
-      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/965109348.jpg'
+      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/tt/6619357402906312710.jpg'
     },
     {
-      name: 'Lina Agdour',
+      name: 'Miryam Montano',
       mention: '1',
-      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/3411018535.jpg'
+      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/174856245.jpg'
     },
     {
-      name: 'Selma Faida',
+      name: 'PRISCILLA CLAIRE HIRT',
       mention: '2',
-      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/1718712370.jpg'
+      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/1907018792.jpg'
     },
     {
-      name: 'Sara Laajaj',
+      name: 'Kim',
       mention: '2',
-      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/588083112.jpg'
+      pictureUrl: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/1417120751.jpg'
     }
   ]
 
@@ -118,7 +108,7 @@ const PostMediaTag = () => {
       <Grid item lg={3} sx={{ position: 'sticky', top: '90px', height: '600px' }}>
         <Card>
           <Typography variant='h6' padding={5}>
-            Laboratoires Filorga Maroc
+            Mango Stores Morocco
           </Typography>
           <TabContext value={value}>
             <TabList onChange={handleChange} aria-label='customized tabs example' sx={{ margin: 2 }}>

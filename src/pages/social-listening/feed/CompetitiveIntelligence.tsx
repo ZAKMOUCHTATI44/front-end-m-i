@@ -24,8 +24,8 @@ interface BankData {
 
 const data: BankData[] = [
   {
-    name: 'Filorga Maroc',
-    picture: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/7097417265.jpg',
+    name: 'Mango Stores',
+    picture: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/50997981995.jpg',
     fansTotal: 42920,
     fansNew: 0,
     fansGrwoth: 0,
@@ -37,9 +37,9 @@ const data: BankData[] = [
     engagementPosts: '0.263%'
   },
   {
-    name: 'Clarins France',
-    picture: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/1581059383.jpg',
-    fansTotal: 322500,
+    name: 'Zara',
+    picture: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/602725764.jpg',
+    fansTotal: 62031831,
     fansNew: 6100,
     fansGrwoth: 0.33,
     postsAdmin: 35,
@@ -50,8 +50,8 @@ const data: BankData[] = [
     engagementPosts: '0.263%'
   },
   {
-    name: 'Estée Lauder',
-    picture: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/yt/UCl-joYa3XaoAv3udOeQOt8w.jpg',
+    name: 'Massimo Dutti',
+    picture: 'https://favikon-creator.s3.eu-west-3.amazonaws.com/li/16778',
     fansTotal: 847192,
     fansNew: 4006,
     fansGrwoth: -528,
@@ -61,19 +61,6 @@ const data: BankData[] = [
     interactionsTotal: 1213,
     engagementPage: '0.155%',
     engagementPosts: '0.422%'
-  },
-  {
-    name: 'Clinique',
-    picture: 'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/409035188.jpg',
-    fansTotal: 318300,
-    fansNew: 13006,
-    fansGrwoth: -268,
-    score: 92,
-    postsAdmin: 13,
-    avg_views: 47200,
-    interactionsTotal: 154885,
-    engagementPage: '0.355%',
-    engagementPosts: '0.522%'
   }
 ]
 

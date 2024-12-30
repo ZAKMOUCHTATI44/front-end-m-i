@@ -23,4 +23,27 @@ export const setAuthToken = (token: string | null) => {
   }
 }
 
+// api.interceptors.response.use(
+//   response => {
+//     console.log('API call successful:', response.data)
+
+//     return response
+//   },
+//   error => {
+//     console.log(JSON.stringify(error))
+//     console.log('Unauthorized')
+
+//     if (error.response?.status === 401) {
+//       setAuthToken(null)
+
+//       console.log('Unauthorized')
+
+//       return Promise.reject(new Error('Unauthorized - Please login again.'))
+//     }
+
+//     // Pass through other errors
+//     return Promise.reject(error)
+//   }
+// )
+
 export default api

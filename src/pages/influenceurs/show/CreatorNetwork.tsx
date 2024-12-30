@@ -2,23 +2,15 @@ import { Grid } from '@mui/material'
 import React from 'react'
 
 const data = [
-  '/logos/Clinique-logo-A48B76E112-seeklogo.com.png',
-  '/logos/Estee-Lauder-Logo.png',
-  '/logos/images (1).png',
-  '/logos/images.png',
-  '/logos/la-mer1660.jpg',
-  '/logos/la-prairie-logo.png',
-  '/logos/Nuxe Paris.jpg',
-  '/logos/images (2).png',
-  '/logos/Caudalie-Symbole.png',
-  '/logos/lancome-3-logo-png-transparent.png'
+  'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/6977836581.jpg',
+  'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/5311574.jpg'
 ]
 const CreatorNetwork = () => {
   return (
     <Grid item container sx={{ position: 'relative', marginTop: '100px' }} minHeight={550} minWidth={550}>
-      <BoxCreators size={220} duration={30} data={data.slice(0, 4)} />
-      <BoxCreators size={340} duration={50} data={data.slice(4, 8)} />
-      <BoxCreators size={440} duration={30} data={data.slice(8, 12)} />
+      <BoxCreators size={220} duration={30} data={data.slice(0, 1)} />
+      <BoxCreators size={340} duration={50} data={data.slice(1, 2)} />
+      {/* <BoxCreators size={440} duration={30} data={data.slice(8, 12)} /> */}
       <MiddleElement />
     </Grid>
   )
@@ -70,7 +62,7 @@ const MiddleElement = () => {
       }}
     >
       <img
-        src='https://favikon-medias.s3.eu-west-3.amazonaws.com/in/1314863628.jpg'
+        src='https://favikon-medias.s3.eu-west-3.amazonaws.com/in/50997981995.jpg'
         width={75}
         height={75}
         style={{
