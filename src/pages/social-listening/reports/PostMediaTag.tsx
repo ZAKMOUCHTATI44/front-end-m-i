@@ -165,13 +165,13 @@ const PostCard = ({ post }: { post: any }) => {
       >
         <Box sx={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
           <img
-            src={'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/1314863628.jpg'}
+            src={'https://favikon-medias.s3.eu-west-3.amazonaws.com/in/50997981995.jpg'}
             alt={post.handle}
             width={35}
             height={35}
             style={{ borderRadius: '50%' }}
           />
-          <Typography variant='caption'>@filorga_maroc</Typography>
+          <Typography variant='caption'>@mangostores_morocco</Typography>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
           <img src={`/images/social-media/${post.network}.png`} alt='' width={15} height={15} />
