@@ -8,7 +8,6 @@ import mock from 'src/@fake-db/mock'
 
 // ** Types
 import { UserDataType } from 'src/context/types'
-import api from 'src/lib/api'
 
 const users: UserDataType[] = [
   {
@@ -63,27 +62,10 @@ mock.onPost('/jwt/login').reply(async request => {
 
   console.log(email, password)
 
-  // try {
-  //   const response = {
-  //     accessToken: 'gdiqgdiqipdqid',
-  //     userData: { name: 'ZAK', email: 'z.mouchtati@gmail.com', role: 'admin' }
-  //   }
-
-  //   return [200, { response }]
-  // } catch (err) {
-  //   const error = {
-  //     email: ['email or Password is Invalid']
-  //   }
-
-  //   return [400, { error }]
-  // }
-
   try {
-    const res = await api.post('/login', { username: email, password })
-
     const response = {
-      // accessToken: res.data.data.token,
-      userData: { name: res.data.name, email: email, role: 'admin' }
+      accessToken: 'gdiqgdiqipdqid',
+      userData: { name: 'ZAK', email: 'z.mouchtati@gmail.com', role: 'admin' }
     }
 
     return [200, { response }]
@@ -94,6 +76,23 @@ mock.onPost('/jwt/login').reply(async request => {
 
     return [400, { error }]
   }
+
+  // try {
+  //   const res = await api.post('/login', { username: email, password })
+
+  //   const response = {
+  //     // accessToken: res.data.data.token,
+  //     userData: { name: res.data.name, email: email, role: 'admin' }
+  //   }
+
+  //   return [200, { response }]
+  // } catch (err) {
+  //   const error = {
+  //     email: ['email or Password is Invalid']
+  //   }
+
+  //   return [400, { error }]
+  // }
 })
 
 mock.onPost('/jwt/register').reply(request => {

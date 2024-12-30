@@ -1,6 +1,5 @@
 // ** MUI Imports
 import Box from '@mui/material/Box'
-import { useRouter } from 'next/router'
 
 // ** Icon Imports
 
@@ -11,7 +10,6 @@ import ModeToggler from 'src/@core/layouts/components/shared-components/ModeTogg
 
 // ** Components
 import UserDropdown from 'src/@core/layouts/components/shared-components/UserDropdown'
-import AutoCompleteSearchInfluencers from 'src/pages/manager-mes-projets/show/AutoCompleteSearchInfluencers'
 
 interface Props {
   hidden: boolean
@@ -23,16 +21,15 @@ interface Props {
 const AppBarContent = (props: Props) => {
   // ** Props
   const { settings, saveSettings } = props
-  const router = useRouter()
 
   return (
     <Box sx={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
       <Box sx={{ width: '350px' }}>
-        <AutoCompleteSearchInfluencers
+        {/* <AutoCompleteSearchInfluencers
           handleChange={id => {
             router.push(`/influenceurs/show/${id}`)
           }}
-        />
+        /> */}
       </Box>
       <Box className='actions-right' sx={{ display: 'flex', alignItems: 'center' }}>
         <ModeToggler settings={settings} saveSettings={saveSettings} />
