@@ -2,7 +2,7 @@ import { Card, Typography } from '@mui/material'
 import { Box } from '@mui/system'
 import React from 'react'
 import CardContent from '@mui/material/CardContent'
-import CustomAvatar from 'src/@core/components/mui/avatar'
+// import CustomAvatar from 'src/@core/components/mui/avatar'
 import CardMedia from '@mui/material/CardMedia'
 
 const CardDetails = ({ influencer }: { influencer: any }) => {
