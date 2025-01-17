@@ -28,14 +28,18 @@ const CardDetails = ({ influencer }: { influencer: any }) => {
             mb: 2
           }}
         >
-          <CustomAvatar
+
+          <img
+           style={{ width: 100, height: 100, backgroundColor: '#fff', borderRadius: '50%' }}
+          src="https://instagram.fcmn2-1.fna.fbcdn.net/v/t51.2885-19/458412218_1593916881194621_2508687106525925276_n.jpg?stp=dst-jpg_s320x320_tt6&_nc_ht=instagram.fcmn2-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=LM_oQoy8sjoQ7kNvgFBcE33&_nc_gid=21ec811fe20e46bebde45c41532dedf7&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AYCZzUTLfNWg8eoFdo_5paVi8UDEsJ8p74y7eKWkPnWrqA&oe=679009A4&_nc_sid=8b3546" alt="" />
+          {/* <CustomAvatar
             src={
               influencer.accounts[0].src ?? `https://api.inflauditor.ma/media/account?id=${influencer.accounts[0].id}`
             }
             variant='rounded'
             alt={influencer.name}
-            sx={{ width: 100, height: 100, backgroundColor: '#fff', borderRadius: '50%' }}
-          />
+           
+          /> */}
         </Box>
 
         <Typography variant='h4' sx={{ mb: 1 }}>
