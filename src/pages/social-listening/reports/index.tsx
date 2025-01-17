@@ -13,6 +13,7 @@ const Page = () => {
       {data && (
         <Grid container spacing={6}>
           <Grid item xs={12} md={6} lg={6}>
+            HELLO WORLD
             <CardDetails influencer={data} />
           </Grid>
           <InfluenceScore data={data} />
